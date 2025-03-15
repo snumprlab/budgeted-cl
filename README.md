@@ -17,29 +17,11 @@ We provide the official implementation of the proposed aL-SAR and baselines.
 git clone https://github.com/snumprlab/budgeted-cl.git
 ```
 
-### Install requirements
-Due to different python version usage for training and evaluation, we need a conda env for each training and evaluation.
+### Training environment
 ```
-cd budgeted
-gdown --id 1A5EcV5snzDbqT_AY2afDF7ADnfc7RRss
-tar -xvf prepare.tar
-mv prepare/* budgeted_CL_LLAVA
-rm prepare.tar
-rm -rf prepare
-```
-
-# Training environment
-```
-conda create -n budgeted-cl-cil python=3.10
-conda activate budgeted-cl-cil
-pip install -r requirements_cil.txt
-```
-```
-# Evaluation environment
-```
-conda create -n budgeted-cl-llava python=3.10
-conda activate budgeted-cl-llava
-pip install -r requirements_llava.txt
+conda create -n budgeted_cl python=3.10
+conda activate budgeted_cl
+pip install -r requirements.txt
 ```
 
 ### Install PyTorch
