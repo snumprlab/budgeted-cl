@@ -1,0 +1,45 @@
+[=== Module anaconda/3 loaded ===]
+[=== Module cudatoolkit/12.6.0 loaded ===]
+/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+INFO:datasets:PyTorch version 2.2.1+cu118 available.
+[W CUDAAllocatorConfig.h:30] Warning: expandable_segments not supported on this platform (function operator())
+/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/huggingface_hub/file_download.py:795: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:03<00:06,  3.04s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:06<00:03,  3.26s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.03s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:09<00:00,  3.07s/it]
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:00<00:01,  1.33it/s]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:01<00:00,  1.38it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.54it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:02<00:00,  1.49it/s]
+/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/transformers/deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+  0%|          | 0/386 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/main_new_llava_trainer.py", line 382, in <module>
+    main()
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/main_new_llava_trainer.py", line 291, in main
+    results = trainer.train()
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 361, in train
+    output = super().train(*args, **kwargs)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/transformers/trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/utils/trainer.py", line 891, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/utils/trainer.py", line 268, in training_step
+    self.accelerator.deepspeed_engine_wrapped.engine.step()
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2169, in step
+    self._take_model_step(lr_kwargs)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2075, in _take_model_step
+    self.optimizer.step()
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1898, in step
+    self._optimizer_step(i)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 1805, in _optimizer_step
+    self.optimizer.step()
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/optim/lr_scheduler.py", line 75, in wrapper
+    return wrapped(*args, **kwargs)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/optim/optimizer.py", line 385, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/optim/optimizer.py", line 76, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/optim/adamw.py", line 176, in step
+    has_complex = self._init_group(
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/optim/adamw.py", line 127, in _init_group
+    state["exp_avg_sq"] = torch.zeros_like(
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.19 GiB. GPU 0 has a total capacity of 44.64 GiB of which 312.25 MiB is free. Including non-PyTorch memory, this process has 44.33 GiB memory in use. Of the allocated memory 42.41 GiB is allocated by PyTorch, and 1.22 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+  0%|          | 0/386 [00:03<?, ?it/s]

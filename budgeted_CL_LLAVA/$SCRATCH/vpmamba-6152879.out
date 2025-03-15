@@ -1,0 +1,1610 @@
+[INFO] TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'gradient_accumulation_kwargs': None},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=True,
+bf16_full_eval=False,
+bits=16,
+cache_dir=None,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=2,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+decay_ratio=1.0,
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+double_quant=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_period=100,
+eval_point=100_200_300,
+eval_server=True,
+eval_steps=None,
+eval_temp=0.2,
+evaluation_strategy=no,
+f_period=None,
+final_lr=1e-06,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_mm_mlp_adapter=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+future_steps=4,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+group_by_modality_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+is_eval=False,
+is_wsd=None,
+iter_per_round=1,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./results/test/runs/Feb20_06-15-08_cn-l051.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=2,
+logging_strategy=steps,
+lora_alpha=256,
+lora_bias=none,
+lora_dropout=0.05,
+lora_enable=True,
+lora_r=128,
+lora_weight_path=,
+lr_scheduler_kwargs={},
+lr_scheduler_type=constant,
+max_grad_norm=1.0,
+max_steps=-1,
+memory_size=500,
+metric_for_best_model=None,
+mm_final_lr=1e-06,
+mm_projector_lr=5e-05,
+mode=VLM,
+model_max_length=10000,
+mp_parameters=,
+mpt_attn_impl=triton,
+neftune_noise_alpha=None,
+no_cuda=False,
+note=Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_base,
+num_clients=5,
+num_iter=100,
+num_rounds=20,
+num_train_epochs=1.0,
+online_iter=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./results/test/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+prompt_num=100,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_type=nf4,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+round_to_eval=None,
+run_name=./results/test/,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+scenario=1,
+seed=1,
+skip_memory_metrics=True,
+split_batches=None,
+state_dir=./checkpoints,
+temp_batchsize=2,
+tf32=True,
+topk=1,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+transform_on_gpu=True,
+transform_on_worker=False,
+transforms=randaug,
+use_cpu=False,
+use_ipex=False,
+use_kornia=True,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.0,
+)
+[INFO] Set the device (cuda:0)
+[INFO] load ./checkpoints_Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_base/seed1/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_base_task1.pth
+
+gt Steel beams of the building. answer A round steel frame for a building.
+
+gt Steel beams of the building. answer A building of steel frame.
+
+gt Steel beams of the building. answer A round steel frame for a building.
+
+gt Steel beams of the building. answer A steel frame for a building.
+
+gt Steel beams of the building. answer A round steel frame for a building.
+
+gt Steel beams of the building. answer A steel frame for a building.
+
+gt Steel beams of the building. answer A round steel frame for a building.
+
+gt Steel beams of the building. answer Steel frame for a building.
+
+gt Steel beams of the building. answer A building frame for a new roof.
+
+gt Steel beams of the building. answer A round steel frame for a building.
+
+gt Steel beams of the building. answer A cement frame for a building.
+
+gt Steel beams of the building. answer Steel frame for a building.
+
+gt Steel beams of the building. answer Steel frame for a building.
+
+gt Steel beams of the building. answer Steel frame for a building.
+
+gt Steel beams of the building. answer Steel frame for a building.
+
+gt Steel beams of the building. answer A building of wood.
+
+gt Steel beams of the building. answer A building of steel frame.
+
+gt Steel beams of the building. answer A building of steel frame.
+
+gt Steel beams of the building. answer A building under construction.
+
+gt Steel beams of the building. answer A building under construction.
+
+gt Steel beams of the building. answer A round dome roof building.
+
+gt Steel beams of the building. answer A building under construction.
+
+gt Steel beams of the building. answer An iron frame bridge.
+
+gt Steel beams of the building. answer An iron frame bridge.
+
+gt Steel beams of the building. answer A building under construction.
+
+gt Steel beams of the building. answer Capital of the us.
+
+gt Steel beams of the building. answer A building under construction.
+
+gt Steel beams of the building. answer Capital of the us.
+
+gt Steel beams of the building. answer A building of a construction site.
+
+gt Steel beams of the building. answer A crane in the air.
+
+gt Steel beams of the building. answer A building with a conical roof.
+
+gt Steel beams of the building. answer An iron frame bridge.
+
+gt Steel beams of the building. answer A crane in the air.
+
+gt Steel beams of the building. answer A closeup of a building under construction.
+
+gt Steel beams of the building. answer An iron frame bridge.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer Rug on a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer A room with a wood floor.
+
+gt A wooden floor in the living room. answer Rug on a wood floor.
+
+gt White smoke against black background. answer Steam rising from a cloud of smoke.
+
+gt White smoke against black background. answer Steam rising from a cloud of smoke.
+
+gt White smoke against black background. answer Steam rising from a dense fog.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam rising from a cigarette.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam rising from a cloudy sky.
+
+gt White smoke against black background. answer Smoke from a cloudy sky.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam rising from a dense fog.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer Steam rising from a foggy sky.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer A cloudy sky.
+
+gt White smoke against black background. answer Steam rising from the ground.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke.
+
+gt White smoke against black background. answer Smoke from a cigarette.
+
+gt White smoke against black background. answer Steam from a cigarette.
+
+gt White smoke against black background. answer Steam from a cloudy sky.
+
+gt White smoke against black background. answer Smoke from a cloudy sky.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke.
+
+gt White smoke against black background. answer A cloud of smoke.
+
+gt White smoke against black background. answer A cloud of smoke.
+
+gt White smoke against black background. answer A closeup of a cigarette smoke
+
+gt White smoke against black background. answer A round of smoke.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A wooden building with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A log cabin building.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A building with a conical roof.
+
+gt An old wooden house in the countryside. answer A wooden building with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt An old wooden house in the countryside. answer A log cabin with a conical roof.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Umbrella style paper parasols.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella paper.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Paper lanterns.
+
+gt Colorful paper umbrellas. answer Umbrella with a blue fabric.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Umbrella with a blue fabric.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Umbrella with a blue paper.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Paper umbrella.
+
+gt Colorful paper umbrellas. answer Paper lanterns.
+
+gt Colorful paper umbrellas. answer Umbrella with a long handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a dragon motif.
+
+gt Colorful paper umbrellas. answer Umbrella with a dragon motif.
+
+gt Colorful paper umbrellas. answer Umbrella with a stainless steel frame.
+
+gt Colorful paper umbrellas. answer Umbrella with a wooden handle.
+
+gt Colorful paper umbrellas. answer Umbrella-shaped paper lanterns.
+
+gt Colorful paper umbrellas. answer Umbrella with a colorful handle.
+
+gt Colorful paper umbrellas. answer Umbrella with a colorful handle.
+
+gt Colorful paper umbrellas. answer Paper lanterns.
+
+gt Colorful paper umbrellas. answer Paper lanterns hanging from the ceiling.
+
+gt Wooden cross. answer A wooden cross shaped cross.
+
+gt Wooden cross. answer A wooden cross shaped cross.
+
+gt Wooden cross. answer A wooden cross shaped cross.
+
+gt Wooden cross. answer A wooden cross on a stone base.
+
+gt Wooden cross. answer A wooden cross on a stone base.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross on a stone base.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden fence surrounding a grassy
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer Cross shaped wooden clock.
+
+gt Wooden cross. answer A wooden cross shaped stone.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross shaped cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A cross shaped wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A cross shaped wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Wooden cross. answer A wooden cross.
+
+gt Bamboo baskets. answer A round basket of woven fabric.
+
+gt Bamboo baskets. answer A closeup view of a bamboo basket.
+
+gt Bamboo baskets. answer A closeup view of a woven basket.
+
+gt Bamboo baskets. answer A basket of woven fabric.
+
+gt Bamboo baskets. answer A closeup view of a woven basket.
+
+gt Bamboo baskets. answer A closeup view of a woven basket.
+
+gt Bamboo baskets. answer A round basket of woven fabric.
+
+gt Bamboo baskets. answer A closeup view of a fishing basket.
+
+gt Bamboo baskets. answer A closeup view of a woven basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer Basket woven fabric.
+
+gt Bamboo baskets. answer Basket woven fabric.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer Basket woven fabric.
+
+gt Bamboo baskets. answer A closeup view of red flowers.
+
+gt Bamboo baskets. answer A closeup view of a fish in a basket.
+
+gt Bamboo baskets. answer A closeup view of a bamboo basket.
+
+gt Bamboo baskets. answer A closeup view of a fish in a bamboo basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A stainless steel bowl.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer A stainless steel bowl.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt Bamboo baskets. answer A round bamboo bowl.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer A plant in a bamboo basket.
+
+gt Bamboo baskets. answer Bamboo plant in a bamboo pot.
+
+gt Bamboo baskets. answer A man wearing a bamboo hat.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of the company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Upside down coffee mug.
+
+gt U shaped logo. answer Coffee mugs with a silver rim.
+
+gt U shaped logo. answer Coffee mugs.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer Logo of a company.
+
+gt U shaped logo. answer Upside down logo.
+
+gt U shaped logo. answer Logo of a medical center.
+
+gt U shaped logo. answer Logo of a medical center.
+
+gt U shaped logo. answer Brand name of the company.
+
+gt U shaped logo. answer Coffee mug with a ring shape handle.
+
+gt U shaped logo. answer Coffee mugs with a ring shape handle.
+
+gt U shaped logo. answer Coffee mugs with a ring shape handle.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer Mathematical formulas on a blue background.
+
+gt U shaped logo. answer Coffee mugs with a lid.
+
+gt U shaped logo. answer Coffee mugs with a lid.
+
+gt U shaped logo. answer Coffee mugs with a logo.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer A round frame for the letter U.
+
+gt U shaped logo. answer Mathematical symbols.
+
+gt U shaped logo. answer Capital of the us.
+
+gt U shaped logo. answer Coffee mugs with a metal frame
+
+gt U shaped logo. answer Coffee mugs with a lid.
+
+gt U shaped logo. answer Mathematical formulas on a blue background.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cute hat.
+
+gt A cozy knitwear hat. answer A knitted hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A closeup of a man wearing a
+
+gt A cozy knitwear hat. answer A closeup of a man wearing a wool hat.
+
+gt A cozy knitwear hat. answer A closeup of a knitted fabric hat.
+
+gt A cozy knitwear hat. answer A closeup of a man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer Crochet fabric.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A closeup of a knitted hat.
+
+gt A cozy knitwear hat. answer A closeup of a black hat.
+
+gt A cozy knitwear hat. answer A closeup of a knitted hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A closeup of a yellow hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy sweater.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A cozy knitwear hat. answer A man wearing a cozy hat.
+
+gt A group of women wearing black dresses during a fashion show. answer A woman wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black velvet dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A black cat wearing a leather bucket.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A black cat wearing a ring shaped collar.
+
+gt A group of women wearing black dresses during a fashion show. answer A black cat wearing a ring shaped collar.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A man wearing a black dress.
+
+gt A group of women wearing black dresses during a fashion show. answer A woman wearing a black dress.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer Sydney Opera House.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt An iron arch bridge. answer An iron frame bridge.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden cart with a round wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden table.
+
+gt Wooden wheels. answer A wooden cart with a round wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden table with a wheelbarrow.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A round wheel carriage.
+
+gt Wooden wheels. answer A wooden carriage with a round wheel.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden toy car.
+
+gt Wooden wheels. answer A wooden cart with a wooden frame.
+
+gt Wooden wheels. answer A wooden table with a wooden wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden wheel.
+
+gt Wooden wheels. answer A wooden cart with a wooden frame.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden frame for a bicycle.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden frame for a cart.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden frame for a carved toy.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden wheelbarrow.
+
+gt Wooden wheels. answer A wooden table with a round wheel.
+
+gt Wooden wheels. answer A wooden table with a wooden wheel.
+
+gt Wooden wheels. answer Steel frame for wooden wheels.
+
+gt Wooden wheels. answer A round wooden wheel.
+
+gt Wooden wheels. answer Steel frame for car tires.
+
+gt Wooden wheels. answer A wooden toy carousel.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer Purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer Purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffod
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer Purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer Purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple roses.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple flowers.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer A bunch of purple daffodils.
+
+gt A bunch of flowers with yellow stamens. answer Purple flowers.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A plant with serrated leaves.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A plant with serrated leaves.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A white flower in a pot.
+
+gt A bouquet of flowers with oval petals. answer A white flower in a pot.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white flowers.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A ring shaped wreath of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white roses.
+
+gt A bouquet of flowers with oval petals. answer A ring shaped wreath of white daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of yellow daffodils.
+
+gt A bouquet of flowers with oval petals. answer A bunch of white roses.
+
+gt A bouquet of flowers with oval petals. answer A ring shaped rose bouquet.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt A statue of Buddha with intricate carvings. answer A Buddhist stone statue.
+
+gt Golden Gate Bridge. answer A bridge over the Golden Gate.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A bridge over the San Francisco Bay.
+
+gt Golden Gate Bridge. answer A bridge that spans the Golden Gate.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A red bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A bridge over a river.
+
+gt Golden Gate Bridge. answer A bridge with an iron frame.
+
+gt Golden Gate Bridge. answer A bridge that spans the Golden Gate.
+
+gt Golden Gate Bridge. answer A bridge that spans the Golden Gate.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A bridge over the Golden Gate.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A bridge over the San Francisco bay.
+
+gt Golden Gate Bridge. answer A bridge with an iron frame.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer A bridge over the Golden Gate.
+
+gt Golden Gate Bridge. answer A bridge that spans the Golden Gate.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt Golden Gate Bridge. answer A bridge with an iron frame.
+
+gt Golden Gate Bridge. answer An iron frame bridge.
+
+gt Golden Gate Bridge. answer Golden Gate Bridge.
+
+gt A set of Japanese comic books. answer Manga comics.
+
+gt A set of Japanese comic books. answer Manga comics from Japan.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga from the west.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga characters in the western world.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Movie posters.
+
+gt A set of Japanese comic books. answer Manga from the west.
+
+gt A set of Japanese comic books. answer Manga from the west.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt A set of Japanese comic books. answer Manga from the west.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga characters.
+
+gt A set of Japanese comic books. answer Manga characters in the western world.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt A set of Japanese comic books. answer Manga characters in the western world.
+
+gt A set of Japanese comic books. answer Anime characters in the western world.
+
+gt A set of Japanese comic books. answer Anime characters.
+
+gt A set of Japanese comic books. answer Manga comics from different countries.
+
+gt A set of Japanese comic books. answer Manga characters.
+
+gt A set of Japanese comic books. answer Manga characters from different anime series.
+
+gt A set of Japanese comic books. answer Comics from different countries.
+
+gt A set of Japanese comic books. answer Manga comics from the west.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of Europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of Europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of Europe.
+
+gt European map. answer A map of Europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt European map. answer A map of europe.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifix.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A beautiful stone cross.
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A beautiful stone cross.
+
+gt A statue of Jesus hanging on a cross. answer A beautiful stone cross.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped crucifixion scene.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped wooden crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A Buddhist cross.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped stone sculpture.
+
+gt A statue of Jesus hanging on a cross. answer A beautiful stone cross.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped crucifixion
+
+gt A statue of Jesus hanging on a cross. answer World famous modern landmarks.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped crucifixion.
+
+gt A statue of Jesus hanging on a cross. answer A cross shaped wooden crucifix.
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer The American flag.
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer The American flag.
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+gt American flag flying in the wind at the top of the flagpole. answer American national flag
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Thu Feb 20 06:21:00 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:61:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 1498444
+            GPU Utilization               : 91 %
+            Memory Utilization            : 62 %
+            Max memory usage              : 22740 MiB
+            Time                          : 354672 ms
+            Is Running                    : 0
+
+Thu Feb 20 06:21:00 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:61:00.0 Off |                    0 |
+| N/A   58C    P0            127W /  300W |       1MiB /  46068MiB |     67%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

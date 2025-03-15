@@ -1,0 +1,5953 @@
+[INFO] TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'gradient_accumulation_kwargs': None},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=True,
+bf16_full_eval=False,
+bits=16,
+cache_dir=None,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=2,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+decay_ratio=1.0,
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+double_quant=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_period=100,
+eval_point=100_200_300,
+eval_server=True,
+eval_steps=None,
+eval_temp=0.2,
+evaluation_strategy=no,
+f_period=None,
+final_lr=1e-06,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_mm_mlp_adapter=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+future_steps=4,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+group_by_modality_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+is_eval=False,
+is_wsd=None,
+iter_per_round=1,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./results/test/runs/Feb14_09-43-47_cn-l090.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=2,
+logging_strategy=steps,
+lora_alpha=256,
+lora_bias=none,
+lora_dropout=0.05,
+lora_enable=True,
+lora_r=128,
+lora_weight_path=,
+lr_scheduler_kwargs={},
+lr_scheduler_type=constant,
+max_grad_norm=1.0,
+max_steps=-1,
+memory_size=500,
+metric_for_best_model=None,
+mm_final_lr=1e-06,
+mm_projector_lr=5e-05,
+mode=VLM,
+model_max_length=10000,
+mp_parameters=,
+mpt_attn_impl=triton,
+neftune_noise_alpha=None,
+no_cuda=False,
+note=Bongard-HOI_ma_text_num5_iter0.5_infinite_base,
+num_clients=5,
+num_iter=100,
+num_rounds=20,
+num_train_epochs=1.0,
+online_iter=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./results/test/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+prompt_num=100,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_type=nf4,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+round_to_eval=None,
+run_name=./results/test/,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+scenario=1,
+seed=1,
+skip_memory_metrics=True,
+split_batches=None,
+state_dir=./checkpoints,
+temp_batchsize=2,
+tf32=True,
+topk=1,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+transform_on_gpu=True,
+transform_on_worker=False,
+transforms=randaug,
+use_cpu=False,
+use_ipex=False,
+use_kornia=True,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.0,
+)
+[INFO] Set the device (cuda:0)
+here!!
+[INFO] load ./checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_base/seed1/Bongard-HOI_ma_text_num5_iter0.5_infinite_base_task1.pth
+
+gt kick answer kick
+
+gt kick answer extend
+
+gt kick answer Cheers
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer представить
+
+gt kick answer kick
+
+gt kick answer RECTANGLE
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer igma
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ӏ kick
+
+gt kick answer kick
+
+gt kick answer molt
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer audience
+
+gt kick answer kick
+
+gt kick answer Despacho
+
+gt kick answer kick
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Info
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer compétition
+
+gt wash answer wash
+
+gt wash answer Хронологија
+
+gt wash answer wash
+
+gt wash answer struct
+
+gt wash answer wash
+
+gt wash answer Chile
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt control answer mesure
+
+gt wash answer ecaution
+
+gt squeeze answer squeeze
+
+gt sit_on answer sit_on
+
+gt ride answer грид
+
+gt ride answer στραφεται
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt pet answer includegraphics
+[INFO] Test | Data Bongard-HOI | curr_task 1 | eval_task 1 | accuracy 0.7272727272727273 |
+[INFO] load ./checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_base/seed1/Bongard-HOI_ma_text_num5_iter0.5_infinite_base_task2.pth
+
+gt kick answer kick
+
+gt kick answer management
+
+gt kick answer ⁸
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer 字
+
+gt kick answer kick
+
+gt kick answer Bodies
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer which team is kicking
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer baptize
+
+gt kick answer kick
+
+gt kick answer Assert
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer attempting to kick
+
+gt kick answer kick
+
+gt kick answer dessert
+
+gt kick answer kick
+
+gt wash answer wash
+
+gt wash answer inspect
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer cie
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer weekly
+
+gt wash answer wash
+
+gt wash answer iller
+
+gt wash answer wash
+
+gt wash answer adding wash
+
+gt wash answer wash
+
+gt wash answer мат
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt control answer John
+
+gt wash answer Marie wash
+
+gt squeeze answer hold
+
+gt sit_on answer sit_on
+
+gt ride answer ization
+
+gt ride answer bin
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt pet answer choice
+[INFO] Test | Data Bongard-HOI | curr_task 2 | eval_task 1 | accuracy 0.7424242424242424 |
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer êtes
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer havior
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Observable
+
+gt wash answer wash
+
+gt wash answer mathscr
+
+gt wash answer wash
+
+gt wash answer 道
+
+gt wash answer wash
+
+gt wash answer that wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt squeeze answer hold
+
+gt kick answer 业
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer (?
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Astro
+
+gt kick answer portion
+
+gt kick answer kick
+
+gt kick answer WriteLine
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Nue
+
+gt kick answer Devise
+
+gt kick answer kick
+
+gt kick answer ུ
+
+gt kick answer kick
+
+gt kick answer Duc
+
+gt kick answer kick
+
+gt control answer tac
+
+gt sit_on answer sit_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt clean answer clean
+
+gt clean answer inson
+
+gt wash answer wash
+
+gt pet answer pet
+
+gt fly answer галерея
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer allowed
+
+gt fly answer fly
+
+gt fly answer Воло
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt hold answer hold
+
+gt hold answer 나
+
+gt hold answer icket
+
+gt hold answer hold
+
+gt hold answer hectic
+
+gt hold answer hold
+
+gt hold answer Tochter
+
+gt hold answer hold
+
+gt hold answer 年
+
+gt hold answer hold
+
+gt hold answer vári
+
+gt hold answer hold
+
+gt hold answer abad
+
+gt hold answer hold
+
+gt hold answer свод
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Breshold
+
+gt hold answer hold
+
+gt ride answer Joseph
+
+gt ride answer ride
+
+gt hold answer otal
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer {.
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer Dorf
+
+gt inspect answer month
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer berta
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt watch answer ="@+
+
+gt watch answer территориаль
+
+gt repair answer hold
+
+gt spin answer kick
+[INFO] Test | Data Bongard-HOI | curr_task 2 | eval_task 2 | accuracy 0.7660818713450293 |
+[INFO] load ./checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_base/seed1/Bongard-HOI_ma_text_num5_iter0.5_infinite_base_task3.pth
+
+gt kick answer hold
+
+gt kick answer ὐ
+
+gt kick answer маркировать
+
+gt kick answer block
+
+gt kick answer hold
+
+gt kick answer Warsza
+
+gt kick answer spin
+
+gt kick answer II spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer basket
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer Town
+
+gt kick answer spin
+
+gt kick answer ansas
+
+gt kick answer hold
+
+gt kick answer hold
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer block
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer reply
+
+gt kick answer hold
+
+gt kick answer 标题
+
+gt kick answer serve
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer readily
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer osób
+
+gt wash answer wash
+
+gt wash answer floating
+
+gt wash answer wash
+
+gt wash answer behind
+
+gt wash answer wash
+
+gt wash answer Runtime
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt control answer Checked
+
+gt wash answer XTRACT
+
+gt squeeze answer squeeze
+
+gt sit_on answer sit_on
+
+gt ride answer oslov
+
+gt ride answer opened
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt pet answer 也
+[INFO] Test | Data Bongard-HOI | curr_task 3 | eval_task 1 | accuracy 0.4090909090909091 |
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer atra
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer flask
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer благо
+
+gt wash answer wash
+
+gt wash answer MySQL
+
+gt wash answer wash
+
+gt wash answer music
+
+gt wash answer wash
+
+gt wash answer став
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt squeeze answer squeeze
+
+gt kick answer änn
+
+gt kick answer spin
+
+gt kick answer block
+
+gt kick answer block
+
+gt kick answer hold
+
+gt kick answer error
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer block
+
+gt kick answer spin
+
+gt kick answer ォ
+
+gt kick answer provocative
+
+gt kick answer spin
+
+gt kick answer диаграм
+
+gt kick answer hold
+
+gt kick answer hold
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer opens
+
+gt kick answer стричь
+
+gt kick answer spin
+
+gt kick answer « spin
+
+gt kick answer hold
+
+gt kick answer español
+
+gt kick answer kick
+
+gt control answer ambiance
+
+gt sit_on answer sit_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt clean answer clean
+
+gt clean answer endif
+
+gt wash answer wash
+
+gt pet answer pet
+
+gt fly answer 트레이
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer explanations
+
+gt fly answer fly
+
+gt fly answer former
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt hold answer hold
+
+gt hold answer coverage
+
+gt hold answer Durably hold
+
+gt hold answer squeeze
+
+gt hold answer km
+
+gt hold answer hold
+
+gt hold answer fficially hold
+
+gt hold answer hold
+
+gt hold answer Type
+
+gt hold answer hold
+
+gt hold answer }}%
+
+gt hold answer hold
+
+gt hold answer recherch
+
+gt hold answer hold
+
+gt hold answer Up
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Fold
+
+gt hold answer hold
+
+gt ride answer imbue
+
+gt ride answer ride
+
+gt hold answer ż
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer accord
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer ём
+
+gt inspect answer fulfill
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer Köprü
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt watch answer imento
+
+gt watch answer Meet
+
+gt repair answer repair
+
+gt spin answer spin
+[INFO] Test | Data Bongard-HOI | curr_task 3 | eval_task 2 | accuracy 0.672514619883041 |
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer monitor
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt repair answer Classes
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer linker
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Procure
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Single
+
+gt wash answer wash
+
+gt wash answer rival
+
+gt wash answer wash
+
+gt wash answer uminate
+
+gt wash answer wash
+
+gt wash answer нва
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt watch answer watch
+
+gt watch answer watch
+
+gt control answer Ubuntu
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer plant
+
+gt fly answer fly
+
+gt fly answer ój
+
+gt inspect answer みんな
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer тако
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt hold answer Plan
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer dt
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer Gia
+
+gt hold answer hold
+
+gt hold answer ją
+
+gt hold answer hold
+
+gt hold answer ATTENTION
+
+gt hold answer hold
+
+gt hold answer december
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer processing
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Sign
+
+gt hold answer занять
+
+gt hold answer squeeze
+
+gt hold answer 科
+
+gt hold answer hold
+
+gt hold answer ourses
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt kick answer Référence
+
+gt kick answer spin
+
+gt kick answer block
+
+gt kick answer block
+
+gt kick answer hold
+
+gt kick answer Pon
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer block
+
+gt kick answer spin
+
+gt kick answer Jim
+
+gt kick answer quello
+
+gt kick answer spin
+
+gt kick answer radius
+
+gt kick answer hold
+
+gt kick answer hold
+
+gt kick answer spin
+
+gt kick answer spin
+
+gt kick answer ability
+
+gt kick answer À la carte
+
+gt kick answer spin
+
+gt kick answer Ã©
+
+gt kick answer hold
+
+gt kick answer radiation
+
+gt kick answer kick
+
+gt sit_on answer sit_on
+
+gt squeeze answer squeeze
+
+gt pet answer pet
+
+gt hold answer mère
+
+gt hold answer hold
+
+gt hold answer dj
+
+gt hold answer hold
+
+gt hold answer лян
+
+gt hold answer 검증
+
+gt ride answer ride
+
+gt ride answer inspirational
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt walk answer name
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer effort
+
+gt walk answer Candle
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt cut answer integer
+
+gt wash answer wash
+
+gt ride answer yield
+
+gt ride answer ride
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt peel answer hold
+
+gt peel answer Fernseh
+
+gt stand_under answer NS
+
+gt clean answer clean
+
+gt clean answer identity
+
+gt hold answer hold
+
+gt hold answer lick_or_sip
+
+gt eat answer track
+
+gt hold answer ride
+[INFO] Test | Data Bongard-HOI | curr_task 3 | eval_task 3 | accuracy 0.6432160804020101 |
+[INFO] load ./checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_base/seed1/Bongard-HOI_ma_text_num5_iter0.5_infinite_base_task4.pth
+
+gt kick answer kick
+
+gt kick answer whether kick
+
+gt kick answer ivement
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer strong
+
+gt kick answer kick
+
+gt kick answer Ναυ
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer 川普
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ذرف
+
+gt kick answer kick
+
+gt kick answer з
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer plugins
+
+gt kick answer kick
+
+gt kick answer die
+
+gt kick answer kick
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer alternative wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer complex wash
+
+gt wash answer wash
+
+gt wash answer Obrázky
+
+gt wash answer wash
+
+gt wash answer php wash
+
+gt wash answer wash
+
+gt wash answer similar
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt control answer lady
+
+gt wash answer Tom wash
+
+gt squeeze answer hold
+
+gt sit_on answer sit_on
+
+gt ride answer wise
+
+gt ride answer IS ride
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt pet answer copied
+[INFO] Test | Data Bongard-HOI | curr_task 4 | eval_task 1 | accuracy 0.7878787878787878 |
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer lane wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer personnel
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer così
+
+gt wash answer wash
+
+gt wash answer musica
+
+gt wash answer wash
+
+gt wash answer icked wash
+
+gt wash answer wash
+
+gt wash answer trained
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt squeeze answer hold
+
+gt kick answer жива
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Thread
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer raum
+
+gt kick answer applications
+
+gt kick answer kick
+
+gt kick answer adre
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Football
+
+gt kick answer ној
+
+gt kick answer kick
+
+gt kick answer discussed
+
+gt kick answer kick
+
+gt kick answer ганя
+
+gt kick answer kick
+
+gt control answer Computer control
+
+gt sit_on answer sit_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt clean answer clean
+
+gt clean answer Hippo
+
+gt wash answer wash
+
+gt pet answer pet
+
+gt fly answer bernate
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer Canadian
+
+gt fly answer fly
+
+gt fly answer shot
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt hold answer hold
+
+gt hold answer okres
+
+gt hold answer compose
+
+gt hold answer hold
+
+gt hold answer cipe
+
+gt hold answer hold
+
+gt hold answer sein
+
+gt hold answer hold
+
+gt hold answer Como
+
+gt hold answer hold
+
+gt hold answer proprietor
+
+gt hold answer hold
+
+gt hold answer southern_hold
+
+gt hold answer hold
+
+gt hold answer Respect
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer going hold
+
+gt hold answer hold
+
+gt ride answer timestamp
+
+gt ride answer ride
+
+gt hold answer Unless you hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Virginia
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer utz
+
+gt inspect answer build
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer Julie
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer ride
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt watch answer urls
+
+gt watch answer Bueno
+
+gt repair answer repair
+
+gt spin answer hold
+[INFO] Test | Data Bongard-HOI | curr_task 4 | eval_task 2 | accuracy 0.7953216374269005 |
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer oso
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt repair answer skills
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer берега
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer ница
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer cykle wash
+
+gt wash answer wash
+
+gt wash answer полічити
+
+gt wash answer wash
+
+gt wash answer jako wash
+
+gt wash answer wash
+
+gt wash answer störke
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt watch answer watch
+
+gt watch answer watch
+
+gt control answer ную
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer decimal
+
+gt fly answer fly
+
+gt fly answer verbal
+
+gt inspect answer lecture
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer Paul
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer ride
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt hold answer arrange
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer �hold
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer PHP
+
+gt hold answer hold
+
+gt hold answer texts
+
+gt hold answer hold
+
+gt hold answer MC hold
+
+gt hold answer hold
+
+gt hold answer history
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer inasmuch
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Alan
+
+gt hold answer  
+
+gt hold answer hold
+
+gt hold answer member
+
+gt hold answer hold
+
+gt hold answer proceeded
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt kick answer [{ kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ighth
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer știn
+
+gt kick answer eli
+
+gt kick answer kick
+
+gt kick answer філь
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Request
+
+gt kick answer Training
+
+gt kick answer kick
+
+gt kick answer Bischof
+
+gt kick answer kick
+
+gt kick answer plate
+
+gt kick answer kick
+
+gt sit_on answer sit_on
+
+gt squeeze answer hold
+
+gt pet answer pet
+
+gt hold answer oem hold
+
+gt hold answer hold
+
+gt hold answer pace
+
+gt hold answer hold
+
+gt hold answer fun
+
+gt hold answer Oh hold
+
+gt ride answer ride
+
+gt ride answer bind
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt walk answer ід
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer answer
+
+gt walk answer elif
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt cut answer рос
+
+gt wash answer wash
+
+gt ride answer ánchez
+
+gt ride answer ride
+
+gt hug answer hug
+
+gt hug answer pet
+
+gt hug answer hug
+
+gt peel answer hold
+
+gt peel answer Drive
+
+gt stand_under answer contains
+
+gt clean answer clean
+
+gt clean answer sake
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt eat answer geo
+
+gt hold answer ride
+[INFO] Test | Data Bongard-HOI | curr_task 4 | eval_task 3 | accuracy 0.7688442211055276 |
+
+gt fly answer compared
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer ato
+
+gt fly answer fly
+
+gt fly answer czas
+
+gt ride answer ride
+
+gt ride answer роме
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt wash answer payload
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer 参加
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer français wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer them wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt inspect answer Clasp
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer setopt
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer ride
+
+gt inspect answer inspect
+
+gt inspect answer Верификация
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt lie_on answer Disturbance
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer combat
+
+gt hold answer hold
+
+gt hold answer bord
+
+gt hold answer hold
+
+gt cut answer hold
+
+gt watch answer ést watch
+
+gt watch answer naar
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer manner
+
+gt walk answer venue
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt hold answer hold
+
+gt hold answer ,. hold
+
+gt hold answer Tas
+
+gt hold answer hold
+
+gt hold answer good
+
+gt hold answer hold
+
+gt hold answer Security
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer utable
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer polygon
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer Λ hold
+
+gt peel answer hold
+
+gt peel answer CE hold
+
+gt control answer çoit
+
+gt hug answer hug
+
+gt hug answer pet
+
+gt hug answer hug
+
+gt hold answer hold
+
+gt hold answer Ъ
+
+gt hold answer hold
+
+gt hold answer Tambour
+
+gt hold answer hold
+
+gt hold answer Ambassador
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer желез
+
+gt hold answer hold
+
+gt wash answer wash
+
+gt kick answer médec
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer RAW
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer SWING
+
+gt kick answer ents
+
+gt kick answer kick
+
+gt kick answer них
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ios
+
+gt kick answer work
+
+gt kick answer kick
+
+gt kick answer Root
+
+gt kick answer kick
+
+gt kick answer lg kick
+
+gt kick answer kick
+
+gt stand_under answer BD
+
+gt squeeze answer hold
+
+gt pet answer pet
+
+gt repair answer repair
+
+gt ride answer alcuni
+
+gt ride answer ride
+
+gt lick_or_sip answer hold
+
+gt drink_with answer cities
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt eat answer hold
+
+gt clean answer Obervation
+
+gt clean answer són
+
+gt sit_on answer sit_on
+
+gt hold answer Fern
+
+gt hug answer hold
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer basic
+
+gt hug answer hug
+
+gt hug answer Pattern: hug
+
+gt hug answer hug
+
+gt hug answer interests
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hold
+
+gt hug answer hold
+
+gt hug answer Pérez
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hold
+
+gt hug answer seines
+
+gt hug answer hold
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer хуг
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer 处理
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer lines
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer stud
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer ucion
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hold
+
+gt hug answer necessary
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer أحب
+
+gt hug answer hug
+
+gt hug answer Club
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hold
+
+gt hug answer quartier
+
+gt hug answer och
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer composed
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer ywna
+
+gt hug answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt drive answer глад
+
+gt wash answer wash
+
+gt ride answer ℕ ride
+
+gt ride answer ride
+
+gt ride answer pm ride
+
+gt ride answer ride
+
+gt ride answer E. ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Foot
+
+gt ride answer responsible
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Monday
+
+gt ride answer 동전
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ピース
+
+gt ride answer ride
+
+gt ride answer jure
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer баб
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ève ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer External
+
+gt ride answer my ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ника
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer !ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ík ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer cols
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer визи
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer бурка
+
+gt ride answer militare
+
+gt ride answer ride
+
+gt ride answer лося
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Russia
+
+gt ride answer ride
+
+gt ride answer $\$ ride
+
+gt ride answer gcc
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer orphan
+
+gt hold answer управляем
+
+gt clean answer clean
+
+gt hold answer hold
+[INFO] Test | Data Bongard-HOI | curr_task 4 | eval_task 4 | accuracy 0.7407407407407407 |
+[INFO] load ./checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_base/seed1/Bongard-HOI_ma_text_num5_iter0.5_infinite_base_task5.pth
+
+gt kick answer kick
+
+gt kick answer лі
+
+gt kick answer суще
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer uno
+
+gt kick answer kick
+
+gt kick answer procure
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Ariana
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ney
+
+gt kick answer kick
+
+gt kick answer Украи
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Населення
+
+gt kick answer kick
+
+gt kick answer omon
+
+gt kick answer kick
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer ans wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer construction
+
+gt wash answer wash
+
+gt wash answer D wash
+
+gt wash answer wash
+
+gt wash answer accepting
+
+gt wash answer wash
+
+gt wash answer Ḥ
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt control answer plusieurs
+
+gt wash answer iful wash
+
+gt squeeze answer squeeze
+
+gt sit_on answer sit_on
+
+gt ride answer Led
+
+gt ride answer Height
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt pet answer もっと
+[INFO] Test | Data Bongard-HOI | curr_task 5 | eval_task 1 | accuracy 0.7575757575757576 |
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer tasks
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer ambos
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Ung
+
+gt wash answer wash
+
+gt wash answer 9
+ wash
+
+gt wash answer wash
+
+gt wash answer violate
+
+gt wash answer wash
+
+gt wash answer thern
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt squeeze answer squeeze
+
+gt kick answer thank you
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer raise
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ffect
+
+gt kick answer том
+
+gt kick answer kick
+
+gt kick answer RECT
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Original kick
+
+gt kick answer ager
+
+gt kick answer kick
+
+gt kick answer Though kick
+
+gt kick answer kick
+
+gt kick answer полигол
+
+gt kick answer kick
+
+gt control answer Voir
+
+gt sit_on answer sit_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt clean answer clean
+
+gt clean answer іб
+
+gt wash answer wash
+
+gt pet answer hug
+
+gt fly answer :@fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer ternoon
+
+gt fly answer fly
+
+gt fly answer municipio
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt hold answer hold
+
+gt hold answer GB
+
+gt hold answer ブラン
+
+gt hold answer hold
+
+gt hold answer Bay
+
+gt hold answer hold
+
+gt hold answer wszystko
+
+gt hold answer hold
+
+gt hold answer pela
+
+gt hold answer hold
+
+gt hold answer Record
+
+gt hold answer hold
+
+gt hold answer spoleh
+
+gt hold answer hold
+
+gt hold answer demselben
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer icale
+
+gt hold answer hold
+
+gt ride answer ün
+
+gt ride answer ride
+
+gt hold answer Kaufman
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer cap
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer верши
+
+gt inspect answer 通
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer owned
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt watch answer MM
+
+gt watch answer ⟨
+
+gt repair answer repair
+
+gt spin answer hold
+[INFO] Test | Data Bongard-HOI | curr_task 5 | eval_task 2 | accuracy 0.7894736842105263 |
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer rock
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt repair answer :) repair
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt wash answer paździer
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Twenty wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Hob
+
+gt wash answer wash
+
+gt wash answer horse wash
+
+gt wash answer wash
+
+gt wash answer Stein wash
+
+gt wash answer wash
+
+gt wash answer uler
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt watch answer watch
+
+gt watch answer watch
+
+gt control answer Assembly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer Pennsylvania
+
+gt fly answer fly
+
+gt fly answer flower
+
+gt inspect answer elta
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer eclect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt hold answer mostly hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer .”
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer HEAVY
+
+gt hold answer hold
+
+gt hold answer јеh
+
+gt hold answer hold
+
+gt hold answer Connect
+
+gt hold answer hold
+
+gt hold answer ']. hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer isi hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer лось
+
+gt hold answer east
+
+gt hold answer hold
+
+gt hold answer coli
+
+gt hold answer hold
+
+gt hold answer Therefore, hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt kick answer ulen
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer ately
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer txt
+
+gt kick answer अपना प्रकार
+
+gt kick answer kick
+
+gt kick answer souls
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Royals
+
+gt kick answer arf
+
+gt kick answer kick
+
+gt kick answer enf
+
+gt kick answer kick
+
+gt kick answer équipe
+
+gt kick answer kick
+
+gt sit_on answer sit_on
+
+gt squeeze answer squeeze
+
+gt pet answer hug
+
+gt hold answer interpreter
+
+gt hold answer hold
+
+gt hold answer growth
+
+gt hold answer hold
+
+gt hold answer Program
+
+gt hold answer ụ hold
+
+gt ride answer ride
+
+gt ride answer téléphère
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt walk answer Launch
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer consumer
+
+gt walk answer dominate
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt cut answer itud
+
+gt wash answer wash
+
+gt ride answer Sang
+
+gt ride answer ride
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt peel answer hold
+
+gt peel answer preventDefault
+
+gt stand_under answer ј
+
+gt clean answer clean
+
+gt clean answer Face
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt eat answer Charlie
+
+gt hold answer ride
+[INFO] Test | Data Bongard-HOI | curr_task 5 | eval_task 3 | accuracy 0.7889447236180904 |
+
+gt fly answer cub
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer Defined
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt ride answer ride
+
+gt ride answer lead
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt wash answer l wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer Black wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer след
+
+gt wash answer wash
+
+gt wash answer LOUD
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer `
+ wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt inspect answer Augen
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer Zusammen
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer metadata
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt lie_on answer smiled
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer ի
+
+gt hold answer hold
+
+gt hold answer ience
+
+gt hold answer hold
+
+gt cut answer cut
+
+gt watch answer '},
+
+gt watch answer савезној
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer navigating
+
+gt walk answer sensible
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt hold answer hold
+
+gt hold answer Алма
+
+gt hold answer вуз
+
+gt hold answer hold
+
+gt hold answer Frankreich
+
+gt hold answer hold
+
+gt hold answer Gelatin
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer рё
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer хан
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer News
+
+gt peel answer hold
+
+gt peel answer ($\_
+
+gt control answer Personal control
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hold answer hold
+
+gt hold answer laughed
+
+gt hold answer hold
+
+gt hold answer Department store
+
+gt hold answer hold
+
+gt hold answer Gemeinden
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer мери
+
+gt hold answer hold
+
+gt wash answer wash
+
+gt kick answer found
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer Party
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer před
+
+gt kick answer suit
+
+gt kick answer kick
+
+gt kick answer ija
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer phyllis
+
+gt kick answer numerical
+
+gt kick answer kick
+
+gt kick answer без
+
+gt kick answer kick
+
+gt kick answer документирование
+
+gt kick answer kick
+
+gt stand_under answer previous
+
+gt squeeze answer squeeze
+
+gt pet answer hug
+
+gt repair answer repair
+
+gt ride answer Live
+
+gt ride answer ride
+
+gt lick_or_sip answer lick_or_sip
+
+gt drink_with answer teddy
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt eat answer eat
+
+gt clean answer colleague
+
+gt clean answer csak_on
+
+gt sit_on answer sit_on
+
+gt hold answer Observation
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer authorization
+
+gt hug answer hug
+
+gt hug answer CGFloat
+
+gt hug answer hug
+
+gt hug answer why hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer atable
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer championship
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer properties
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer life
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer pto
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Majesty
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer formatted
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer iga hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer rim
+
+gt hug answer hug
+
+gt hug answer lying
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer directly hug
+
+gt hug answer Jacob
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer unhug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Frei
+
+gt hug answer hug
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt drive answer está en el camino
+
+gt wash answer wash
+
+gt ride answer }}_{\
+
+gt ride answer sit_on
+
+gt ride answer emy
+
+gt ride answer sit_on
+
+gt ride answer Auction
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer урна
+
+gt ride answer gemeinde
+
+gt ride answer sit_on
+
+gt ride answer sit_on
+
+gt ride answer fach
+
+gt ride answer �
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer sistema
+
+gt ride answer ride
+
+gt ride answer Heart
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Luciano
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer температура
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer ogeneous
+
+gt ride answer Always hold
+
+gt ride answer sit_on
+
+gt ride answer hold
+
+gt ride answer turn
+
+gt ride answer hold
+
+gt ride answer ride
+
+gt ride answer oris
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer atile
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer phrase
+
+gt ride answer ride
+
+gt ride answer walk
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Negative
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer Connected
+
+gt ride answer members
+
+gt ride answer ride
+
+gt ride answer ímac
+
+gt ride answer ride
+
+gt ride answer walk
+
+gt ride answer Master
+
+gt ride answer sit_on
+
+gt ride answer populace
+
+gt ride answer Festival
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer од
+
+gt hold answer ließ
+
+gt clean answer clean
+
+gt hold answer hold
+[INFO] Test | Data Bongard-HOI | curr_task 5 | eval_task 4 | accuracy 0.7094017094017094 |
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer lie_on
+
+gt lie_on answer Hoping lie_on
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt sit_at answer sit_at
+
+gt type_on answer incoming
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt lick_or_sip answer lick_or_sip
+
+gt wash answer ེ
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer relacion
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer bekend
+
+gt wash answer wash
+
+gt wash answer Clarence
+
+gt wash answer wash
+
+gt wash answer insbesondere
+
+gt wash answer wash
+
+gt wash answer oure wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt wash answer wash
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt drink_with answer drink_with
+
+gt walk answer hosted
+
+gt walk answer walk
+
+gt walk answer следова
+
+gt walk answer pied
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt walk answer walk
+
+gt watch answer watch
+
+gt watch answer watch
+
+gt wash answer amed
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Bürger
+
+gt hug answer hug
+
+gt hug answer Johnson
+
+gt hug answer hug
+
+gt hug answer ἐκπληρώσει
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer attract
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer overflow
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer V
+hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Te hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer reconcile
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Pulled
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer Him
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer 分享
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hay
+
+gt hug answer hug
+
+gt hug answer adopted
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer jök
+
+gt hug answer ције
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer }^
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer hug
+
+gt hug answer 泉
+
+gt hug answer hug
+
+gt control answer capture
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer esters
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer налази
+
+gt kick answer LayoutInflater
+
+gt kick answer kick
+
+gt kick answer databank
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer kick
+
+gt kick answer `.
+
+gt kick answer ftp
+
+gt kick answer kick
+
+gt kick answer Transaction
+
+gt kick answer kick
+
+gt kick answer summer kick
+
+gt kick answer kick
+
+gt fly answer labels
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer fly
+
+gt fly answer Test
+
+gt fly answer fly
+
+gt fly answer virtually fly
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer Mexican
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer lamp
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer milk
+
+gt hold answer hold
+
+gt hold answer ű
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hug answer hug
+
+gt hug answer hogy
+
+gt hug answer icago
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer przyjac
+
+gt inspect answer %.
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt inspect answer equality
+
+gt inspect answer inspect
+
+gt inspect answer inspect
+
+gt cut answer KS
+
+gt peel answer hold
+
+gt peel answer ifest
+
+gt hold answer fly
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer ishing
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer taking care
+
+gt hold answer ķh
+
+gt drive answer drive
+
+gt hold answer hold
+
+gt hold answer ceptor
+
+gt hold answer hold
+
+gt hold answer eil hold
+
+gt hold answer hold
+
+gt hold answer ово
+
+gt hold answer hold
+
+gt hold answer hold
+
+gt hold answer психология
+
+gt hold answer hold
+
+gt ride answer ride
+
+gt ride answer schedule
+
+gt ride answer ride
+
+gt ride answer rotate
+
+gt ride answer asts
+
+gt stand_under answer stand_under
+
+gt eat answer ool
+
+gt sit_on answer inspect
+
+gt sit_on answer bye
+
+gt sit_on answer sit_on
+
+gt sit_on answer худ
+
+gt sit_on answer sit_on
+
+gt sit_on answer ¸ sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer subsequent
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer questa
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer chestra
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer inspect
+
+gt sit_on answer È sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt sit_on answer joust
+
+gt sit_on answer absorbed
+
+gt sit_on answer sit_on
+
+gt sit_on answer industries
+
+gt sit_on answer sit_on
+
+gt sit_on answer sit_on
+
+gt clean answer sending
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt clean answer clean
+
+gt eat answer eat
+
+gt clean answer základ
+
+gt sit_on answer sit_on
+
+gt ride answer }}(\_
+
+gt ride answer sit_on
+
+gt ride answer large jump
+
+gt ride answer sit_on
+
+gt ride answer �
+
+gt ride answer sit_on
+
+gt ride answer 二轮
+
+gt ride answer bronx
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer rir
+
+gt ride answer managed
+
+gt ride answer sit_on
+
+gt ride answer atic
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer riel
+
+gt ride answer ride
+
+gt ride answer murky
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer lánc
+
+gt ride answer Serial number: ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer sit_on
+
+gt ride answer hold
+
+gt ride answer inoskate
+
+gt ride answer sit_on
+
+gt ride answer ADD
+
+gt ride answer OFF
+
+gt ride answer hold
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer Grandstand
+
+gt ride answer sit_on
+
+gt ride answer walk
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer abril
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ride
+
+gt ride answer ulus
+
+gt ride answer ља
+
+gt ride answer sit_on
+
+gt ride answer ride
+
+gt ride answer walk
+
+gt ride answer ride
+
+gt ride answer linux
+
+gt ride answer ride
+
+gt ride answer walk
+
+gt ride answer nau
+
+gt ride answer sit_on
+
+gt ride answer volunteer
+
+gt ride answer sit_on
+
+gt ride answer sit_on
+
+gt ride answer speaker
+
+gt ride answer Update
+
+gt clean answer clean
+
+gt clean answer 索污
+
+gt squeeze answer squeeze
+
+gt walk answer walk
+
+gt pet answer Drugs
+
+gt hold answer G hold
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer gestellt
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer Users
+
+gt eat answer eat
+
+gt eat answer ὺ
+
+gt eat answer perspective
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer cantante
+
+gt eat answer eat
+
+gt eat answer Под
+
+gt eat answer твор
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer concentrate
+
+gt eat answer eat
+
+gt eat answer utf
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer roughly eat
+
+gt eat answer ето
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer ῦ
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer fleet
+
+gt eat answer Sidetrack
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer hippie
+
+gt eat answer lade
+
+gt eat answer eat
+
+gt eat answer correctly
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer utwor
+
+gt eat answer look
+
+gt eat answer eat
+
+gt eat answer discard
+
+gt eat answer eat
+
+gt eat answer twitter
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer AEAT
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer invalid
+
+gt eat answer eat
+
+gt eat answer eat
+
+gt eat answer Territory
+
+gt eat answer eat
+
+gt eat answer iker
+
+gt eat answer eat
+
+gt eat answer Stone
+
+gt eat answer eat
+
+gt eat answer }({eat
+
+gt eat answer eat
+
+gt eat answer Marble
+
+gt wash answer wash
+
+gt hold answer hold
+
+gt eat answer )$
+
+gt hold answer ateurs
+
+gt repair answer repair
+
+gt hold answer hold
+
+gt type_on answer '<|endoftext|>
+
+gt type_on answer suspect
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer Entirely hold
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer compile
+
+gt type_on answer type_on
+
+gt type_on answer сертификат
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer Fu
+
+gt type_on answer type_on
+
+gt type_on answer surprises
+
+gt type_on answer type_on
+
+gt type_on answer autour
+
+gt type_on answer unfortunately
+
+gt type_on answer type_on
+
+gt type_on answer Ressource
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer voyager
+
+gt type_on answer getting ready
+
+gt type_on answer type_on
+
+gt type_on answer Gabriela
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer type_on
+
+gt type_on answer medio
+
+gt type_on answer type_on
+
+gt type_on answer первые
+
+gt type_on answer type_on
+
+gt type_on answer dread
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer naming
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer Auf
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer type_on
+
+gt type_on answer copy
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer ation
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer affect
+
+gt type_on answer type_on
+
+gt type_on answer type_on
+
+gt type_on answer hold
+
+gt type_on answer ouw
+
+gt type_on answer type_on
+
+gt type_on answer ry
+
+gt type_on answer type_on
+
+gt type_on answer machines
+
+gt type_on answer type_on
+
+gt feed answer hold
+[INFO] Test | Data Bongard-HOI | curr_task 5 | eval_task 5 | accuracy 0.6855575868372943 |
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Fri Feb 14 10:04:56 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:4A:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3183347
+            GPU Utilization               : 86 %
+            Memory Utilization            : 54 %
+            Max memory usage              : 22458 MiB
+            Time                          : 1300387 ms
+            Is Running                    : 0
+
+Fri Feb 14 10:04:56 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:4A:00.0 Off |                    0 |
+| N/A   55C    P0            121W /  300W |       1MiB /  46068MiB |     28%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

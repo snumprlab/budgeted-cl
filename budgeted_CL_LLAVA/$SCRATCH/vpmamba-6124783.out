@@ -1,0 +1,1624 @@
+[2025-02-17 11:32:52,213] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-17 11:32:54,975] [WARNING] [runner.py:202:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected CUDA_VISIBLE_DEVICES=0 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2025-02-17 11:32:54,988] [INFO] [runner.py:568:main] cmd = /home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=26004 --enable_each_rank_log=None main_new_llava_trainer.py --deepspeed ./deepspeed_script/zero2.json --model_name_or_path ./llava-v1.5-7b --model_name_for_dataarg ./llava-v1.5-7b --model_type llama --version v1 --model_max_length 10000 --vision_tower ./clip-vit-large-patch14-336 --gradient_checkpointing True --num_train_epochs 1 --gradient_accumulation_steps 1 --bits 16 --bf16 True --tf32 True --dataset Bongard-OpenWorld --num_set 5 --data_type ma_ver3_more --mode VLM --dataloader_num_workers 2 --seed 1 --optim adamw_torch --lr_scheduler_type constant --weight_decay 0. --warmup_ratio 0.03 --learning_rate 5e-5 --per_gpu_train_batch_size 2 --mm_projector_lr 0 --evaluation_strategy no --save_strategy no --logging_steps 2 --num_iter 0.5 --note Bongard-OpenWorld_ma_ver3_more_num5_iter0.5_infinite_ours --ours --output_dir ./results/test/
+[2025-02-17 11:33:04,501] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-17 11:33:05,793] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0]}
+[2025-02-17 11:33:05,794] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=1, node_rank=0
+[2025-02-17 11:33:05,794] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2025-02-17 11:33:05,794] [INFO] [launch.py:163:main] dist_world_size=1
+[2025-02-17 11:33:05,794] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+[2025-02-17 11:33:05,797] [INFO] [launch.py:253:main] process 2654378 spawned with command: ['/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python', '-u', 'main_new_llava_trainer.py', '--local_rank=0', '--deepspeed', './deepspeed_script/zero2.json', '--model_name_or_path', './llava-v1.5-7b', '--model_name_for_dataarg', './llava-v1.5-7b', '--model_type', 'llama', '--version', 'v1', '--model_max_length', '10000', '--vision_tower', './clip-vit-large-patch14-336', '--gradient_checkpointing', 'True', '--num_train_epochs', '1', '--gradient_accumulation_steps', '1', '--bits', '16', '--bf16', 'True', '--tf32', 'True', '--dataset', 'Bongard-OpenWorld', '--num_set', '5', '--data_type', 'ma_ver3_more', '--mode', 'VLM', '--dataloader_num_workers', '2', '--seed', '1', '--optim', 'adamw_torch', '--lr_scheduler_type', 'constant', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--learning_rate', '5e-5', '--per_gpu_train_batch_size', '2', '--mm_projector_lr', '0', '--evaluation_strategy', 'no', '--save_strategy', 'no', '--logging_steps', '2', '--num_iter', '0.5', '--note', 'Bongard-OpenWorld_ma_ver3_more_num5_iter0.5_infinite_ours', '--ours', '--output_dir', './results/test/']
+[2025-02-17 11:33:21,985] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-17 11:33:22,627] [INFO] [comm.py:637:init_distributed] cdb=None
+[2025-02-17 11:33:22,627] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[INFO] TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'gradient_accumulation_kwargs': None},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=True,
+bf16_full_eval=False,
+bits=16,
+cache_dir=None,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=2,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+decay_ratio=1.0,
+deepspeed=./deepspeed_script/zero2.json,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+double_quant=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_period=100,
+eval_point=100_200_300,
+eval_server=True,
+eval_steps=None,
+eval_temp=0.2,
+evaluation_strategy=no,
+f_period=None,
+final_lr=1e-06,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_mm_mlp_adapter=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+future_steps=4,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+group_by_modality_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+is_eval=False,
+is_wsd=None,
+iter_per_round=1,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./results/test/runs/Feb17_11-33-22_cn-g004.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=2,
+logging_strategy=steps,
+lora_alpha=256,
+lora_bias=none,
+lora_dropout=0.05,
+lora_enable=True,
+lora_r=128,
+lora_weight_path=,
+lr_scheduler_kwargs={},
+lr_scheduler_type=constant,
+max_grad_norm=1.0,
+max_steps=-1,
+memory_size=500,
+metric_for_best_model=None,
+mm_final_lr=1e-06,
+mm_projector_lr=0.0,
+mode=VLM,
+model_max_length=10000,
+mp_parameters=,
+mpt_attn_impl=triton,
+neftune_noise_alpha=None,
+no_cuda=False,
+note=Bongard-OpenWorld_ma_ver3_more_num5_iter0.5_infinite_ours,
+num_clients=5,
+num_iter=0.5,
+num_rounds=20,
+num_train_epochs=1.0,
+online_iter=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./results/test/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+prompt_num=100,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_type=nf4,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+round_to_eval=None,
+run_name=./results/test/,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+scenario=1,
+seed=1,
+skip_memory_metrics=True,
+split_batches=None,
+state_dir=./checkpoints,
+temp_batchsize=2,
+tf32=True,
+topk=1,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+transform_on_gpu=True,
+transform_on_worker=False,
+transforms=randaug,
+use_cpu=False,
+use_ipex=False,
+use_kornia=True,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.0,
+)
+!! collections/Bongard-OpenWorld/ma_ver3_more/5_set/Bongard-OpenWorld_train_seed1.json
+num_train_samples 13510 num_test_samples 414
+eval_point
+[ 3640  5670  8540 11480 13510]
+model loading done
+len(train_datalists) 13510 len(datalists) 13510
+seen_commonsenses
+['3', '6']
+load skip
+@@ours@@
+self.num_blocks 31
+Warning: module Embedding is treated as a zero-op.
+Warning: module Dropout is treated as a zero-op.
+Warning: module ModuleDict is treated as a zero-op.
+Warning: module ParameterDict is treated as a zero-op.
+Warning: module Linear is treated as a zero-op.
+Warning: module LlamaRotaryEmbedding is treated as a zero-op.
+Warning: module LlamaFlashAttention2 is treated as a zero-op.
+Warning: module SiLU is treated as a zero-op.
+Warning: module LlamaMLP is treated as a zero-op.
+Warning: module LlamaRMSNorm is treated as a zero-op.
+Warning: module LlamaDecoderLayer is treated as a zero-op.
+Warning: module CLIPVisionEmbeddings is treated as a zero-op.
+Warning: module LayerNorm is treated as a zero-op.
+Warning: module CLIPAttention is treated as a zero-op.
+Warning: module QuickGELUActivation is treated as a zero-op.
+Warning: module CLIPMLP is treated as a zero-op.
+Warning: module CLIPEncoderLayer is treated as a zero-op.
+Warning: module CLIPEncoder is treated as a zero-op.
+Warning: module CLIPVisionTransformer is treated as a zero-op.
+Warning: module CLIPVisionModel is treated as a zero-op.
+Warning: module CLIPVisionTower is treated as a zero-op.
+Warning: module LlavaLlamaModel is treated as a zero-op.
+Warning: module LlavaLlamaForCausalLM is treated as a zero-op.
+Warning: module LoraModel is treated as a zero-op.
+Warning: module PeftModelForCausalLM is treated as a zero-op.
+Check! input_ids torch.Size([2, 157])
+Check! labels torch.Size([2, 157])
+Check! attention_mask torch.Size([2, 157])
+Check! images torch.Size([2, 5, 3, 336, 336])
+conv input shape torch.Size([10, 3, 336, 336]) output shape torch.Size([10, 1024, 24, 24])
+in_channels 3 out_channels 1024 filters_per_channel 1024 kernel_dim [14, 14] output_dims [24, 24]
+
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 576, 1024]) output shape torch.Size([10, 576, 4096])
+matrix input shape torch.Size([10, 576, 4096]) output shape torch.Size([10, 576, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 32000])
+!!!!!!!!!!!
+forward_flops_count 7547090944.0 backward_flops_count 15070588928.0
+!!!!!!!!!!!
+blockwise_backward_flops 32
+[0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999]
+cumulative_backward_flops
+[0.004567295999999999, 0.009134591999999999, 0.013701887999999999, 0.018269183999999997, 0.022836479999999996, 0.027403775999999994, 0.031971071999999996, 0.036538367999999995, 0.04110566399999999, 0.04567295999999999, 0.05024025599999999, 0.05480755199999999, 0.05937484799999999, 0.06394214399999999, 0.06850943999999999, 0.07307673599999999, 0.07764403199999999, 0.08221132799999999, 0.08677862399999998, 0.09134591999999998, 0.09591321599999998, 0.10048051199999998, 0.10504780799999998, 0.10961510399999998, 0.11418239999999998, 0.11874969599999997, 0.12331699199999997, 0.12788428799999998, 0.13245158399999998, 0.13701887999999998, 0.14158617599999998]
+
+whole 0.14615347199999998
+self.total_flops 0.43846041599999996
+{'loss': 0.72, 'grad_norm': 11.385955810546875, 'learning_rate': 5e-05, 'epoch': 0.0}
+
+whole 0.14615347199999998
+self.total_flops 0.8769208319999999
+
+whole 0.14615347199999998
+self.total_flops 1.315381248
+I/C: [1, 0.993875645695233, 0.9393863351158473, 0.9419782607710147, 0.938772056145007, 0.9322952937605682, 0.9178393403260707, 0.8909704697791481, 0.8572306531617347, 0.8146566478551789, 0.7627246560503715, 0.689328641931985, 0.6159167770769215, 0.5308368311560502, 0.47458440511156574, 0.3922413837180421, 0.3436477658163564, 0.31613044044105054, 0.28930943825331623, 0.2659420238579665, 0.23042934045302596, 0.22229586041645585, 0.21018680388476668, 0.18098732937464376, 0.16184989552625606, 0.14502655797901523, 0.057761213267146685, 0.04422344995541123, 0.03778955815758033, 0.02377290384775628, 0.011639354327382886, 0.0] 
+ BI/C: [1.688849860263936e+26, 1.6435378548239544e+26, 1.5203790440944894e+26, 1.491431113195119e+26, 1.4533246345201679e+26, 1.410495654030567e+26, 1.3563312364476243e+26, 1.2852776976837108e+26, 1.2064448906717986e+26, 1.1178641222883107e+26, 1.019767547792502e+26, 8.973830308812955e+25, 7.801432221754297e+25, 6.537006205047836e+25, 5.677304460980787e+25, 4.554253041813396e+25, 3.869129875193117e+25, 3.448083823976123e+25, 3.053751277294694e+25, 2.713530905227962e+25, 2.2701032633113555e+25, 2.1117618720089037e+25, 1.9227755861714375e+25, 1.5919813850203653e+25, 1.3667008672162513e+25, 1.173613727100135e+25, 4.471042443766071e+24, 3.267546068394363e+24, 2.6592037505777265e+24, 1.5892259197618178e+24, 7.371420723511134e+23, 0.6458333333333333] 
+ Grad_Magnitude: 1.688849860263936e+26
+Iter: 3 Freeze: 0
+freeze!!
+{'loss': 0.3223, 'grad_norm': 3.156399965286255, 'learning_rate': 5e-05, 'epoch': 0.0}
+
+whole 0.14615347199999998
+self.total_flops 1.7538416639999999
+I/C: [1, 0.9942418239463635, 0.9402785249110016, 0.9429664623153132, 0.939842609981841, 0.9335136102372403, 0.9193554108542429, 0.8929218674177448, 0.8598114213263336, 0.8180408399356208, 0.7670165966297818, 0.6947444071020359, 0.6226260291735654, 0.5388506319495501, 0.4833993400241858, 0.40175091076548675, 0.35284881997143175, 0.3252475828326043, 0.2985033285731845, 0.2746133145201893, 0.23787262430489486, 0.22923039260385925, 0.21671356136222658, 0.18622675942446387, 0.16586837660798148, 0.1483577781652654, 0.06209594327988143, 0.047652732431878925, 0.04106701512721202, 0.025851362885723914, 0.012633411157759716, 0.0] 
+ BI/C: [88.75, 86.42148350283894, 80.01431412394093, 78.5202564348288, 76.54344566623102, 74.3233607305806, 71.51869362414979, 67.83582177221498, 63.75688636892676, 59.17591369223266, 54.09923900279041, 47.757644725443974, 41.69354506686545, 35.141766156110215, 30.680364760895433, 24.825582914675405, 21.210221848309715, 18.99661275558756, 16.932606506793828, 15.120542046798692, 12.731530654117996, 11.881111005770787, 10.876386309236205, 9.087304634854775, 7.86040921197918, 6.829902389163502, 3.067548526124344, 2.4127662514565493, 2.1019573302250274, 1.512330430542749, 1.0454557150941906, 0.6458333333333333] 
+ Grad_Magnitude: 88.75
+Iter: 4 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 2.1923020799999997
+{'loss': 0.1921, 'grad_norm': 1.6732224225997925, 'learning_rate': 5e-05, 'epoch': 0.0}
+
+whole 0.14615347199999998
+self.total_flops 2.6307624959999996
+I/C: [1, 0.9941324290209589, 0.9391748721965646, 0.9416736855463493, 0.9381935643080951, 0.9315445669131615, 0.9170985783963057, 0.8904814481146771, 0.8575453738092987, 0.8161256706673002, 0.76553954722786, 0.6938769279815462, 0.6224354637646504, 0.5394657656998662, 0.48447592071163303, 0.4033941815674522, 0.3547369985991711, 0.32724914915490555, 0.30062409702762166, 0.2766825928720507, 0.23976573225519288, 0.23100698979155396, 0.21837815274722894, 0.1876153252605364, 0.16702375211207757, 0.1493826410297247, 0.06362366826849551, 0.04891304650416741, 0.04221146484405651, 0.026596164413178386, 0.012965505709645319, 0.0] 
+ BI/C: [41.27829560585885, 40.20200702073727, 37.19389058345265, 36.50376695897573, 35.58311200943858, 34.55126241941977, 33.24923294141117, 31.542912798317648, 29.665009529614135, 27.559224806834386, 25.225132785020495, 22.307418896882865, 19.519806301635313, 16.50808243964588, 14.457157690580926, 11.760354187292045, 10.09529246034115, 9.078268762146699, 8.1307814645941, 7.296012288947336, 6.189987117107952, 5.801260831544903, 5.341067219104154, 4.512729612653011, 3.947227906441015, 3.475499973762587, 1.7453767687281943, 1.4458331467546879, 1.3093405515788679, 1.0387300499157255, 0.8256977415108213, 0.6458333333333333] 
+ Grad_Magnitude: 41.27829560585885
+Iter: 6 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 3.0692229119999994
+{'loss': 0.3055, 'grad_norm': 0.9559036493301392, 'learning_rate': 5e-05, 'epoch': 0.0}
+
+whole 0.14615347199999998
+self.total_flops 3.5076833279999993
+
+whole 0.14615347199999998
+self.total_flops 3.946143743999999
+{'loss': 0.3525, 'grad_norm': 0.7387934327125549, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 4.384604159999999
+I/C: [1, 0.9946307542330654, 0.9397088340817986, 0.9424430755762208, 0.9390316257051718, 0.9323461162189627, 0.9183261834099171, 0.8924856374497838, 0.8609131754029486, 0.8211002047185318, 0.7727191176555281, 0.7040856866373953, 0.6361578146030884, 0.5573306119585928, 0.5046297362629963, 0.4259844502027492, 0.37809806339993585, 0.351015069262373, 0.3247603952026185, 0.29986804840115605, 0.260778544719794, 0.2509934549636827, 0.23724170224754823, 0.20344448056337286, 0.18083578050564128, 0.16141093529084707, 0.0778294707338364, 0.060608026933891015, 0.05289879778159137, 0.03354597063075998, 0.016012982663211456, 0.0] 
+ BI/C: [33.6975196727069, 32.83916046185119, 30.388112884625883, 29.835619449658843, 29.089450290452806, 28.249235802116583, 27.20215030249034, 25.834513444759803, 24.342198887194524, 22.668595245185198, 20.822318154366823, 18.517913067483214, 16.327705354400354, 13.965064044243253, 12.336712412818281, 10.181300831294886, 8.827311286421148, 7.993301109550983, 7.214762378910192, 6.500822382212736, 5.54276091553383, 5.195044498577146, 4.7886641696979995, 4.049778326087445, 3.546858635559078, 3.1270918301901425, 1.7437192222028335, 1.4560238287188247, 1.326065949544883, 1.0516230020860742, 0.827349174367106, 0.6458333333333333] 
+ Grad_Magnitude: 33.6975196727069
+Iter: 10 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 4.823064575999999
+I/C: [1, 0.9946368249573334, 0.9397418483071819, 0.942480311160932, 0.9390737415683933, 0.9323926748689764, 0.9183785660122423, 0.8925488927224583, 0.8609951468033709, 0.8212023986915318, 0.7728466311295419, 0.704245665711186, 0.6363546618583579, 0.5575726460085654, 0.5048929259855975, 0.42626197225331847, 0.3783820278015122, 0.3513028106017118, 0.3250527502527653, 0.30015751268642177, 0.26103489390787693, 0.2512398148365263, 0.23748054776757754, 0.20365012231324509, 0.18100488180811855, 0.16156848980990032, 0.07798797726844786, 0.060741430573341915, 0.05302856323035639, 0.033611072501397124, 0.016042539903399888, 0.0] 
+ BI/C: [22.17524725937192, 21.617644244899132, 20.012382519266314, 19.656000566015734, 19.172176379557428, 18.626450805125188, 17.94461280665028, 17.05192058073259, 16.077316891236645, 14.983422570791404, 13.775968234938905, 12.267133446541699, 10.83349147852232, 9.286476982512013, 8.222255543543863, 6.811069434489598, 5.927143350000716, 5.3853547360034, 4.880078193246211, 4.417207182433428, 3.7932994341764683, 3.5713590711618184, 3.3108528441034375, 2.8312457378633042, 2.5069140046242095, 2.237601830202721, 1.3343095612936327, 1.1517933558101756, 1.0733006256009963, 0.8991946463344165, 0.7584052333848373, 0.6458333333333333] 
+ Grad_Magnitude: 22.17524725937192
+Iter: 11 Freeze: 0
+freeze!!
+{'loss': 0.2213, 'grad_norm': 1.5104238986968994, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 5.261524991999999
+I/C: [1, 0.9946980530861703, 0.9399042502347821, 0.9426984042053128, 0.9393419146126077, 0.9327256632257293, 0.9188136268690834, 0.8931167528506901, 0.8617435684610106, 0.8221773500692967, 0.7740587643947425, 0.7058039004323176, 0.6382533892680136, 0.5598830930038533, 0.5074427002855294, 0.42906822233706715, 0.38124019582408913, 0.3542297895945797, 0.32800360375822796, 0.30300902578863004, 0.263701343336601, 0.25383088563002054, 0.23998176991044462, 0.2058626474022617, 0.18288726088863433, 0.16331510076155775, 0.07975990495384916, 0.06221436284290331, 0.05437757958331215, 0.034520058559008214, 0.016492578192484685, 0.0] 
+ BI/C: [18.300146078436693, 17.84472134884238, 16.52536903408003, 16.235798598312236, 15.84091973375837, 15.395160066456594, 14.837620641742147, 14.10647601526945, 13.308360987491506, 12.412347057028217, 11.422599198860084, 10.185492412161386, 9.010097693996476, 7.741832991846074, 6.8694451753436025, 5.7107576631386445, 4.984500849701761, 4.54075341129908, 4.126571164393274, 3.7460036169892694, 3.2317009774148757, 3.0503925360146873, 2.8371716163249143, 2.441310687268279, 2.173431795073585, 1.9529140545265762, 1.2106582096014304, 1.0606077185883727, 0.9979656874026788, 0.8542233368969738, 0.738181221299691, 0.6458333333333333] 
+ Grad_Magnitude: 18.300146078436693
+Iter: 12 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 5.699985407999999
+I/C: [1, 0.9947216531057407, 0.9399630533657881, 0.942779689862942, 0.9394489384888952, 0.9328580657260478, 0.9189915828834949, 0.893360061259348, 0.8620789608630895, 0.8226144999198692, 0.7746244589524863, 0.706552700691536, 0.6391790087059247, 0.5610228314487399, 0.5087098519200107, 0.4304751252623877, 0.382668687815519, 0.3556860847016375, 0.32947364952742536, 0.3044293449587362, 0.2650571273418699, 0.25513287760222136, 0.24124498364493666, 0.20698742088652938, 0.18384378888287725, 0.16420301293753742, 0.0806438610227181, 0.06294924139609, 0.05504839969210304, 0.034961043072123506, 0.016727353265874073, 0.0] 
+ BI/C: [17.865808012089712, 17.422099703192004, 16.135149472812024, 15.853300878239502, 15.468679841187074, 15.03436069804188, 14.491211286457581, 13.778845269692852, 13.001447671701465, 12.12854658786778, 11.164439393215243, 9.959499819504234, 8.8145870911734, 7.579362852024486, 6.729363055018563, 5.599915335068687, 4.891123539166904, 4.458191632445655, 4.053945604687196, 3.68182105579357, 3.1790181871067538, 3.0014621924574647, 2.792936470910087, 2.4052070429564285, 2.142258918198319, 1.9265260124045982, 1.2020185467600328, 1.0545295893140398, 0.9931183917799546, 0.8514070496906291, 0.7370678807494405, 0.6458333333333333] 
+ Grad_Magnitude: 17.865808012089712
+Iter: 13 Freeze: 0
+freeze!!
+{'loss': 0.2034, 'grad_norm': 1.0880376100540161, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 6.138445823999999
+I/C: [1, 0.9947516455504727, 0.9400682314387703, 0.9429070824612544, 0.9396020872144711, 0.9330319228339953, 0.9192030495396698, 0.8936263691538519, 0.8624329203096747, 0.8230547255350316, 0.7752008285352482, 0.707281923757629, 0.6400537389059572, 0.5620883394110345, 0.5098885759797319, 0.4317711790304716, 0.38398864646819086, 0.35703566161289396, 0.33082657222627077, 0.3057455354852282, 0.2662925246722868, 0.25631162871607044, 0.2423629830846548, 0.20797755629875708, 0.1847031580719669, 0.16499177936570836, 0.08142117395187028, 0.06355797174709663, 0.055597735175966265, 0.0353681506048778, 0.016963945877900545, 0.0] 
+ BI/C: [13.349608742378559, 13.023721404270715, 12.068312119145384, 11.863225591820708, 11.581376884682493, 11.262318289609752, 10.862125932886332, 10.335667874856814, 9.760951710567586, 9.114810079559986, 8.400996974856325, 7.507326401055903, 6.658350241368288, 5.742251652972308, 5.113159202339405, 4.275233710575944, 3.7507321279105814, 3.4323932932887598, 3.1352533130018476, 2.861789894380161, 2.490358925647211, 2.3621837272082544, 2.2108692904835876, 1.925218231137717, 1.7328574468712294, 1.5762341896988388, 1.0398478738178643, 0.9337073991862646, 0.8925866714839696, 0.7910597599545026, 0.7099232650738216, 0.6458333333333333] 
+ Grad_Magnitude: 13.349608742378559
+Iter: 14 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 6.576906239999999
+{'loss': 0.3873, 'grad_norm': 3.308993339538574, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 7.0153666559999985
+I/C: [1, 0.9948461704929542, 0.9404807711945621, 0.9434469327326538, 0.9402807389301759, 0.9337704676365529, 0.9201643228120542, 0.894940854119585, 0.8644077984715276, 0.8256991397022732, 0.778812087663986, 0.7122065011884943, 0.6462565493606368, 0.5700400174379581, 0.5188119359051246, 0.441680599252208, 0.3940461332332078, 0.36740294193677614, 0.3412908897250794, 0.31588021010636214, 0.2759075921807299, 0.26572041187487105, 0.2515289783878771, 0.21631654845020323, 0.1916542349772862, 0.17147852044302003, 0.08788566313844412, 0.0686462747413289, 0.060223749860191654, 0.03849305226831692, 0.018403466353455734, 0.0] 
+ BI/C: [15.331875024653897, 14.955922630696135, 13.860194745084927, 13.62325981098447, 13.298244545919454, 12.929321683233312, 12.469363849562237, 11.865957802553297, 11.210826947084728, 10.473356764527086, 9.661347596638606, 8.646251239892008, 7.681243486496017, 6.643591265090845, 5.9260048318389185, 4.968106827127503, 4.360977379119774, 3.992130326529366, 3.6453932926986576, 3.321834192067763, 2.88427208763974, 2.7291205823303586, 2.5472225500993098, 2.2065303576057325, 1.9692093893087022, 1.7806043048215348, 1.1592488350280012, 1.0229582960434231, 0.9680595859885316, 0.8377758889002249, 0.7308098673068524, 0.6458333333333333] 
+ Grad_Magnitude: 15.331875024653897
+Iter: 16 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 7.453827071999998
+{'loss': 0.3649, 'grad_norm': 0.6074501872062683, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 7.892287487999998
+I/C: [1, 0.994922505138038, 0.9409735036850965, 0.94408511603861, 0.9410832234078665, 0.934688871347857, 0.9213652128367964, 0.8964903554845615, 0.8666223285195619, 0.8285241248734705, 0.7824995191504417, 0.7170470025466937, 0.652155687387936, 0.5772943020726801, 0.5268753130935497, 0.45062981806960484, 0.4030990713751052, 0.37663453612281794, 0.35072175917857284, 0.3250492068076227, 0.2846962196313075, 0.2741023418471518, 0.25977267975000307, 0.22371264435757277, 0.1978851001407988, 0.17749028502865266, 0.0939327491116262, 0.07350149506698203, 0.06469695181449839, 0.04163606658531772, 0.020046164845086558, 0.0] 
+ BI/C: [13.409974271258838, 13.084762587551701, 12.1343292045887, 11.931397296208914, 11.651576661928424, 11.332679370947691, 10.936048323752567, 10.41455034709721, 9.851152606954791, 9.214770848107271, 8.515527915104872, 7.64117768023071, 6.809043241545507, 5.915678350434663, 5.296313944861713, 4.467017307995624, 3.9370321172723277, 3.6160508877356126, 3.314481104347063, 3.0293363230274193, 2.643698571888619, 2.5050842604224317, 2.3452535155710637, 2.0416566692657967, 1.8268170507767953, 1.661317157907302, 1.118999718207113, 0.9937232565144383, 0.94482685802554, 0.825175688575939, 0.725806958053759, 0.6458333333333333] 
+ Grad_Magnitude: 13.409974271258838
+Iter: 18 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 8.330747903999999
+I/C: [1, 0.9950800201784249, 0.9413997900254204, 0.9446164648660386, 0.9417410971257152, 0.9354697055291545, 0.922323124146123, 0.8976990747088798, 0.8681871073365541, 0.8304797502934715, 0.7849367686468512, 0.7201427671481319, 0.6558720844061987, 0.5817649338047722, 0.5318353504785674, 0.4560839390622982, 0.4087071453211976, 0.38232930362650186, 0.35646436700735257, 0.3306484243219908, 0.29005202849796013, 0.27924821932348365, 0.2647610959570185, 0.22826205149490994, 0.2020713372362266, 0.18143870094237385, 0.09753085517716117, 0.07645170055920852, 0.06739820385046735, 0.043512253009853716, 0.02111072362898986, 0.0] 
+ BI/C: [9.245380694729711, 9.029062491429928, 8.382616134526806, 8.25000515143403, 8.064525378899694, 7.8520263105866785, 7.586324855497942, 7.235049114470797, 6.855600267985507, 6.4259574287158605, 5.953489404216303, 5.361370403397942, 4.797840330535903, 4.192757084904734, 3.7745560331466286, 3.2114603812007125, 2.852435434100461, 2.637045392627403, 2.434780485680515, 2.2427530460439717, 1.9809574977663025, 1.8897378039836787, 1.7842342761914372, 1.578317481370021, 1.4341132201210132, 1.3246209760062002, 0.9549503642312274, 0.8717359709378463, 0.8429675219744035, 0.7634054069847589, 0.698191253759214, 0.6458333333333333] 
+ Grad_Magnitude: 9.245380694729711
+Iter: 19 Freeze: 0
+freeze!!
+{'loss': 0.2786, 'grad_norm': 0.9702673554420471, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 8.769208319999999
+I/C: [1, 0.9950995305058172, 0.9414616268016605, 0.9446931029950739, 0.9418358715369931, 0.9355851459072818, 0.9224701834426405, 0.897888933509934, 0.8684355775524057, 0.8307953042716889, 0.7853430763097834, 0.7206568063036368, 0.6564843153535286, 0.5825033785228303, 0.5326544882229177, 0.4569902221820283, 0.409621759405399, 0.3832570073979166, 0.35740008511671123, 0.33155731530462923, 0.29091538529215116, 0.2800768730825266, 0.2655613871804503, 0.22899874826536512, 0.20273098892538594, 0.18205889188710742, 0.09809838856140105, 0.07691880064289973, 0.067819133911141, 0.04379052743713025, 0.021240321657462657, 0.0] 
+ BI/C: [9.78097357868652, 9.551103836539912, 8.866394159715343, 8.725017137839565, 8.527732460382314, 8.301878010154581, 8.019824429956254, 7.647319694697562, 7.245121199026208, 6.789864372807303, 6.289457404675719, 5.662558994270622, 5.065791807471229, 4.42522407122834, 3.9819979620796473, 3.3854938861053454, 3.004333070666197, 2.7751547199868773, 2.5598254934667914, 2.3551176434089505, 2.076504156685965, 1.9784262787869984, 1.865284827079468, 1.6457451595499073, 1.491453223130095, 1.3740917470873564, 0.9814364672057776, 0.8916490810967004, 0.859723815380947, 0.7737076217776467, 0.702906634350417, 0.6458333333333333] 
+ Grad_Magnitude: 9.78097357868652
+Iter: 20 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 9.207668735999999
+{'loss': 0.214, 'grad_norm': 0.4405384659767151, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 9.646129151999999
+
+whole 0.14615347199999998
+self.total_flops 10.084589567999998
+I/C: [1, 0.9951036531644192, 0.9414591235693569, 0.944692392796593, 0.9418407019937632, 0.9355935474785548, 0.9224853813956304, 0.8979222347002197, 0.868498461398761, 0.8308950772952345, 0.7854888826694462, 0.7208629669570529, 0.6567331798947412, 0.5828353109060235, 0.5330210482068589, 0.457405055878708, 0.41004976316485253, 0.3837032069894698, 0.35786388220334153, 0.33203250557857483, 0.2913743856493457, 0.28051585732349804, 0.2660001897873695, 0.22940087775421297, 0.20310089617091046, 0.18242773647721192, 0.09832148543529365, 0.07710487786402676, 0.06798679744127538, 0.043896055371037336, 0.021294876875893088, 0.0] 
+ BI/C: [8.991437801033717, 8.781841507113278, 8.154026520465022, 8.02575896025651, 7.846126916253951, 7.64021335699338, 7.382661188033968, 7.042043517965859, 6.674208246633702, 6.257639892931729, 5.799617258607922, 5.225395783898536, 4.6787316541739905, 4.092051262896209, 3.6864431344622517, 3.1400012629955816, 2.791291293883586, 2.5823197731415104, 2.3860692737923768, 2.1995424798563117, 1.9449268881386272, 1.8562604968719334, 1.7538505874988275, 1.5534602728278881, 1.4130845376274743, 1.3068044969066475, 0.9468569470318141, 0.8658116246434304, 0.8380412752019607, 0.7603975912501848, 0.696801835341349, 0.6458333333333333] 
+ Grad_Magnitude: 8.991437801033717
+Iter: 23 Freeze: 0
+freeze!!
+{'loss': 0.2053, 'grad_norm': 0.6157330870628357, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 10.523049983999998
+I/C: [1, 0.9950923068620117, 0.9414153554770818, 0.9446379167962878, 0.941773863941332, 0.9355186806143964, 0.9224077967518303, 0.8978385949052212, 0.86843012922394, 0.8308548884229887, 0.7854806188784264, 0.7208995091605503, 0.6568113516011385, 0.5829687655006621, 0.5331856136097768, 0.45761461947678794, 0.410276707277604, 0.38394524635914856, 0.35811858852908945, 0.33229332205536505, 0.291634294745926, 0.28077409809964304, 0.2662573037408254, 0.22966446512200966, 0.20335648635500597, 0.18268271426442653, 0.09849080426292252, 0.07724033976916002, 0.06811767900224755, 0.043995065548488296, 0.021354715778927426, 0.0] 
+ BI/C: [8.326065458633655, 8.133428607559297, 7.553357295404012, 7.436047309331149, 7.271164935205386, 7.081982504594008, 6.845024233396064, 6.531124571066876, 6.192171751806841, 5.808173652453899, 5.385804080671966, 4.855906053908369, 4.351490730553543, 3.8100888243001636, 3.436197977032701, 2.9319638776566346, 2.6106604806306737, 2.4187364763592165, 2.2385742562791817, 2.067378803668632, 1.8330969663549408, 1.7524807299248812, 1.6591410257171004, 1.4751048802749682, 1.3465797084147608, 1.2496593636231068, 0.9175187382096768, 0.8438598046722445, 0.8196467726095451, 0.7491627107637134, 0.6916752855347, 0.6458333333333333] 
+ Grad_Magnitude: 8.326065458633655
+Iter: 24 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 10.961510399999998
+I/C: [1, 0.9950983465039467, 0.9414437698618171, 0.9446703586167394, 0.9418137562510827, 0.9355634193590667, 0.9224599733156319, 0.8979055179494859, 0.8685163244075012, 0.8309653780330913, 0.7856099906015578, 0.721066156210421, 0.6570115857533486, 0.5832157278037828, 0.533452183270452, 0.4579175883010029, 0.41058757743913077, 0.38427280092426064, 0.35845108241243784, 0.33262410939538306, 0.2919459000577228, 0.2810793543048925, 0.26655576662004427, 0.2299433263193241, 0.20361501591412426, 0.18292025910587073, 0.09869764928608542, 0.07741791793662374, 0.0682660622294348, 0.04409507550044936, 0.021406125312987495, 0.0] 
+ BI/C: [6.774355026699878, 6.62154220474767, 6.153604570772072, 6.062061617940329, 5.931832357718397, 5.78181388265541, 5.592937437515163, 5.34149918999852, 5.069698273350715, 4.76126926962478, 4.4215841161787015, 3.9945010661784863, 3.5881223039111916, 3.151705498029781, 2.8514377561299, 2.445191217333314, 2.187644012750201, 2.035400245781761, 1.8926718074791942, 1.7572104253550274, 1.5703513524219317, 1.508573876914509, 1.4364443403115987, 1.2904779835976061, 1.1896802032847116, 1.1146007471970685, 0.8481142534254665, 0.79194970191964, 0.7760243924237409, 0.7224082964794669, 0.6793797597310767, 0.6458333333333333] 
+ Grad_Magnitude: 6.774355026699878
+Iter: 25 Freeze: 0
+freeze!!
+{'loss': 0.2735, 'grad_norm': 2.1890482902526855, 'learning_rate': 5e-05, 'epoch': 0.01}
+
+whole 0.14615347199999998
+self.total_flops 11.399970815999998
+I/C: [1, 0.995185967340846, 0.9417193010656097, 0.9449944556202614, 0.9422174138346431, 0.93605263758926, 0.9230601932476921, 0.8986589610990864, 0.8694940711668098, 0.8322072101537316, 0.7871822286822492, 0.7230664387179085, 0.6593984672456263, 0.5861912881008978, 0.5367214807220998, 0.4615283946287274, 0.4142040361974148, 0.38793337385400345, 0.3621234632260192, 0.33618116869389386, 0.2953422626768394, 0.2843487836323685, 0.2697377163990196, 0.2329421767470199, 0.20639854689273715, 0.18556966174795267, 0.10090342268559095, 0.0793287187567805, 0.07002082211158206, 0.045237487132824425, 0.022055089543594336, 0.0] 
+ BI/C: [8.263915443446999, 8.073629920347056, 7.499693313990365, 7.383769633536313, 7.220871284166732, 7.033849446855976, 6.799579962934427, 6.489252257245205, 6.15452123558417, 5.7752981381116095, 5.358289172994628, 4.83517326361851, 4.336909882642309, 3.8030881947768433, 3.433423161136447, 2.934646744223629, 2.6152980876465977, 2.4246105536633022, 2.2453485501175074, 2.0743127041916747, 1.8403986999553332, 1.7592817962165057, 1.6657569101245753, 1.4817783603384678, 1.3528300695859552, 1.2556507469113598, 0.9238512868045528, 0.8493100480188222, 0.8244358971711492, 0.7521445125469577, 0.6933480231572183, 0.6458333333333333] 
+ Grad_Magnitude: 8.263915443446999
+Iter: 26 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 11.838431231999998
+I/C: [1, 0.9952075296104452, 0.9417568212696124, 0.9450498708041822, 0.9422962139580442, 0.9361555619374108, 0.923192321907197, 0.8988333602239916, 0.8697320521425731, 0.8325333954560253, 0.7875956307745917, 0.7236064827456882, 0.6600492397122015, 0.5869950218507693, 0.5376058638833203, 0.46250266688031944, 0.41517602484542443, 0.3889062750911128, 0.36311234017620186, 0.3371555461564093, 0.29627042680935334, 0.28524231657185317, 0.27060246379565567, 0.23376278247124135, 0.2071650781209362, 0.1862922085826051, 0.10142696657064602, 0.07976242801127245, 0.07041203617039354, 0.04552283441702773, 0.022213523271707662, 0.0] 
+ BI/C: [6.837551030780758, 6.683849305971824, 6.21267239384948, 6.120462548365336, 5.989415244962162, 5.83840607046542, 5.648327785732257, 5.395387035764315, 5.12236440802543, 4.812647780711048, 4.471636709324307, 4.043015860899261, 3.6348402695201645, 3.197422803857533, 2.8954344995306665, 2.4866400908331348, 2.2258581710915264, 2.0715450326232636, 1.9267494724131264, 1.7886297773437703, 1.5983624279617534, 1.5345768788302183, 1.4605565007646406, 1.3116484136689661, 1.208250896723792, 1.1311874396847825, 0.8595263607527062, 0.8011036064413977, 0.7839357877067692, 0.7273756117594163, 0.6819572871039014, 0.6458333333333333] 
+ Grad_Magnitude: 6.837551030780758
+Iter: 27 Freeze: 0
+freeze!!
+{'loss': 0.148, 'grad_norm': 0.6007441878318787, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 12.276891647999998
+I/C: [1, 0.995211525764926, 0.9417714371858332, 0.9450657211904404, 0.9423154198080762, 0.936170317406377, 0.9232066087636065, 0.8988539434801285, 0.8697632239324815, 0.8325791534476311, 0.7876607916804428, 0.7236972379514748, 0.6601592973344973, 0.5871434332375507, 0.5377700338594366, 0.4626935858112979, 0.4153722395760621, 0.38911376793958724, 0.36333572937496644, 0.33738682341737114, 0.29650404759383914, 0.28547587652598366, 0.27084347779711626, 0.2339842565495695, 0.20739120700238314, 0.18652252408677936, 0.10146842618317699, 0.07980031194948596, 0.07044828403422973, 0.045546993741786, 0.0222315284722099, 0.0] 
+ BI/C: [6.460420676960101, 6.316370845688223, 5.87239634635888, 5.786426993373374, 5.663774520484231, 5.522215109506745, 5.343765181317291, 5.105957472564001, 4.849196929960735, 4.557784407237948, 4.23682421812745, 3.8331120457721464, 3.4486800809404285, 3.036703649479637, 2.752572957721485, 2.367571706099584, 2.1223196034616114, 1.9776874498893684, 1.842063536707758, 1.712711739459264, 1.5340655132619339, 1.474915518708498, 1.406121518930982, 1.2664774630708209, 1.1699172209689543, 1.0982358612618213, 0.8421173293456816, 0.7880503185890173, 0.7729689795129566, 0.720641709639861, 0.6788593848333595, 0.6458333333333333] 
+ Grad_Magnitude: 6.460420676960101
+Iter: 28 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 12.715352063999998
+{'loss': 0.1682, 'grad_norm': 1.466193675994873, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 13.153812479999997
+
+whole 0.14615347199999998
+self.total_flops 13.592272895999997
+{'loss': 0.1341, 'grad_norm': 1.3259799480438232, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 14.030733311999997
+I/C: [1, 0.9952684821385188, 0.9419323154690279, 0.9452603097218101, 0.9425791680847562, 0.9364908581008959, 0.9236005491725375, 0.8993637109074252, 0.8704620522832676, 0.83346242128175, 0.7887967465345032, 0.7251663710919065, 0.6619137249332107, 0.5893813619758951, 0.5402269007505652, 0.4654364167944724, 0.4181247726303589, 0.39190041306181966, 0.36618350899204005, 0.3401888896823591, 0.29922128818112553, 0.28809655544262236, 0.2733985765064995, 0.2364020135819286, 0.20965863543824328, 0.18863960571899832, 0.10311898248665394, 0.08123453298583372, 0.07178596849009854, 0.04639565174623475, 0.022671059859984303, 0.0] 
+ BI/C: [6.125919691472943, 5.990748651513181, 5.571443314392821, 5.491176948336858, 5.376317262664043, 5.243444060553353, 5.075664942327363, 4.851804677587562, 4.610317188968349, 4.335900635138979, 4.033750205047691, 3.6534480257049537, 3.2911227412184205, 2.9034916914382234, 2.635815514829661, 2.2727179511542834, 2.0409325187659753, 1.9046513371171923, 1.7770067302668737, 1.6548984317841444, 1.4859199224697166, 1.4302317036427112, 1.3655262668643284, 1.2334269531798912, 1.1421759816592407, 1.0745540568981498, 0.8311951941323381, 0.780215848544918, 0.7665646158103961, 0.7166688478330964, 0.6770804095085649, 0.6458333333333333] 
+ Grad_Magnitude: 6.125919691472943
+Iter: 32 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 14.469193727999997
+{'loss': 0.0699, 'grad_norm': 0.8513190150260925, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 14.907654143999997
+I/C: [1, 0.995287770826285, 0.9420106061997999, 0.9453388944211166, 0.9426590572367411, 0.9365124208296476, 0.9235934448866735, 0.8993345681172883, 0.8704227661721967, 0.8333859205451373, 0.7886902913646239, 0.7250617082527661, 0.6617656434084588, 0.5892905677598249, 0.5401288133180213, 0.4653704633858543, 0.41805001952662457, 0.391834978247662, 0.3661531454658117, 0.34017261759549994, 0.29922861110844096, 0.28808857352126416, 0.27340919399947733, 0.23641674498387058, 0.20967019810923263, 0.1886506732729193, 0.1031606674708239, 0.08127655656902857, 0.07182539083452524, 0.04642607008660252, 0.02268712904104559, 0.0] 
+ BI/C: [5.827221021658118, 5.699766782825713, 5.302249673444366, 5.2269050107766635, 5.118659118370831, 4.992966442191784, 4.834235245320604, 4.622197361131508, 4.393454867307028, 4.133263213725552, 3.846732510955602, 3.4860105968376036, 3.142191001510661, 2.7747379885629484, 2.521110399220436, 2.1768738761318205, 1.9573799079267558, 1.8288037435466156, 1.708534566502888, 1.5934493712313331, 1.4338082308773905, 1.3818001328439686, 1.32132522651036, 1.1966940761677067, 1.1108972930186714, 1.0475856435011663, 0.817189171293206, 0.7697072008155749, 0.7577260113998983, 0.7112534262431425, 0.6745760932258942, 0.6458333333333333] 
+ Grad_Magnitude: 5.827221021658118
+Iter: 34 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 15.346114559999997
+I/C: [1, 0.995295382617342, 0.9420219241021279, 0.945351147211228, 0.9426740793641792, 0.9365262850188789, 0.9236121958730208, 0.899358230308385, 0.8704540610965464, 0.8334252077058883, 0.7887373962902606, 0.7251212765787995, 0.6618190610402284, 0.5893684805633383, 0.5402086248214004, 0.4654583496609799, 0.41814199795682666, 0.3919271157437774, 0.36625307131906426, 0.34027094441720185, 0.29933465790028385, 0.2881918176558238, 0.27351463756554806, 0.23652306348911808, 0.20978521531649852, 0.18876185860934036, 0.10317110077483738, 0.08128660909956512, 0.07183527111006693, 0.046432638680661865, 0.02268939720347761, 0.0] 
+ BI/C: [6.263528477921168, 6.125018036030351, 5.696198600588115, 5.613656717680913, 5.495760446371018, 5.359088321481479, 5.186937379980224, 4.957487320478408, 4.710094833666959, 4.428898299680097, 4.119387655085141, 3.7301511944691863, 3.3589919020423893, 2.9625712327065825, 2.6883919081244607, 2.316845494516569, 2.0793628746782926, 1.9395884619302155, 1.8087728389581572, 1.683491786800458, 1.5103531732758775, 1.4528674320575035, 1.386298640823386, 1.2507650749214831, 1.1569978351908563, 1.0873594035361136, 0.8378486002424315, 0.7852491835488378, 0.7708092776321216, 0.7192877278947009, 0.6782933820740676, 0.6458333333333333] 
+ Grad_Magnitude: 6.263528477921168
+Iter: 35 Freeze: 0
+freeze!!
+{'loss': 0.189, 'grad_norm': 3.5508534908294678, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 15.784574975999996
+I/C: [1, 0.9945382100063593, 0.9402813923329404, 0.9432683613057605, 0.940399638353224, 0.9337130493337905, 0.9204131536637961, 0.8959670181307786, 0.8670767546562764, 0.829969288947201, 0.7852357628651165, 0.7219695479340967, 0.6583430050942101, 0.5869256633437727, 0.538217158222801, 0.46429074408704324, 0.4173233765850989, 0.39133138863571276, 0.36607630895117826, 0.34018717664604287, 0.2996407476182789, 0.2884383291375946, 0.2738804251179745, 0.23719362622388218, 0.21056560328676394, 0.1894612637529099, 0.10402146070733911, 0.0820967427432048, 0.07256023664976041, 0.04695765734078021, 0.022923917364329662, 0.0] 
+ BI/C: [5.2809188562598885, 5.163490678441591, 4.800318496004606, 4.732490945999647, 4.635659667382894, 4.521397968504116, 4.378048781391175, 4.187347790541349, 3.982468319574133, 3.7486878803457824, 3.4911900244898435, 3.1680940869840035, 2.85749199211661, 2.5308903770234177, 2.3049491405651596, 1.9981686998498882, 1.802567259044197, 1.6888389289182038, 1.5832620517314364, 1.4812192791339405, 1.3397207766173547, 1.2943109188060857, 1.241767663239909, 1.1315626527658122, 1.0559899324384054, 1.0002537476358773, 0.7934424094314969, 0.7521764785956719, 0.7429936341409997, 0.7023252496632837, 0.670397255300737, 0.6458333333333333] 
+ Grad_Magnitude: 5.2809188562598885
+Iter: 36 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 16.223035391999996
+I/C: [1, 0.9945367314845479, 0.9402799416511786, 0.9432661450826975, 0.9403974753989243, 0.933708095454592, 0.920405990617957, 0.8959586753900581, 0.867067359173839, 0.8299591429109593, 0.7852225671930707, 0.7219560299471705, 0.6583248746965582, 0.5869089094421454, 0.5381978171284815, 0.46427226835555874, 0.4173050513287145, 0.3913117894055497, 0.3660582387513305, 0.34016980392296675, 0.29962652181456506, 0.28842336629966653, 0.273865439424234, 0.2371809098647189, 0.21055543610958866, 0.18945045416183182, 0.10401656588720587, 0.0820927419832476, 0.07255670673424534, 0.04695534177240252, 0.022922326866338008, 0.0] 
+ BI/C: [4.422195985088415, 4.327243917223216, 4.0265145918778025, 3.9731010246761227, 3.8954034450883706, 3.803098504405113, 3.6864387168167982, 3.5301312321191047, 3.361951495449804, 3.1695716165242165, 2.9573230665332626, 2.690153106470452, 2.433431213325215, 2.163331620899347, 1.9775114934796516, 1.7240082857630172, 1.5636031483619708, 1.471753753017428, 1.386738296071669, 1.3046797644486927, 1.1895875343800526, 1.1549488670065395, 1.1143386002830078, 1.0254481600746757, 0.9655587021011816, 0.9222729555969891, 0.7524915850224979, 0.7213257098764072, 0.7170249905047571, 0.6863597656963142, 0.6630126331889515, 0.6458333333333333] 
+ Grad_Magnitude: 4.422195985088415
+Iter: 37 Freeze: 0
+freeze!!
+{'loss': 0.0466, 'grad_norm': 1.206411361694336, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 16.661495807999998
+I/C: [1, 0.9945282983094843, 0.9401776477701471, 0.9431193829068438, 0.9402416939679353, 0.9334805768489376, 0.9201176535721916, 0.8956205997118207, 0.8666918710355825, 0.8295464968242053, 0.7848112836751758, 0.7215417094758456, 0.6578029054328435, 0.5864449428497109, 0.5377030078006936, 0.4638309079111389, 0.416898301618534, 0.39094791851640126, 0.3657711198885572, 0.3399091027280029, 0.2994329968909188, 0.2882350394361908, 0.27367828902402175, 0.2370541139602073, 0.21046291150473737, 0.189349082043816, 0.10401868466140349, 0.08210829451481985, 0.07257276630135144, 0.046956082209976525, 0.022917788364832575, 0.0] 
+ BI/C: [5.517248286258265, 5.393579142202447, 5.012727119440747, 4.940709811637253, 4.83858463515373, 4.717927017784013, 4.566952853911255, 4.366579374475069, 4.151461866820864, 3.9061613652296012, 3.6362489786653023, 3.2977961692202147, 2.971946464521297, 2.630097551193413, 2.3930373737988724, 2.071860818728113, 1.8667542934325587, 1.747201223687008, 1.636281302729943, 1.5288650941829187, 1.3803602768849323, 1.3320236560200103, 1.2762234968479338, 1.1603575020819923, 1.0805880689102185, 1.0214119929885177, 0.8047027502731934, 0.7606926831497719, 0.7501674877104803, 0.7067145607905314, 0.6724161732177633, 0.6458333333333333] 
+ Grad_Magnitude: 5.517248286258265
+Iter: 38 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 17.099956224
+I/C: [1, 0.9945426504718473, 0.9402266262685214, 0.9431746763440273, 0.9403089521143995, 0.933547504264177, 0.920193182482193, 0.8956841155188301, 0.866739481009249, 0.8295681257836182, 0.7847629801848119, 0.7214330594941831, 0.6575383125242256, 0.5861641014695904, 0.5373247798666525, 0.46347434147294725, 0.4165356805425699, 0.3905430481432822, 0.3653760050947382, 0.3395236653221594, 0.2991239145023392, 0.28793963070058665, 0.2733994505708742, 0.2368339887912437, 0.2103024473861367, 0.18921537075821634, 0.10387561378402263, 0.08199343102799853, 0.07246742664684383, 0.04689218191067674, 0.022880570679012623, 0.0] 
+ BI/C: [4.684928023213179, 4.583124051528845, 4.263023483344224, 4.205036379989831, 4.121506446885722, 4.022185898756304, 3.897158973957977, 3.7301008358830043, 3.550510069504565, 3.3452544047140886, 3.118941811313091, 2.834476925416221, 2.5603897500107875, 2.2732246225245007, 2.0747739424579277, 1.8052989521547333, 1.634293121628039, 1.5358260038759224, 1.4448501782987628, 1.3568473769196516, 1.2341348388547186, 1.1962992502353431, 1.1521307382348946, 1.0570573911132572, 0.9926259145548135, 0.945595604925423, 0.7647144797249001, 0.7305583286998294, 0.7247936157783099, 0.6911259051032469, 0.6651976850354561, 0.6458333333333333] 
+ Grad_Magnitude: 4.684928023213179
+Iter: 39 Freeze: 0
+freeze!!
+{'loss': 0.0471, 'grad_norm': 1.6104013919830322, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 17.53841664
+I/C: [1, 0.9946031100984207, 0.9402247587344205, 0.9430786951055822, 0.9401442484998564, 0.9330907792876767, 0.9195535838801026, 0.8947959988200368, 0.865556138404369, 0.828115090802934, 0.782925914901125, 0.7192873334833898, 0.6546822865660314, 0.5831930546161678, 0.5341306222908723, 0.4604374692185306, 0.4136575976274044, 0.38777734961209104, 0.36280698431570035, 0.3371132620864587, 0.2970314908912085, 0.2859189844231528, 0.27149493217942494, 0.23521652576074162, 0.20888997385366245, 0.18795583398982996, 0.10313817145101227, 0.08140951412388663, 0.0719383219997048, 0.04655532108661652, 0.02271927181488648, 0.0] 
+ BI/C: [4.518427231935107, 4.421249240601971, 4.112989772588338, 4.057405429208957, 3.9773089265048407, 3.881092080021719, 3.760568960298956, 3.5992894777478366, 3.425793688779077, 3.2276944441865676, 3.008928404794253, 2.7344115954646138, 2.4686007039141247, 2.1922716308512267, 2.0011798306617448, 1.7428115746702002, 1.5793878358776794, 1.4857594964346181, 1.3995730986676962, 1.3161131367933339, 1.1995671866913207, 1.1641960705064516, 1.1228121347331061, 1.032712893436719, 0.9719270731693004, 0.9277726968774291, 0.755260231162446, 0.7234312974307391, 0.718770030476326, 0.6874329121082451, 0.6634957661717945, 0.6458333333333333] 
+ Grad_Magnitude: 4.518427231935107
+Iter: 40 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 17.976877056000003
+{'loss': 0.0048, 'grad_norm': 0.16520769894123077, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 18.415337472000004
+I/C: [1, 0.9946027376057183, 0.9402196749074687, 0.9430726732241211, 0.9401374132856675, 0.9330760050570029, 0.9195360800659982, 0.8947760759906158, 0.8655341564890743, 0.8280921458111268, 0.7828988889108518, 0.7192580766510784, 0.6546428466402332, 0.5831539121673004, 0.5340866961003404, 0.46039499685494767, 0.41361652278723166, 0.3877376094211709, 0.36276968940743726, 0.33707774693708387, 0.2970008715432106, 0.2858891364361795, 0.271467093968794, 0.23519326120659778, 0.20887055107795746, 0.18793851024044023, 0.10312715811621562, 0.0814006040488005, 0.07193028948432859, 0.04655020858053512, 0.022716544534049792, 0.0] 
+ BI/C: [4.3648530534679395, 4.271684487971185, 3.974590688994227, 3.9216002850291973, 3.8449315208044466, 3.7526626029375247, 3.636934883493761, 3.4818376997034526, 3.314941171526778, 3.124281681597169, 2.9136472296068576, 2.64916385516191, 2.393064871066425, 2.1268404103288034, 1.942940378622207, 1.6940700991287805, 1.5369168949684264, 1.4471864237753556, 1.3646477415722928, 1.2847406282553813, 1.1728796772721797, 1.1394235394463084, 1.100161735930619, 1.013845846006615, 0.9558446313260769, 0.9139052405542839, 0.7479784917078909, 0.7179444828722369, 0.7141521432052101, 0.6845939912746676, 0.6621828920401329, 0.6458333333333333] 
+ Grad_Magnitude: 4.3648530534679395
+Iter: 42 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 18.853797888000006
+I/C: [1, 0.9946027373471339, 0.9402197248195621, 0.9430727227258815, 0.9401374705437912, 0.9330760358506728, 0.9195360915904949, 0.894776066128784, 0.8655341290640358, 0.828092097119465, 0.7828987658459019, 0.7192578974730207, 0.6546424938087417, 0.5831534864164174, 0.5340861531884753, 0.46039443979630873, 0.4136159544288889, 0.3877370308948907, 0.36276911992016087, 0.337077160484187, 0.29700033465868425, 0.28588861046352343, 0.2714665944179997, 0.23519283601409138, 0.20887017691817, 0.18793816836321373, 0.10312700377005948, 0.08140048080287815, 0.07193017449390798, 0.04655013634355805, 0.02271650674316501, 0.0] 
+ BI/C: [4.222763274485685, 4.133305830472985, 3.846561768751955, 3.7959745550275694, 3.7224798182818404, 3.6338926314415647, 3.522610332490892, 3.3732401655923665, 3.2124547775213026, 3.0286799776814273, 2.8255802902096088, 2.570384705631582, 2.323300210579958, 2.0664201959159105, 1.8891845701094043, 1.6490940033526187, 1.4977348414024378, 1.4116035941844385, 1.3324300729477179, 1.2558023867678278, 1.1482612283288791, 1.1165724577332499, 1.0792670477939328, 0.9964394116366873, 0.9410046561126879, 0.9011088143850122, 0.7412620902253122, 0.7128840453761934, 0.7098933746584256, 0.6819757066104934, 0.6609724113998664, 0.6458333333333333] 
+ Grad_Magnitude: 4.222763274485685
+Iter: 43 Freeze: 0
+freeze!!
+{'loss': 0.0027, 'grad_norm': 0.16299544274806976, 'learning_rate': 5e-05, 'epoch': 0.02}
+
+whole 0.14615347199999998
+self.total_flops 19.292258304000008
+I/C: [1, 0.9946025750978978, 0.940216336482382, 0.9430687666995095, 0.9401331955646768, 0.9330669382165239, 0.9195254122495374, 0.8947640875564763, 0.8655209774714124, 0.8280775206734243, 0.7828823504701407, 0.7192412955988261, 0.654619467648812, 0.5831310322426457, 0.5340603037756884, 0.46036893497286024, 0.4135910625206399, 0.38771292074173197, 0.3627462656470276, 0.3370550918258168, 0.29698089884038414, 0.28586944520809304, 0.27144838958180506, 0.23517741086199545, 0.2088575760374866, 0.18792648269807066, 0.103120842655955, 0.08139543205966142, 0.07192555894736798, 0.046547069477794266, 0.02271487150173561, 0.0] 
+ BI/C: [4.6094901698462225, 4.509931401300468, 4.195004712188354, 4.137874571490991, 4.055740163026369, 3.957112579567832, 3.833725430102034, 3.668763685475898, 3.4913420312084744, 3.2888248430245106, 3.06521172808859, 2.7847379213954007, 2.5130965008378747, 2.2307872214565934, 2.0354032185877124, 1.7714204301787324, 1.6042959580167628, 1.5083734542358922, 1.4200470910302503, 1.3344981633659132, 1.2152094780714937, 1.1787132236196802, 1.1360876201738723, 1.0437749810095074, 0.9813634718213522, 0.9359091941033804, 0.7595283173257383, 0.7266462567278604, 0.7214750653869115, 0.6890959775972457, 0.6642639913362139, 0.6458333333333333] 
+ Grad_Magnitude: 4.6094901698462225
+Iter: 44 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 19.73071872000001
+I/C: [1, 0.9946025764359351, 0.9402163499743583, 0.9430687845329918, 0.9401332214059487, 0.9330669691995274, 0.9195254421113409, 0.8947641125274013, 0.8655209970595472, 0.8280775369611494, 0.7828823403645533, 0.7192412682000169, 0.6546193561203493, 0.5831308904392637, 0.5340601041361814, 0.46036872767760134, 0.4135908477683637, 0.3877127012321693, 0.3627460436596929, 0.3370548670121718, 0.29698070001683957, 0.28586925239763883, 0.27144820408107184, 0.23517725479405643, 0.20885743851863398, 0.18792635877645542, 0.10312079263695274, 0.081395394007696, 0.07192552049068883, 0.04654704158543484, 0.022714854974294287, 0.0] 
+ BI/C: [3.4479031561439872, 3.3786830840190194, 3.1483676321791543, 3.110884223736415, 3.0546976095079357, 2.9861740742470926, 2.8991303397590893, 2.7809887564810762, 2.653527147892086, 2.5072940619914825, 2.345281139683932, 2.1407363922972116, 1.9427981080302228, 1.7368804024098061, 1.5959828256903896, 1.4037734175403456, 1.2840141262485392, 1.2175139840400153, 1.156695768008125, 1.0979550761079964, 1.0139770708594487, 0.9919278423923168, 0.96529385643957, 0.9014939578425551, 0.8600601107262734, 0.8313102784917442, 0.704627315431967, 0.6852815032039392, 0.6866634287946437, 0.6676938362550029, 0.6543694825589583, 0.6458333333333333] 
+ Grad_Magnitude: 3.4479031561439872
+Iter: 45 Freeze: 0
+freeze!!
+{'loss': 0.7664, 'grad_norm': 84.44524383544922, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 20.16917913600001
+I/C: [1, 0.9867152553451563, 0.8669054082124511, 0.8477578251876663, 0.8274255498697524, 0.7776520241303393, 0.7327450680682498, 0.6654357238583672, 0.5898830267565066, 0.41598099088070095, 0.33502204989230344, 0.27323008728171905, 0.19118502133944243, 0.13908920424811463, 0.10733286384489059, 0.089466639953122, 0.08067142526971559, 0.07401352618491275, 0.0695635716606561, 0.06525257438384668, 0.0606590561367102, 0.05743330510917014, 0.05389643411936509, 0.04901922155143272, 0.04434296826415506, 0.03967531272915862, 0.030585785935121648, 0.025358588411339745, 0.020343996738383142, 0.014067391002059807, 0.007313664075571228, 0.0] 
+ BI/C: [3.8540615332841526, 3.7444683659735336, 3.2435606706714535, 3.12560389712164, 3.006536568125376, 2.7890855490978317, 2.59603900797733, 2.336454984875433, 2.0612045687995657, 1.490113272618723, 1.2305298462727785, 1.0408892928697657, 0.8026291273633412, 0.6617092148452426, 0.5846811187762879, 0.5495568306944136, 0.540608424644812, 0.5383923585535779, 0.5425639285344939, 0.5477736597819968, 0.553040512026061, 0.5620102142222264, 0.5708484273236737, 0.5775641125900575, 0.5854502641292599, 0.5941032337925165, 0.5956947713089988, 0.6052584325588567, 0.6160029230261086, 0.6256274004199879, 0.635570241767883, 0.6458333333333333] 
+ Grad_Magnitude: 3.8540615332841526
+Iter: 46 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 20.607639552000013
+{'loss': 0.5376, 'grad_norm': 0.022862177342176437, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 21.046099968000014
+I/C: [1, 0.9869148373430912, 0.8674867129528481, 0.848576659996924, 0.8284487715914638, 0.7792710697023452, 0.7347926575557577, 0.6680922333686455, 0.5931723872926205, 0.4218301076768406, 0.3409742468427434, 0.2786715667044064, 0.19537013119155144, 0.14249432154552075, 0.10995893548344236, 0.09110533930167716, 0.08185414473516274, 0.0750244914314572, 0.07041116521341059, 0.06582606547196183, 0.061074707497197074, 0.057795460743122744, 0.05424792108741185, 0.04930869397439611, 0.04450392325412453, 0.0397884414661363, 0.03067708032625861, 0.025426256232160924, 0.020416762470265658, 0.014101084187543824, 0.007324809306570947, 0.0] 
+ BI/C: [3.747116522021794, 3.6418747909026497, 3.1567998866258278, 3.043483396446761, 2.928936239705781, 2.720017469121999, 2.5341844939640468, 2.284170776697787, 2.018905044026074, 1.471775334844224, 1.2198222685266353, 1.0340822661913303, 0.799055984873071, 0.6601666443648488, 0.5835205019248708, 0.5472003464724298, 0.537811345422061, 0.5357268927785828, 0.5398992753162356, 0.5448558372454295, 0.550164859898564, 0.5593185582897346, 0.56843969408732, 0.5753986572243626, 0.5833806930601599, 0.5922732147348936, 0.5943523558298769, 0.6041828758590517, 0.6152099949910528, 0.6250818688586197, 0.6352925927399916, 0.6458333333333333] 
+ Grad_Magnitude: 3.747116522021794
+Iter: 48 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 21.484560384000016
+I/C: [1, 0.9865336889261189, 0.8661221348568372, 0.8467339136969119, 0.825855355425286, 0.776712831571145, 0.7322543838446681, 0.6658099616533624, 0.5914477821987713, 0.4221505106247539, 0.3420429433112038, 0.2800761303619745, 0.19714722032485585, 0.1444921995798215, 0.11197521542916533, 0.09292204419426314, 0.08352121962338313, 0.0765906272572205, 0.07186747383186223, 0.06713490320254964, 0.06226502586886225, 0.05891240228736431, 0.05527045683835099, 0.05022625260835177, 0.04530540749476697, 0.040425139187969465, 0.031154245924581787, 0.025787050037138846, 0.020723678486004, 0.014289630982936749, 0.007411634266065324, 0.0] 
+ BI/C: [4.109218113678075, 3.9902595604495086, 3.4524562333274385, 3.324450939652074, 3.194151470308994, 2.9633821828039273, 2.7578688556753526, 2.4827977613005285, 2.1919899499215965, 1.5969506765281214, 1.3210438378288778, 1.1163140541544716, 0.8575906966151351, 0.7037760152698054, 0.6175924966632094, 0.5750129011746044, 0.5621379390352604, 0.5574282370575713, 0.5595744532838584, 0.5625059760145479, 0.5659186670868949, 0.5736721997122339, 0.5813557796286826, 0.5866617848960467, 0.5930849005625314, 0.6004304463870982, 0.6003423128493334, 0.6088595182360335, 0.6188158812569701, 0.6274096874788401, 0.6364210081667773, 0.6458333333333333] 
+ Grad_Magnitude: 4.109218113678075
+Iter: 49 Freeze: 0
+freeze!!
+{'loss': 0.1864, 'grad_norm': 4.137779712677002, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 21.923020800000018
+I/C: [1, 0.9865401063258471, 0.8662757050936466, 0.8469378502786548, 0.8260890414932617, 0.7770070773296331, 0.7326225776447828, 0.6662728592987872, 0.5919860801125126, 0.4230028759244898, 0.3429017553506625, 0.2808580143604154, 0.19776437687576043, 0.1450255895220814, 0.11239355545112732, 0.09323508709751899, 0.08377737312175779, 0.07682190945917719, 0.07208622626057767, 0.06732911812864463, 0.06243093488800412, 0.05907145792082872, 0.05542478342958131, 0.05036419674507675, 0.04542316333398403, 0.040508297519875336, 0.03119564464412206, 0.025813776518600708, 0.020751881195651987, 0.014305124963960665, 0.0074166981641040864, 0.0] 
+ BI/C: [3.536959296760979, 3.4374906965155874, 2.9779826624937646, 2.8708606593642303, 2.761689705656795, 2.5661338218715684, 2.392349207390494, 2.1587454028943953, 1.9115255580058679, 1.4031169630781763, 1.1684900615750209, 0.9948996771581311, 0.7746134135191471, 0.6448590885311012, 0.5732514301846271, 0.539215986814549, 0.5308781058141431, 0.5296498952615328, 0.5343537800879785, 0.5397097949776459, 0.5454758107419365, 0.5550250050247938, 0.5645190683037032, 0.5719458926569783, 0.5803299399212136, 0.589486512264673, 0.592238124115303, 0.602444746118364, 0.6139160663001002, 0.6241945052066574, 0.6348372098210493, 0.6458333333333333] 
+ Grad_Magnitude: 3.536959296760979
+Iter: 50 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 22.36148121600002
+I/C: [1, 0.986540100978718, 0.8662759647157829, 0.8469381153144725, 0.8260893577130265, 0.7770074753763678, 0.7326230243897405, 0.6662734088837413, 0.5919867751752569, 0.42300404098166916, 0.34290305609590643, 0.28085934984790506, 0.1977657253712887, 0.14502695070861438, 0.1123948875640806, 0.09323632223303796, 0.083778524797449, 0.07682301318289264, 0.07208729157756298, 0.06733011375405437, 0.062431835408577656, 0.059072316691489025, 0.05542555589190055, 0.05036488728879716, 0.0454238089426881, 0.04050878299547562, 0.031195847910796125, 0.025813910862827923, 0.020752015974647136, 0.014305200279428698, 0.007416717844227453, 0.0] 
+ BI/C: [3.449448199965012, 3.352956080191125, 2.9053334810300697, 2.801377335018688, 2.6954230773089978, 2.505221304244665, 2.336252026142349, 2.108943751027115, 1.868356430026152, 1.3730435537904928, 1.1447375109432496, 0.9759575378066541, 0.761636969047575, 0.6356084040080949, 0.5662877426701747, 0.533609531429951, 0.5259931210388564, 0.5253105654318362, 0.530413361357861, 0.5361520927308022, 0.5422906396578675, 0.5521188792695612, 0.5618932746684955, 0.5696515988540531, 0.578343537996455, 0.5877887045310392, 0.5909872114852107, 0.6014566399074295, 0.6131595850622464, 0.6236990812442973, 0.6345938440065321, 0.6458333333333333] 
+ Grad_Magnitude: 3.449448199965012
+Iter: 51 Freeze: 0
+freeze!!
+{'loss': 0.0095, 'grad_norm': 0.15029747784137726, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 22.79994163200002
+
+whole 0.14615347199999998
+self.total_flops 23.238402048000022
+{'loss': 0.014, 'grad_norm': 0.27050983905792236, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 23.676862464000024
+I/C: [1, 0.9865402321759944, 0.8662778351056587, 0.8469403153470689, 0.8260918373630443, 0.7770102964573669, 0.7326264107071546, 0.6662775378418385, 0.591991865800203, 0.4230117263557427, 0.3429113787970907, 0.2808677774310936, 0.19777415912708465, 0.14503534571915952, 0.11240292340332257, 0.09324340701275678, 0.08378483020440515, 0.07682899932524757, 0.07209290414228187, 0.06733504919305759, 0.06243610235295687, 0.05907644281379515, 0.055429428354425825, 0.05036829705436585, 0.045427034607127555, 0.040511503691357205, 0.031196939865113515, 0.025814642116079062, 0.020752736179076744, 0.014305636399784402, 0.007416872912526706, 0.0] 
+ BI/C: [3.3669758701210752, 3.2732892992102123, 2.8368725439705815, 2.7359008798809206, 2.6329786759965748, 2.4478233649442878, 2.2833935158313516, 2.0620199187792343, 1.8276852728810313, 1.3447195987771619, 1.1223713509164706, 0.95812450175596, 0.749425616135785, 0.6269076630684944, 0.5597410343379553, 0.5283394572536334, 0.5214010010536158, 0.5212317290096534, 0.5267094179087592, 0.532807272698891, 0.5392954958606424, 0.5493862885637326, 0.5594243383721431, 0.5674941879172606, 0.5764758646866767, 0.5861922682082452, 0.5898096992175837, 0.600526308731534, 0.612447484147475, 0.6232326649735666, 0.6343646620480871, 0.6458333333333333] 
+ Grad_Magnitude: 3.3669758701210752
+Iter: 54 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 24.115322880000026
+{'loss': 0.1558, 'grad_norm': 0.39819568395614624, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 24.553783296000027
+I/C: [1, 0.9865300306754179, 0.8662943874457532, 0.8469572144507643, 0.8261153750527201, 0.7770324594693885, 0.7326572189682236, 0.6663255244930651, 0.5920633233078092, 0.42315405705200465, 0.34307687614130633, 0.2810403902805947, 0.19795645147148752, 0.14522694468604946, 0.11259425260125239, 0.09341509385201316, 0.0839389620865607, 0.07697565835655183, 0.07223322053068704, 0.06746288516922036, 0.06255059714466839, 0.05918632108378079, 0.05553607999092079, 0.05046562504070508, 0.04551809583387689, 0.04058762876895653, 0.03124307381460737, 0.025850049381647915, 0.0207866145260409, 0.014326383858635768, 0.007426533893144857, 0.0] 
+ BI/C: [2.8721920198825504, 2.7953056881162475, 2.4261570003869535, 2.3430847679944744, 2.258365155417978, 2.1034753428945967, 1.96629069042614, 1.7805501878711354, 1.5837662937248602, 1.1749960109996258, 0.9884279438052745, 0.8513848489678804, 0.6764267051505054, 0.5749830938744136, 0.5207362222792197, 0.496960434880103, 0.49405921137482905, 0.4969532296117438, 0.5046672997366598, 0.5129005094211946, 0.5214667734753861, 0.5331218944954608, 0.5447347381229692, 0.5546598778751552, 0.5653683558071552, 0.5766924095727396, 0.5827957158398368, 0.5949827586770482, 0.6082096451508622, 0.6204544663012168, 0.6329989117687292, 0.6458333333333333] 
+ Grad_Magnitude: 2.8721920198825504
+Iter: 56 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 24.99224371200003
+I/C: [1, 0.9865258596875228, 0.8663192647821265, 0.8469896947777974, 0.8261511574444804, 0.7770719526372388, 0.7327090673298766, 0.6663970805446406, 0.5921585090935664, 0.42330770190023465, 0.3432515914041494, 0.2812257113608761, 0.19815734858554526, 0.1454385315101459, 0.1128086811051841, 0.09361980107871465, 0.08413171651266534, 0.07716230437280505, 0.07241310302956587, 0.06762531698952486, 0.0626959617198155, 0.05932661326943321, 0.055670611450274604, 0.05058711253694351, 0.04563136104765411, 0.04067839254757597, 0.031304868461493544, 0.025896845593306416, 0.020831503073211605, 0.014354365576875007, 0.007438163927308358, 0.0] 
+ BI/C: [3.228676103191122, 3.1396480419291586, 2.722186628438814, 2.6262394254795782, 2.528426624692624, 2.3517351393628414, 2.194970224244499, 1.9836415311838174, 1.7599066896764006, 1.2979628124054066, 1.0856965000178795, 0.9290731073610423, 0.7298394220373973, 0.6132309768948041, 0.5496577408160779, 0.5203092599882423, 0.514422708416595, 0.5150644736263479, 0.5211240345684224, 0.5277472313147771, 0.5347478894666229, 0.5452448604322826, 0.5556937852880839, 0.5642340632174321, 0.5736644424853234, 0.5837658154269892, 0.5879919203277842, 0.5990804803503731, 0.6113575734025127, 0.622511798857833, 0.6340057832963946, 0.6458333333333333] 
+ Grad_Magnitude: 3.228676103191122
+Iter: 57 Freeze: 0
+freeze!!
+{'loss': 0.142, 'grad_norm': 0.703112006187439, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 25.43070412800003
+
+whole 0.14615347199999998
+self.total_flops 25.869164544000032
+I/C: [1, 0.986512326075148, 0.8663078708601749, 0.8469772932919403, 0.8261379643459453, 0.7770557838303331, 0.732692399553974, 0.6663886833620637, 0.5921605042072228, 0.42334729483399447, 0.3433061788841167, 0.2812894306267932, 0.19823427736219032, 0.14552370363022715, 0.11289750262209373, 0.0937061900977456, 0.08421511685365947, 0.07724421328616153, 0.07249351794095953, 0.06770191524856209, 0.0627673227182734, 0.059395028110378965, 0.055733578133465085, 0.05064272981707464, 0.045684826726961274, 0.04072283083186612, 0.03134056392846527, 0.025924039375538138, 0.020857148465569384, 0.014370518501997036, 0.007446139454122141, 0.0] 
+ BI/C: [3.158288091231905, 3.0716132535612797, 2.6637144222165676, 2.570310905263532, 2.4750832199660033, 2.3026904003469, 2.149796970041514, 1.943553024053306, 1.7251778904462935, 1.2738553347801758, 1.0667056879960284, 0.9139696495980447, 0.719560718100226, 0.6059625480386618, 0.5442320102933368, 0.5159664116790408, 0.5106504004404107, 0.511723830147627, 0.5180971340027742, 0.5250175505793883, 0.5323050845847858, 0.5430174681021591, 0.5536789603878605, 0.5624710054628863, 0.5721429221008774, 0.5824610818359017, 0.5870336595043918, 0.5983205683659202, 0.6107803681732764, 0.6221320523238336, 0.6338188950863523, 0.6458333333333333] 
+ Grad_Magnitude: 3.158288091231905
+Iter: 59 Freeze: 0
+freeze!!
+{'loss': 0.118, 'grad_norm': 1.1979058980941772, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 26.307624960000034
+
+whole 0.14615347199999998
+self.total_flops 26.746085376000035
+I/C: [1, 0.9864978791357154, 0.8663381562417816, 0.84701751921153, 0.8261873377231582, 0.7771223581967031, 0.732782060927128, 0.6665144135602233, 0.5923339874670366, 0.4236352419767217, 0.34364449272150654, 0.2816598959947136, 0.19864852589800427, 0.14596453113543986, 0.11335341395511468, 0.09415261878060789, 0.08464527143667555, 0.07766779195156534, 0.07291036151270121, 0.06808845773812366, 0.06311724146794447, 0.05973576441495836, 0.056054680276585056, 0.050937596403176015, 0.04596301542256351, 0.04094820459438978, 0.03150063825073954, 0.02604428350231904, 0.020974452587832038, 0.014442819519806374, 0.007476222702935143, 0.0] 
+ BI/C: [3.091563249779022, 3.00711599351424, 2.6084084054801413, 2.517445219668778, 2.4246928765095452, 2.2564267853510227, 2.1072618284521862, 1.9059047942258944, 1.6926983227067987, 1.2516273056427618, 1.049398958710355, 0.9003847330327502, 0.7106008617167847, 0.5998760480840482, 0.5398944679146066, 0.5126166585636498, 0.5077908069607975, 0.5092408672907752, 0.5158793713629811, 0.5230102799300446, 0.5304930507540067, 0.5413807528540427, 0.5522023193239851, 0.561185833891737, 0.5710487846647119, 0.5814929413077979, 0.5863020154652611, 0.5977264280123855, 0.6103516028353224, 0.6218409773117055, 0.6336674557583342, 0.6458333333333333] 
+ Grad_Magnitude: 3.091563249779022
+Iter: 61 Freeze: 0
+freeze!!
+{'loss': 0.1541, 'grad_norm': 0.7463507652282715, 'learning_rate': 5e-05, 'epoch': 0.03}
+
+whole 0.14615347199999998
+self.total_flops 27.184545792000037
+I/C: [1, 0.9864969438872715, 0.86634176022035, 0.8470215880795614, 0.826191511090741, 0.7771264900871504, 0.7327869379856329, 0.6665225735850062, 0.5923465720815622, 0.4236599378302819, 0.34367395147216795, 0.2816918012880097, 0.19868416854958842, 0.14600240508116705, 0.11339209436995673, 0.09418951690249866, 0.08468000404463166, 0.07770163748886746, 0.07294331753904255, 0.06811993840809398, 0.06314678972726544, 0.0597642301356909, 0.05608001848672348, 0.05095803834610024, 0.04598244021765929, 0.04096175990888973, 0.03151085359260105, 0.026050864097691948, 0.02098092616594255, 0.014447213551148915, 0.007478012389682933, 0.0] 
+ BI/C: [2.6443663556274344, 2.5751455923376034, 2.2371364614016707, 2.1623456781322297, 2.0860236156305674, 1.9451105669060789, 1.8205374840708979, 1.6513275963131344, 1.47198445506977, 1.0977535697333065, 0.9277998690413414, 0.80335758152787, 0.6440452980312565, 0.552352805714717, 0.5040605862034482, 0.48373671781546623, 0.482616635793346, 0.48686707238613197, 0.4955555342300579, 0.5046643359362402, 0.5140735602953854, 0.5263966671854479, 0.5386603951425136, 0.5493498552870834, 0.560797208930614, 0.5727356603066291, 0.5798578604937973, 0.5926385124927945, 0.6064505230263006, 0.6192889746561924, 0.632415476638841, 0.6458333333333333] 
+ Grad_Magnitude: 2.6443663556274344
+Iter: 62 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 27.62300620800004
+{'loss': 0.1544, 'grad_norm': 0.8518477082252502, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 28.06146662400004
+I/C: [1, 0.9864621497534719, 0.8664129810228232, 0.8471148992272985, 0.8262994908137049, 0.7772490981248479, 0.7329508621243817, 0.6667575866414984, 0.5926761713833365, 0.42421831750436556, 0.34432909090944414, 0.2824017529592328, 0.1994784409274233, 0.14684912094951852, 0.11426770026611385, 0.09504351156178446, 0.08549540315269569, 0.07850116102625736, 0.07372144202186262, 0.06883376851321767, 0.06379058881204255, 0.06038759983414826, 0.05666941241560525, 0.05149004700455289, 0.046481431379371836, 0.041355823002700264, 0.03178824594329871, 0.026254910080790627, 0.021181493642988297, 0.014568515180688612, 0.007526907481565241, 0.0] 
+ BI/C: [2.9792364264448765, 2.8985101371493593, 2.51536373368256, 2.4285208423395144, 2.3399297470029565, 2.178566239559665, 2.0356796688307424, 1.8425743349784156, 1.6381020323926023, 1.2143754147227586, 1.0204549015049684, 0.8777008084249426, 0.695720078126059, 0.5898424741947401, 0.532804933957548, 0.5071705005726959, 0.5031406795774007, 0.5052099806641013, 0.5122710034259856, 0.5197310426082817, 0.5275275600810357, 0.5386987771364524, 0.5497837712724742, 0.5590630331433973, 0.5692395867593611, 0.5798708710356413, 0.5850729876132377, 0.5967210682125051, 0.6096269489282088, 0.6213470410626027, 0.6334091638553349, 0.6458333333333333] 
+ Grad_Magnitude: 2.9792364264448765
+Iter: 64 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 28.499927040000042
+I/C: [1, 0.9864624083105692, 0.8664206883262663, 0.847123941419492, 0.82630880502404, 0.7772580128978785, 0.7329621585841545, 0.6667726696679629, 0.5926954212166385, 0.42424954256841024, 0.3443642122853922, 0.28243811166365745, 0.19951757841033885, 0.14688960905947165, 0.11430825336443534, 0.09508143672991042, 0.08553073561495485, 0.07853564763089889, 0.07375498191533718, 0.06886474485337989, 0.06381876110021296, 0.06041509885049281, 0.05669487349807514, 0.05151317150475251, 0.04650348440092794, 0.04137339186751577, 0.03180171367500261, 0.026263662152577145, 0.021190242446869317, 0.014573654056701737, 0.007528901782724993, 0.0] 
+ BI/C: [3.291734898138138, 3.2003566364886002, 2.7748594155560857, 2.67672572595519, 2.5766570692917505, 2.396180729464132, 2.2361274768728565, 2.0205915312646128, 1.7924968349879107, 1.322170082643157, 1.1057315920726598, 0.945819195477446, 0.7425692317339935, 0.6234012048129705, 0.5581929972776574, 0.5276757323711596, 0.5210296715247823, 0.5211265519518709, 0.5267386549264141, 0.5327885423473381, 0.5392100917905485, 0.5493646502091057, 0.5594216007212013, 0.5674831793520672, 0.5765385712437785, 0.5860911556434762, 0.5896462882487763, 0.6003231933014896, 0.6123969419009865, 0.623155823070519, 0.6342936807785688, 0.6458333333333333] 
+ Grad_Magnitude: 3.291734898138138
+Iter: 65 Freeze: 0
+freeze!!
+{'loss': 0.1517, 'grad_norm': 2.6669063568115234, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 28.938387456000044
+I/C: [1, 0.9863986232982083, 0.8664137059201026, 0.8471272295401765, 0.8263255974396987, 0.777284633756313, 0.7330140892042174, 0.6668866905944759, 0.5928926843533789, 0.424644117633199, 0.3448544617422084, 0.2829742693677912, 0.20012808661281908, 0.14754695127818068, 0.11498882523735184, 0.09574770534498435, 0.08616874827862632, 0.07916350525879431, 0.07437382920048904, 0.06943841098280167, 0.0643399114778767, 0.06092154355917077, 0.057175170925646154, 0.051954893663248715, 0.04692188344002853, 0.041722660400730624, 0.03204765479877195, 0.026446562352227948, 0.02136463500277026, 0.014680186972338628, 0.007571787131151886, 0.0] 
+ BI/C: [3.2179871632992043, 3.1289218970931914, 2.7136036761008246, 2.618166765945163, 2.5208464014942886, 2.3449073930682114, 2.1889761883795504, 1.9789030249590123, 1.7566008728859837, 1.2977806971052483, 1.0868753079485325, 0.9310933324098409, 0.7330072103017623, 0.6170447256645657, 0.5537730658384631, 0.5243289846169161, 0.5181932838921199, 0.5186908636554509, 0.5245837672828633, 0.5308355320894574, 0.5374429220471084, 0.5477751691422539, 0.5579940233031738, 0.566244885874432, 0.5754970092939167, 0.5851676805943664, 0.5889340983049672, 0.5997333054462518, 0.6119796338281197, 0.6228660919042612, 0.6341372176717304, 0.6458333333333333] 
+ Grad_Magnitude: 3.2179871632992043
+Iter: 66 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 29.376847872000045
+{'loss': 0.0862, 'grad_norm': 0.7143757939338684, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 29.815308288000047
+I/C: [1, 0.9863852666005993, 0.866419329573377, 0.8471364859282926, 0.8263369317211933, 0.7773001822725795, 0.7330385166394501, 0.6669271330396938, 0.5929515803651705, 0.42475091273738613, 0.34498195341254, 0.28311213357871795, 0.20028185181911512, 0.14770959697832028, 0.11515555918374804, 0.09590833578415917, 0.08632173053265373, 0.07931320633406663, 0.07452019450629234, 0.0695739508106327, 0.06446264705247487, 0.06104043763825243, 0.05728518070191227, 0.05205436832783955, 0.04701682976710545, 0.04180126141576209, 0.03210180970466561, 0.02648551285112445, 0.02140160663356733, 0.014702420731858137, 0.007579908810281655, 0.0] 
+ BI/C: [2.7939931969756704, 2.7193713552191268, 2.36157097453306, 2.28146272993143, 2.1997147851688665, 2.0497118982277924, 1.9170915500352905, 1.7374788495051474, 1.5472522347302158, 1.1517353179854393, 0.9714028078069281, 0.8389061433834916, 0.6696895985952227, 0.5717601316248035, 0.5195685596752692, 0.49672747592851185, 0.49412155190626766, 0.49728369430747926, 0.5051305728049278, 0.5132767752561918, 0.5217297817721341, 0.5334324442197034, 0.54502946946636, 0.5549164328025258, 0.5656823512563278, 0.5767963775098903, 0.5827756090491615, 0.5948751499419482, 0.6082483097243901, 0.6204268918036214, 0.6329418301186086, 0.6458333333333333] 
+ Grad_Magnitude: 2.7939931969756704
+Iter: 68 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 30.25376870400005
+I/C: [1, 0.9863813092894923, 0.8664225418495108, 0.8471401337519203, 0.8263385042932087, 0.7772975398239426, 0.7330372999523441, 0.6669300242437795, 0.592959382956585, 0.42477218388239063, 0.34500670394417365, 0.28313766180517175, 0.2003099767026153, 0.14773856138423144, 0.11518469250169656, 0.09593441617406204, 0.08634438441183272, 0.07933429826308568, 0.07453997706771597, 0.06959095192484686, 0.06447722318337863, 0.06105396516333347, 0.057297453325578084, 0.05206511619893448, 0.047026772037474504, 0.041809297956216115, 0.03210823524902225, 0.02649021456963322, 0.02140611427819356, 0.014705265251602793, 0.007581107305262384, 0.0] 
+ BI/C: [2.3968261472218657, 2.335764002543577, 2.0318031943953665, 1.966044646504029, 1.898873922417323, 1.7731463314107079, 1.662342596487859, 1.5112318362388946, 1.3510171277590723, 1.0147103750152517, 0.8629791954426809, 0.7522786414558793, 0.6100811422826733, 0.5290339091823625, 0.4872216919463418, 0.47058245550931366, 0.47130165214937114, 0.476972211122965, 0.4866621037807624, 0.4966067704650511, 0.5068154050819393, 0.5198138538034659, 0.5327215185791503, 0.5441619957623702, 0.5563574984194304, 0.5688504422163398, 0.57693901815192, 0.5902779420301313, 0.6047111393384973, 0.6181181941850129, 0.6318139735803053, 0.6458333333333333] 
+ Grad_Magnitude: 2.3968261472218657
+Iter: 69 Freeze: 0
+freeze!!
+{'loss': 0.1311, 'grad_norm': 3.132434606552124, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 30.69222912000005
+I/C: [1, 0.9862967934979732, 0.866413389834926, 0.84711587851203, 0.8262775349739495, 0.7771562835334322, 0.7328999762855207, 0.666833060337572, 0.5929443550587518, 0.42498477399564394, 0.34531358688252584, 0.28349753614594847, 0.20076063917847858, 0.14824425290211468, 0.11571863287673496, 0.096456524821964, 0.086841617053443, 0.07982184848809606, 0.07501374472337084, 0.0700252915493735, 0.0648678960931678, 0.06143071634674291, 0.057660850279762164, 0.05238752456507286, 0.04733245619810164, 0.04204805734040873, 0.032272890049727256, 0.026608352384460323, 0.02151923119040275, 0.014778144861427072, 0.007609963396149936, 0.0] 
+ BI/C: [2.706941260120195, 2.6350589957721637, 2.2892747302120657, 2.2122746159192315, 2.1336276890871093, 1.9887459501397424, 1.8609275371798402, 1.687670727296661, 1.504221283053245, 1.1222071659669777, 0.9483386801764904, 0.8207127828380775, 0.657585443200245, 0.563439520134895, 0.5135475088449375, 0.49200772595826275, 0.49005010419834827, 0.49371384810575397, 0.501911125417385, 0.5103557536971127, 0.5190962575618749, 0.5310377541537279, 0.5428791229711132, 0.5530260165420604, 0.5640630893127365, 0.5753728602171041, 0.5817070414270091, 0.5940119205333244, 0.607604706164736, 0.6200014131540661, 0.632724896464391, 0.6458333333333333] 
+ Grad_Magnitude: 2.706941260120195
+Iter: 70 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 31.13068953600005
+I/C: [1, 0.9862974865091788, 0.8664202275549073, 0.8471237676742718, 0.8262851326990867, 0.7771615912664769, 0.732906507671984, 0.6668425034448998, 0.5929565871090409, 0.4250055484467501, 0.34533592895285603, 0.28351969292799883, 0.200783372832773, 0.1482669020223719, 0.11574076084042778, 0.09647589661608405, 0.08685839833935236, 0.07983739997834172, 0.07502798250115568, 0.07003708685565563, 0.06487767899337403, 0.06143989468930626, 0.057669736512405985, 0.05239544238877107, 0.04734009075664539, 0.042054779001422515, 0.03227530327298798, 0.026609873019970202, 0.021520819857344078, 0.014779224354862622, 0.007610370040505541, 0.0] 
+ BI/C: [2.661510833559597, 2.5911864153430972, 2.251570704467034, 2.1762147672164667, 2.0992362629305283, 1.9571298284798375, 1.8318087838859007, 1.6618156340637658, 1.481800317017698, 1.1065649581050954, 0.9359662919326033, 0.8108303576551728, 0.6507903414947958, 0.5585726835350037, 0.5098654129433704, 0.4890305052644949, 0.48744971211054744, 0.4913985677902751, 0.499804867654341, 0.5084526978562744, 0.5173923765399556, 0.5294816567471965, 0.5414730071021603, 0.5517974153889905, 0.562998082205253, 0.5744660989177194, 0.5810379901038445, 0.5934848285785044, 0.607199122998919, 0.6197367968522796, 0.632595655866326, 0.6458333333333333] 
+ Grad_Magnitude: 2.661510833559597
+Iter: 71 Freeze: 0
+freeze!!
+{'loss': 0.0364, 'grad_norm': 0.27278339862823486, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 31.569149952000053
+I/C: [1, 0.9862975713083015, 0.8664215550953068, 0.8471253477519319, 0.8262868839803107, 0.7771634551127075, 0.7329087896772761, 0.6668454732501905, 0.5929603048539855, 0.4250111999308712, 0.3453422555847851, 0.2835262107330097, 0.20079023283604042, 0.14827391004160576, 0.11574771138413878, 0.09648228313321483, 0.08686418362787787, 0.07984296356964035, 0.07503326202723509, 0.0700418140984389, 0.06488194673789116, 0.06144401604152898, 0.05767351086219386, 0.05239877795402759, 0.04734332010767247, 0.0420574446580943, 0.03227635103721535, 0.026610382754915965, 0.021521340558021726, 0.014779548276388534, 0.0076104820265545286, 0.0] 
+ BI/C: [2.618012275970428, 2.549177917164849, 2.2154563395963645, 2.141673024719008, 2.066293438589322, 1.9268501882205922, 1.8039186824740205, 1.6370457300190968, 1.4603144643924182, 1.0915561878107036, 0.9240872927547252, 0.8013370564491817, 0.6442534708447858, 0.5538833767568138, 0.5063121582677365, 0.48615686363878263, 0.4849409993866225, 0.4891651171256358, 0.4977737506833795, 0.5066195738559917, 0.5157526776117175, 0.5279844184084262, 0.540119561360916, 0.5506149187132775, 0.561972696613542, 0.573592892655193, 0.580395779817857, 0.5929790100652806, 0.6068096390734338, 0.6194826611999327, 0.6324716257643396, 0.6458333333333333] 
+ Grad_Magnitude: 2.618012275970428
+Iter: 72 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 32.00761036800005
+I/C: [1, 0.9862968053729323, 0.8664210829602027, 0.8471248172460903, 0.8262860901611665, 0.7771615139683437, 0.7329068294061911, 0.6668436945719264, 0.5929588625638958, 0.4250108691420305, 0.34534229220103696, 0.2835264649489177, 0.20079081802411458, 0.14827471234570247, 0.11574858356735766, 0.09648299126783096, 0.08686475368467253, 0.07984348207381446, 0.07503374460533462, 0.07004220241589054, 0.0648822790702838, 0.061444317654479934, 0.05767380008107607, 0.052399039883377, 0.04734357535639954, 0.04205763242439784, 0.03227654708466439, 0.026610538155055898, 0.02152147769819738, 0.014779641692384554, 0.00761051026364702, 0.0] 
+ BI/C: [2.576326989018962, 2.5089184313891044, 2.180843019056849, 2.10856612163018, 2.034717891838738, 1.897824039173535, 1.7771816894060508, 1.613297994147784, 1.4397132675011253, 1.0771606653975785, 0.9126907787123699, 0.7922271812232148, 0.6379771027170411, 0.5493780210871662, 0.5028960581812544, 0.48339306738940824, 0.48252800620820413, 0.48701646772259616, 0.49581966332117466, 0.5048561849411928, 0.5141754805620689, 0.5265441178159886, 0.5388177241752534, 0.5494776357553256, 0.5609862654736726, 0.5727530606398322, 0.5797793472096743, 0.5924938833430202, 0.6064359849322648, 0.6192388876212975, 0.6323526861221649, 0.6458333333333333] 
+ Grad_Magnitude: 2.576326989018962
+Iter: 73 Freeze: 0
+freeze!!
+{'loss': 0.2564, 'grad_norm': 3.2058136463165283, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 32.44607078400005
+
+whole 0.14615347199999998
+self.total_flops 32.88453120000005
+{'loss': 0.0719, 'grad_norm': 0.6143941879272461, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 33.322991616000046
+I/C: [1, 0.9861900502669524, 0.8665946979812913, 0.847324631124072, 0.8265108092296012, 0.7774209802749992, 0.7332553642873845, 0.6673572852147154, 0.593691577828286, 0.4263310734285878, 0.34689913593640725, 0.2851923799200818, 0.2026417760435114, 0.15023789382818106, 0.1177664792013565, 0.09843313204143081, 0.08872375471674376, 0.08166773029236928, 0.076820422048583, 0.07171663357582822, 0.06640419055885878, 0.0629175150815719, 0.0590883917695202, 0.05366891258331414, 0.048572960539180275, 0.04297501276644566, 0.03284786709294577, 0.026985844403636317, 0.021888569921148494, 0.014997630194341275, 0.007690672705924339, 0.0] 
+ BI/C: [2.536345884309717, 2.470041594409657, 2.148067899939909, 2.077289069524177, 2.0049575152164096, 1.8705784512281323, 1.7523155721885386, 1.5916376052595087, 1.421505991645096, 1.066074989048203, 0.9048861549314653, 0.7867462750985694, 0.6354772259928786, 0.5486861297655491, 0.5032433717560045, 0.4841415726664361, 0.48335608674421193, 0.4879430408301452, 0.49677697580866176, 0.5057301554956541, 0.5149139973311798, 0.5272640764908284, 0.5395121579406805, 0.5500640237219098, 0.5615989142761441, 0.5730622588633674, 0.5798520449002084, 0.592444877982156, 0.6064654100970542, 0.6192238411403858, 0.6323148272744666, 0.6458333333333333] 
+ Grad_Magnitude: 2.536345884309717
+Iter: 76 Freeze: 0
+freeze!!
+
+whole 0.14615347199999998
+self.total_flops 33.761452032000044
+I/C: [1, 0.9861900409475027, 0.8665948023951023, 0.8473247624731024, 0.8265109517947629, 0.7774210178820572, 0.7332554252638631, 0.667357413783681, 0.5936917806040789, 0.4263314934757783, 0.34689962362398313, 0.28519289225549876, 0.20264232502635174, 0.15023846312245145, 0.11776704900370595, 0.09843364104652876, 0.08872420726766271, 0.08166815990728533, 0.07682083391084728, 0.07171699422637445, 0.06640451121906547, 0.0629178250477825, 0.059088685316231265, 0.053669168699578516, 0.04857320927695397, 0.042975217486707816, 0.03284794930317273, 0.02698589473675595, 0.021888621958062803, 0.0149976609950023, 0.007690680325732714, 0.0] 
+ BI/C: [2.497968448854387, 2.4329826150516682, 2.1161962045606604, 2.04680361492892, 1.9758817568645999, 1.8438509685054705, 1.727692802602882, 1.5697614231951786, 1.4025194469109754, 1.052782128307565, 0.8943475824963028, 0.7783105276582353, 0.6296456007387419, 0.5444829775822708, 0.5000430140142117, 0.4815453391275598, 0.48108684693615905, 0.4859195643428375, 0.49493501207748725, 0.5040678515812607, 0.5134278847673133, 0.5259062922849442, 0.5382842387856251, 0.5489916094207242, 0.560667172116716, 0.5722722283204662, 0.5792743562774096, 0.5919918372072283, 0.6061154529333925, 0.6189960415723014, 0.6322041538014646, 0.6458333333333333] 
+ Grad_Magnitude: 2.497968448854387
+Iter: 77 Freeze: 0
+freeze!!
+{'loss': 0.0024, 'grad_norm': 0.02147739753127098, 'learning_rate': 5e-05, 'epoch': 0.04}
+
+whole 0.14615347199999998
+self.total_flops 34.19991244800004
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Mon Feb 17 11:36:36 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:41:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2654378
+            GPU Utilization               : 75 %
+            Memory Utilization            : 35 %
+            Max memory usage              : 56486 MiB
+            Time                          : 0 ms
+            Is Running                    : 1
+
+Mon Feb 17 11:36:37 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  |   00000000:41:00.0 Off |                    0 |
+| N/A   69C    P0            471W /  500W |   56495MiB /  81920MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   2654378      C   ...cratch/budgeted_CL_llava/bin/python      56486MiB |
++-----------------------------------------------------------------------------------------+

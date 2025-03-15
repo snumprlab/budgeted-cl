@@ -1,0 +1,71 @@
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Mon Feb 17 10:04:36 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:41:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2620372
+            GPU Utilization               : 24 %
+            Memory Utilization            : 9 %
+            Max memory usage              : 81326 MiB
+            Time                          : 39475 ms
+            Is Running                    : 0
+        Process ID                        : 2622069
+            GPU Utilization               : 23 %
+            Memory Utilization            : 8 %
+            Max memory usage              : 81326 MiB
+            Time                          : 40034 ms
+            Is Running                    : 0
+        Process ID                        : 2622860
+            GPU Utilization               : 57 %
+            Memory Utilization            : 26 %
+            Max memory usage              : 56786 MiB
+            Time                          : 77095 ms
+            Is Running                    : 0
+        Process ID                        : 2624190
+            GPU Utilization               : 3 %
+            Memory Utilization            : 0 %
+            Max memory usage              : 14648 MiB
+            Time                          : 16376 ms
+            Is Running                    : 0
+        Process ID                        : 2625380
+            GPU Utilization               : 24 %
+            Memory Utilization            : 9 %
+            Max memory usage              : 81326 MiB
+            Time                          : 37863 ms
+            Is Running                    : 0
+        Process ID                        : 2626553
+            GPU Utilization               : 49 %
+            Memory Utilization            : 21 %
+            Max memory usage              : 81326 MiB
+            Time                          : 59869 ms
+            Is Running                    : 0
+
+Mon Feb 17 10:04:36 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  |   00000000:41:00.0 Off |                    0 |
+| N/A   25C    P0             62W /  500W |       1MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

@@ -1,0 +1,95 @@
+# seed 1
+task_splits
+[array(['sit_on_toilet', 'clean_toilet', 'squeeze_orange', 'hold_carrot',
+       'lie_on_bed', 'peel_banana', 'ride_bicycle', 'ride_skateboard',
+       'type_on_laptop', 'sit_on_bed', 'type_on_keyboard', 'hold_dog',
+       'ride_motorcycle', 'sit_at_dining_table'], dtype='<U20'), array(['eat_donut', 'control_tv', 'hold_orange', 'wash_car',
+       'repair_laptop', 'hug_dog', 'spin_sports_ball', 'wash_motorcycle',
+       'hug_person', 'pet_cat', 'feed_bird', 'hold_donut',
+       'stand_under_umbrella', 'kick_sports_ball'], dtype='<U20'), array(['hold_bottle', 'walk_dog', 'lick_or_sip_spoon', 'hold_kite',
+       'cut_cake', 'fly_kite', 'jump_motorcycle', 'inspect_motorcycle',
+       'walk_bicycle', 'ride_snowboard', 'hold_cake', 'watch_tv',
+       'hold_cup', 'hold_spoon'], dtype='<U20'), array(['drink_with_cup', 'drive_car', 'wash_dog', 'clean_refrigerator',
+       'hold_bird', 'clean_keyboard', 'hold_bicycle', 'cut_with_knife',
+       'eat_orange', 'eat_banana', 'eat_at_dining_table', 'eat_sandwich',
+       'sit_on_motorcycle', 'ride_elephant'], dtype='<U20')]
+train_eval_point
+[16051, 656, 3234, 2906]
+
+# seed 2
+task_splits
+[array(['repair_laptop', 'walk_bicycle', 'wash_dog', 'lie_on_bed',
+       'walk_dog', 'hug_person', 'clean_keyboard', 'jump_motorcycle',
+       'clean_refrigerator', 'sit_on_bed', 'inspect_motorcycle',
+       'eat_banana', 'eat_donut', 'feed_bird'], dtype='<U20'), array(['stand_under_umbrella', 'wash_car', 'hold_kite', 'squeeze_orange',
+       'hold_bottle', 'wash_motorcycle', 'sit_at_dining_table',
+       'type_on_laptop', 'eat_sandwich', 'kick_sports_ball',
+       'ride_skateboard', 'hold_bird', 'clean_toilet', 'hold_spoon'],
+      dtype='<U20'), array(['hold_carrot', 'drink_with_cup', 'fly_kite', 'ride_bicycle',
+       'hold_orange', 'cut_with_knife', 'ride_motorcycle', 'peel_banana',
+       'cut_cake', 'control_tv', 'ride_elephant', 'hold_cup', 'hug_dog',
+       'sit_on_toilet'], dtype='<U20'), array(['hold_dog', 'type_on_keyboard', 'lick_or_sip_spoon', 'pet_cat',
+       'drive_car', 'watch_tv', 'eat_orange', 'hold_cake',
+       'sit_on_motorcycle', 'hold_donut', 'eat_at_dining_table',
+       'spin_sports_ball', 'hold_bicycle', 'ride_snowboard'], dtype='<U20')]
+train_eval_point
+[3737, 1084, 14468, 3558]
+
+
+# seed 3
+task_splits
+[array(['eat_sandwich', 'pet_cat', 'eat_banana', 'wash_dog',
+       'squeeze_orange', 'watch_tv', 'feed_bird', 'hold_spoon',
+       'walk_dog', 'drink_with_cup', 'sit_on_toilet', 'hold_cake',
+       'ride_bicycle', 'kick_sports_ball'], dtype='<U20'), array(['wash_motorcycle', 'cut_cake', 'hug_person', 'hold_bird',
+       'hold_bicycle', 'hold_kite', 'eat_orange', 'drive_car',
+       'spin_sports_ball', 'ride_snowboard', 'stand_under_umbrella',
+       'wash_car', 'cut_with_knife', 'repair_laptop'], dtype='<U20'), array(['type_on_laptop', 'clean_refrigerator', 'inspect_motorcycle',
+       'lick_or_sip_spoon', 'peel_banana', 'clean_toilet', 'hold_donut',
+       'ride_elephant', 'hold_bottle', 'hug_dog', 'fly_kite',
+       'ride_skateboard', 'jump_motorcycle', 'hold_cup'], dtype='<U20'), array(['lie_on_bed', 'ride_motorcycle', 'walk_bicycle',
+       'type_on_keyboard', 'sit_at_dining_table', 'sit_on_motorcycle',
+       'eat_donut', 'hold_carrot', 'hold_dog', 'clean_keyboard',
+       'eat_at_dining_table', 'control_tv', 'hold_orange', 'sit_on_bed'],
+      dtype='<U20')]
+train_eval_point
+[1485, 494, 2900, 17968]
+
+# seed 4
+task_splits
+[array(['cut_cake', 'hold_cup', 'wash_motorcycle', 'hold_orange',
+       'eat_sandwich', 'inspect_motorcycle', 'repair_laptop',
+       'lie_on_bed', 'drink_with_cup', 'sit_on_motorcycle', 'drive_car',
+       'hold_spoon', 'eat_orange', 'fly_kite'], dtype='<U20'), array(['ride_elephant', 'hug_dog', 'hold_bird', 'hold_bottle',
+       'hold_donut', 'peel_banana', 'hold_bicycle', 'jump_motorcycle',
+       'hold_cake', 'sit_at_dining_table', 'hug_person',
+       'lick_or_sip_spoon', 'wash_dog', 'feed_bird'], dtype='<U20'), array(['eat_donut', 'hold_carrot', 'pet_cat', 'stand_under_umbrella',
+       'walk_dog', 'sit_on_toilet', 'walk_bicycle', 'watch_tv',
+       'clean_toilet', 'type_on_laptop', 'type_on_keyboard', 'hold_dog',
+       'clean_keyboard', 'control_tv'], dtype='<U20'), array(['sit_on_bed', 'ride_motorcycle', 'ride_bicycle', 'wash_car',
+       'kick_sports_ball', 'spin_sports_ball', 'ride_skateboard',
+       'eat_banana', 'eat_at_dining_table', 'hold_kite', 'ride_snowboard',
+       'clean_refrigerator', 'cut_with_knife', 'squeeze_orange'],
+      dtype='<U20')]
+train_eval_point
+[1335, 3355, 1562, 16595]
+
+# seed 5
+task_splits
+[array(['hold_kite', 'ride_elephant', 'hold_carrot', 'lie_on_bed',
+       'wash_car', 'type_on_laptop', 'sit_on_bed', 'hold_orange',
+       'drink_with_cup', 'sit_at_dining_table', 'clean_toilet',
+       'type_on_keyboard', 'control_tv', 'lick_or_sip_spoon'],
+      dtype='<U20'), array(['hold_bottle', 'peel_banana', 'cut_cake', 'hold_dog',
+       'clean_keyboard', 'cut_with_knife', 'wash_motorcycle',
+       'ride_snowboard', 'sit_on_motorcycle', 'pet_cat', 'watch_tv',
+       'hug_dog', 'inspect_motorcycle', 'eat_donut'], dtype='<U20'), array(['walk_bicycle', 'hold_spoon', 'hold_cake', 'jump_motorcycle',
+       'hold_donut', 'hold_cup', 'spin_sports_ball', 'clean_refrigerator',
+       'eat_orange', 'feed_bird', 'squeeze_orange', 'sit_on_toilet',
+       'wash_dog', 'hold_bicycle'], dtype='<U20'), array(['eat_sandwich', 'drive_car', 'walk_dog', 'kick_sports_ball',
+       'hug_person', 'ride_skateboard', 'ride_bicycle',
+       'eat_at_dining_table', 'eat_banana', 'hold_bird',
+       'ride_motorcycle', 'stand_under_umbrella', 'fly_kite',
+       'repair_laptop'], dtype='<U20')]
+train_eval_point
+[1925, 1731, 2636, 16555]

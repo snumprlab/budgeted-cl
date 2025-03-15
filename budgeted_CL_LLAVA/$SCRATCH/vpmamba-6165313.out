@@ -1,0 +1,81 @@
+Processing 1 1
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task1_evaltask1_Bongard-OpenWorld.json
+Skip already evaluated 699
+Processing 2 1
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task2_evaltask1_Bongard-OpenWorld.json
+Skip already evaluated 699
+Processing 2 2
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task2_evaltask2_Bongard-OpenWorld.json
+Skip already evaluated 314
+Processing 3 1
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task3_evaltask1_Bongard-OpenWorld.json
+Skip already evaluated 699
+Processing 3 2
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task3_evaltask2_Bongard-OpenWorld.json
+Skip already evaluated 314
+Processing 3 3
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task3_evaltask3_Bongard-OpenWorld.json
+Skip already evaluated 629
+Processing 4 1
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task4_evaltask1_Bongard-OpenWorld.json
+Skip already evaluated 699
+Processing 4 2
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task4_evaltask2_Bongard-OpenWorld.json
+Skip already evaluated 314
+Processing 4 3
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task4_evaltask3_Bongard-OpenWorld.json
+Skip already evaluated 629
+Processing 4 4
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task4_evaltask4_Bongard-OpenWorld.json
+Skip already evaluated 489
+Processing 5 1
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task5_evaltask1_Bongard-OpenWorld.json
+Skip already evaluated 699
+Processing 5 2
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task5_evaltask2_Bongard-OpenWorld.json
+Skip already evaluated 314
+Processing 5 3
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task5_evaltask3_Bongard-OpenWorld.json
+Skip already evaluated 629
+Processing 5 4
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task5_evaltask4_Bongard-OpenWorld.json
+Skip already evaluated 489
+Processing 5 5
+start evaluating ./eval_results/VLM/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed1/task5_evaltask5_Bongard-OpenWorld.json
+Skip already evaluated 279
+All datasets processed.
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Fri Feb 21 12:29:24 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:28:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes                   : None
+
+Fri Feb 21 12:29:24 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Quadro RTX 8000                On  |   00000000:28:00.0 Off |                    0 |
+| 33%   41C    P8             32W /  235W |       1MiB /  46080MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

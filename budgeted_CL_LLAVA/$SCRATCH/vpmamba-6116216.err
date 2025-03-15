@@ -1,0 +1,18 @@
+[=== Module anaconda/3 loaded ===]
+[=== Module cudatoolkit/12.6.0 loaded ===]
+/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+INFO:datasets:PyTorch version 2.2.1+cu118 available.
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:03,  1.86s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:04<00:02,  2.43s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.28s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:06<00:00,  2.26s/it]
+Traceback (most recent call last):
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/eval_VLM_CL.py", line 443, in <module>
+    main()
+  File "/network/scratch/s/sparsha.mishra/smh/budgeted_CL_LLAVA/eval_VLM_CL.py", line 374, in main
+    server_state_dict = torch.load(f'./checkpoints_{training_args.note}/seed{training_args.seed}/{training_args.note}_task{task_num+1}.pth', map_location='cpu')
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/serialization.py", line 998, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/serialization.py", line 445, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/lib/python3.10/site-packages/torch/serialization.py", line 426, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: './checkpoints_Bongard-HOI_ma_text_num5_iter0.5_infinite_ours/seed4/Bongard-HOI_ma_text_num5_iter0.5_infinite_ours_task1.pth'

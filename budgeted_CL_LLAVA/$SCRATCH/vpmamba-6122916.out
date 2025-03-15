@@ -1,0 +1,46 @@
+[2025-02-17 09:36:37,981] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-17 09:36:39,392] [WARNING] [runner.py:202:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected CUDA_VISIBLE_DEVICES=0 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2025-02-17 09:36:39,398] [INFO] [runner.py:568:main] cmd = /home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=26006 --enable_each_rank_log=None main_new_llava_trainer.py --deepspeed ./deepspeed_script/zero2.json --model_name_or_path ./llava-v1.5-7b --model_name_for_dataarg ./llava-v1.5-7b --model_type llama --version v1 --model_max_length 10000 --vision_tower ./clip-vit-large-patch14-336 --gradient_checkpointing True --num_train_epochs 1 --gradient_accumulation_steps 1 --bits 16 --bf16 True --tf32 True --dataset Bongard-OpenWorld --num_set 11 --data_type ma_ver3_more --mode VLM --dataloader_num_workers 2 --seed 3 --optim adamw_torch --lr_scheduler_type constant --weight_decay 0. --warmup_ratio 0.03 --learning_rate 5e-5 --per_gpu_train_batch_size 2 --mm_projector_lr 0 --evaluation_strategy no --save_strategy no --logging_steps 2 --num_iter 0.5 --note Bongard-HOI_ma_ver3_more_num11_iter0.5_infinite_ours --ours --output_dir ./results/test/
+[2025-02-17 09:36:58,777] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-17 09:37:00,134] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0]}
+[2025-02-17 09:37:00,134] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=1, node_rank=0
+[2025-02-17 09:37:00,134] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2025-02-17 09:37:00,135] [INFO] [launch.py:163:main] dist_world_size=1
+[2025-02-17 09:37:00,135] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+[2025-02-17 09:37:00,138] [INFO] [launch.py:253:main] process 2619615 spawned with command: ['/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python', '-u', 'main_new_llava_trainer.py', '--local_rank=0', '--deepspeed', './deepspeed_script/zero2.json', '--model_name_or_path', './llava-v1.5-7b', '--model_name_for_dataarg', './llava-v1.5-7b', '--model_type', 'llama', '--version', 'v1', '--model_max_length', '10000', '--vision_tower', './clip-vit-large-patch14-336', '--gradient_checkpointing', 'True', '--num_train_epochs', '1', '--gradient_accumulation_steps', '1', '--bits', '16', '--bf16', 'True', '--tf32', 'True', '--dataset', 'Bongard-OpenWorld', '--num_set', '11', '--data_type', 'ma_ver3_more', '--mode', 'VLM', '--dataloader_num_workers', '2', '--seed', '3', '--optim', 'adamw_torch', '--lr_scheduler_type', 'constant', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--learning_rate', '5e-5', '--per_gpu_train_batch_size', '2', '--mm_projector_lr', '0', '--evaluation_strategy', 'no', '--save_strategy', 'no', '--logging_steps', '2', '--num_iter', '0.5', '--note', 'Bongard-HOI_ma_ver3_more_num11_iter0.5_infinite_ours', '--ours', '--output_dir', './results/test/']
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Mon Feb 17 09:37:11 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:41:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes                   : None
+
+Mon Feb 17 09:37:11 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  |   00000000:41:00.0 Off |                    0 |
+| N/A   25C    P0             62W /  500W |       5MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

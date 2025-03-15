@@ -1,0 +1,910 @@
+[INFO] TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'gradient_accumulation_kwargs': None},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=True,
+bf16_full_eval=False,
+bits=16,
+cache_dir=None,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=2,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+decay_ratio=1.0,
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+double_quant=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_period=100,
+eval_point=100_200_300,
+eval_server=True,
+eval_steps=None,
+eval_temp=0.2,
+evaluation_strategy=no,
+f_period=None,
+final_lr=1e-06,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_mm_mlp_adapter=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+future_steps=4,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+group_by_modality_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+is_eval=False,
+is_wsd=None,
+iter_per_round=1,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./results/test/runs/Feb20_06-09-04_cn-l007.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=2,
+logging_strategy=steps,
+lora_alpha=256,
+lora_bias=none,
+lora_dropout=0.05,
+lora_enable=True,
+lora_r=128,
+lora_weight_path=,
+lr_scheduler_kwargs={},
+lr_scheduler_type=constant,
+max_grad_norm=1.0,
+max_steps=-1,
+memory_size=500,
+metric_for_best_model=None,
+mm_final_lr=1e-06,
+mm_projector_lr=5e-05,
+mode=VLM,
+model_max_length=10000,
+mp_parameters=,
+mpt_attn_impl=triton,
+neftune_noise_alpha=None,
+no_cuda=False,
+note=Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours,
+num_clients=5,
+num_iter=100,
+num_rounds=20,
+num_train_epochs=1.0,
+online_iter=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./results/test/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+prompt_num=100,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_type=nf4,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+round_to_eval=None,
+run_name=./results/test/,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+scenario=1,
+seed=2,
+skip_memory_metrics=True,
+split_batches=None,
+state_dir=./checkpoints,
+temp_batchsize=2,
+tf32=True,
+topk=1,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+transform_on_gpu=True,
+transform_on_worker=False,
+transforms=randaug,
+use_cpu=False,
+use_ipex=False,
+use_kornia=True,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.0,
+)
+[INFO] Set the device (cuda:0)
+[INFO] load ./checkpoints_Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours/seed2/Bongard-OpenWorld_ma_ver3_more_text_num5_iter0.5_infinite_ours_task1.pth
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug rests on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug rests on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a flower.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug rests on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug hanging somewhere.
+
+gt A ladybug on a green leaf. answer A ladybug on a leaf.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lighthouse on the coast.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A pond in the middle of mountains.
+
+gt A pond surrounded by trees. answer A pond in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lily pond in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lily pond in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lighthouse on the coast.
+
+gt A pond surrounded by trees. answer A lighthouse on the coast.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lighthouse on the coast.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lighthouse on the coast.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of flowers.
+
+gt A pond surrounded by trees. answer A lake in the middle of a garden.
+
+gt A pond surrounded by trees. answer A lake in the middle of a forest.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A pond in the middle of a garden.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A pond in the middle of rocks.
+
+gt A pond surrounded by trees. answer A pond in the middle of rocks.
+
+gt A pond surrounded by trees. answer A lake in the middle of mountains.
+
+gt A pond surrounded by trees. answer A pond in the middle of a garden.
+
+gt A pond surrounded by trees. answer A pond in the middle of a garden.
+
+gt A pond surrounded by trees. answer A duck pond in the middle of a forest.
+
+gt A pond surrounded by trees. answer A pond in the middle of rocks.
+
+gt The sun setting at the top of mountains. answer A lone hiker rises above the clouds.
+
+gt The sun setting at the top of mountains. answer A sunset over the mountains.
+
+gt The sun setting at the top of mountains. answer A man riding through the forest.
+
+gt The sun setting at the top of mountains. answer A lone hiker hikes through the forest.
+
+gt The sun setting at the top of mountains. answer A sunset over the mountains.
+
+gt The sun setting at the top of mountains. answer A lone hiker hikes through the wilder
+
+gt The sun setting at the top of mountains. answer A lone hiker hikes through the wilderness.
+
+gt The sun setting at the top of mountains. answer A lone hiker standing on the edge of a cliff.
+
+gt The sun setting at the top of mountains. answer A lighthouse on the coast.
+
+gt The sun setting at the top of mountains. answer A bench sits on the hillside.
+
+gt The sun setting at the top of mountains. answer A bench overlooking the sunset.
+
+gt The sun setting at the top of mountains. answer A bench sits on the side of a mountain.
+
+gt The sun setting at the top of mountains. answer A bird of prey riding through the sky.
+
+gt The sun setting at the top of mountains. answer A bird riding through the sky.
+
+gt The sun setting at the top of mountains. answer A beautiful sunset.
+
+gt The sun setting at the top of mountains. answer A lone hiker standing on top of
+
+gt The sun setting at the top of mountains. answer A lighthouse on the coast.
+
+gt The sun setting at the top of mountains. answer A lone hiker standing on top of a mountain.
+
+gt The sun setting at the top of mountains. answer A lighthouse on the coast.
+
+gt The sun setting at the top of mountains. answer A bench overlooking the mountains.
+
+gt The sun setting at the top of mountains. answer A bench overlooking the sunrise.
+
+gt The sun setting at the top of mountains. answer A beautiful sunset over the mountains.
+
+gt The sun setting at the top of mountains. answer A bird riding through the sky.
+
+gt The sun setting at the top of mountains. answer A bird flying through the sky.
+
+gt The sun setting at the top of mountains. answer A beautiful sunset.
+
+gt The sun setting at the top of mountains. answer A person riding through the air.
+
+gt The sun setting at the top of mountains. answer A person rises above the clouds.
+
+gt The sun setting at the top of mountains. answer A person riding through the air.
+
+gt The sun setting at the top of mountains. answer A bird of prey riding through the air.
+
+gt The sun setting at the top of mountains. answer A person riding through the air.
+
+gt The sun setting at the top of mountains. answer A lighthouse on the coast.
+
+gt The sun setting at the top of mountains. answer A raptor flying high above the land.
+
+gt The sun setting at the top of mountains. answer A raptor flying through the air.
+
+gt The sun setting at the top of mountains. answer A sunset over the mountains.
+
+gt The sun setting at the top of mountains. answer A bird riding through the sky.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A small town sits at the foot of mountains.
+
+gt A town surrounded by mountains. answer A town sits at the base of mountains.
+
+gt A town surrounded by mountains. answer A town in the middle of mountains.
+
+gt A town surrounded by mountains. answer A small town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A small town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town in the mountains.
+
+gt A town surrounded by mountains. answer A small town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A mountain village at the foot of a mountain.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A street in the middle of mountains.
+
+gt A town surrounded by mountains. answer A street in the middle of mountains.
+
+gt A town surrounded by mountains. answer A small town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A city sits at the bottom of mountains.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A town surrounded by mountains. answer A town nestled in the mountains.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A town surrounded by mountains. answer A small village nestled in the mountains.
+
+gt A town surrounded by mountains. answer A mountain village by the lake shores.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A person playing a guitar. answer A man playing a guitar solo.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a necklace.
+
+gt A girl is holding a doll. answer A little girl wearing a ponytail.
+
+gt A girl is holding a doll. answer A little girl wearing a shirt.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a hat.
+
+gt A girl is holding a doll. answer A little girl wearing a flower crown.
+
+gt A girl is holding a doll. answer A little girl wearing a flower crown.
+
+gt A girl is holding a doll. answer A little girl wearing a flower crown.
+
+gt A girl is holding a doll. answer A little girl wearing a flower crown.
+
+gt A girl is holding a doll. answer A little girl wearing a flower crown.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a pink shirt.
+
+gt A girl is holding a doll. answer A little girl wearing a necklace.
+
+gt A girl is holding a doll. answer A little girl wearing a dress.
+
+gt A girl is holding a doll. answer A little girl wearing a striped shirt.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a mask.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A stethoscope hanging somewhere.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a white shirt.
+
+gt Doctor wearing a stethoscope. answer A hand wearing a watch.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A man wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A woman wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a face mask.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A nurse wearing a stethoscope.
+
+gt Doctor wearing a stethoscope. answer A doctor wearing a stethoscope.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A woman wearing a flower crown.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding veil.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding veil.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding veil.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding dress.
+
+gt A bride holding colored flowers. answer A woman wearing a wedding veil.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A girl wearing a flower crown.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt A bride holding colored flowers. answer A bride wearing a veil.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A person holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man wearing a sweater.
+
+gt Elderly person using a cell phone. answer A man wearing glasses.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man wearing a necklace.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A person holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A person holding a smart phone.
+
+gt Elderly person using a cell phone. answer A person holding a smart phone.
+
+gt Elderly person using a cell phone. answer A man holding a smart phone.
+
+gt Elderly person using a cell phone. answer A person holding a smart phone.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the surf.
+
+gt People surfing in the sea. answer The lighthouse on the coast.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer A hot air balloon floating above the water.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer The man having fun in the ocean.
+
+gt People surfing in the sea. answer People having fun in the ocean.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the air above the water.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+gt People surfing in the sea. answer A man riding through the ocean waves.
+
+gt People surfing in the sea. answer The man riding through the waves.
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Thu Feb 20 06:12:17 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:CA:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 3721370
+            GPU Utilization               : 85 %
+            Memory Utilization            : 60 %
+            Max memory usage              : 22740 MiB
+            Time                          : 194921 ms
+            Is Running                    : 0
+
+Thu Feb 20 06:12:17 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:CA:00.0 Off |                    0 |
+| N/A   53C    P0            110W /  300W |       1MiB /  46068MiB |      8%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

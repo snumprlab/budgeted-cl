@@ -1,0 +1,1094 @@
+[2025-02-13 02:43:47,452] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-13 02:43:50,352] [WARNING] [runner.py:202:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+Detected CUDA_VISIBLE_DEVICES=0 but ignoring it because one or several of --include/--exclude/--num_gpus/--num_nodes cl args were used. If you want to use CUDA_VISIBLE_DEVICES don't pass any of these arguments to deepspeed.
+[2025-02-13 02:43:50,358] [INFO] [runner.py:568:main] cmd = /home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMF19 --master_addr=127.0.0.1 --master_port=26001 --enable_each_rank_log=None main_new_llava_trainer.py --deepspeed ./deepspeed_script/zero2.json --model_name_or_path ./llava-v1.5-7b --model_name_for_dataarg ./llava-v1.5-7b --model_type llama --version v1 --model_max_length 10000 --vision_tower ./clip-vit-large-patch14-336 --gradient_checkpointing True --num_train_epochs 1 --gradient_accumulation_steps 1 --bits 16 --bf16 True --tf32 True --dataset Bongard-HOI --num_set 5 --data_type ma_text --mode VLM --dataloader_num_workers 2 --seed 1 --optim adamw_torch --lr_scheduler_type constant --weight_decay 0. --warmup_ratio 0.03 --learning_rate 5e-5 --per_gpu_train_batch_size 2 --mm_projector_lr 0 --evaluation_strategy no --save_strategy no --logging_steps 2 --num_iter 0.5 --note Bongard-HOI_ma_text_num5_iter0.5_infinite_base --output_dir ./results/test/
+[2025-02-13 02:44:04,302] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-13 02:44:05,720] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0]}
+[2025-02-13 02:44:05,720] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=1, node_rank=0
+[2025-02-13 02:44:05,720] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0]})
+[2025-02-13 02:44:05,720] [INFO] [launch.py:163:main] dist_world_size=1
+[2025-02-13 02:44:05,720] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0
+[2025-02-13 02:44:05,724] [INFO] [launch.py:253:main] process 1927164 spawned with command: ['/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python', '-u', 'main_new_llava_trainer.py', '--local_rank=0', '--deepspeed', './deepspeed_script/zero2.json', '--model_name_or_path', './llava-v1.5-7b', '--model_name_for_dataarg', './llava-v1.5-7b', '--model_type', 'llama', '--version', 'v1', '--model_max_length', '10000', '--vision_tower', './clip-vit-large-patch14-336', '--gradient_checkpointing', 'True', '--num_train_epochs', '1', '--gradient_accumulation_steps', '1', '--bits', '16', '--bf16', 'True', '--tf32', 'True', '--dataset', 'Bongard-HOI', '--num_set', '5', '--data_type', 'ma_text', '--mode', 'VLM', '--dataloader_num_workers', '2', '--seed', '1', '--optim', 'adamw_torch', '--lr_scheduler_type', 'constant', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--learning_rate', '5e-5', '--per_gpu_train_batch_size', '2', '--mm_projector_lr', '0', '--evaluation_strategy', 'no', '--save_strategy', 'no', '--logging_steps', '2', '--num_iter', '0.5', '--note', 'Bongard-HOI_ma_text_num5_iter0.5_infinite_base', '--output_dir', './results/test/']
+[2025-02-13 02:44:25,165] [INFO] [real_accelerator.py:191:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2025-02-13 02:44:25,847] [INFO] [comm.py:637:init_distributed] cdb=None
+[2025-02-13 02:44:25,847] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[INFO] TrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'gradient_accumulation_kwargs': None},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=True,
+bf16_full_eval=False,
+bits=16,
+cache_dir=None,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=2,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+decay_ratio=1.0,
+deepspeed=./deepspeed_script/zero2.json,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+double_quant=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_period=100,
+eval_point=100_200_300,
+eval_server=True,
+eval_steps=None,
+eval_temp=0.2,
+evaluation_strategy=no,
+f_period=None,
+final_lr=1e-06,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_mm_mlp_adapter=False,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+future_steps=4,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+group_by_modality_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+is_eval=False,
+is_wsd=None,
+iter_per_round=1,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=./results/test/runs/Feb13_02-44-25_cn-l007.server.mila.quebec,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=2,
+logging_strategy=steps,
+lora_alpha=256,
+lora_bias=none,
+lora_dropout=0.05,
+lora_enable=True,
+lora_r=128,
+lora_weight_path=,
+lr_scheduler_kwargs={},
+lr_scheduler_type=constant,
+max_grad_norm=1.0,
+max_steps=-1,
+memory_size=500,
+metric_for_best_model=None,
+mm_final_lr=1e-06,
+mm_projector_lr=0.0,
+mode=VLM,
+model_max_length=10000,
+mp_parameters=,
+mpt_attn_impl=triton,
+neftune_noise_alpha=None,
+no_cuda=False,
+note=Bongard-HOI_ma_text_num5_iter0.5_infinite_base,
+num_clients=5,
+num_iter=0.5,
+num_rounds=20,
+num_train_epochs=1.0,
+online_iter=1.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=./results/test/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=8,
+prediction_loss_only=False,
+prompt_num=100,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_type=nf4,
+ray_scope=last,
+remove_unused_columns=False,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+round_to_eval=None,
+run_name=./results/test/,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+scenario=1,
+seed=1,
+skip_memory_metrics=True,
+split_batches=None,
+state_dir=./checkpoints,
+temp_batchsize=2,
+tf32=True,
+topk=1,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+transform_on_gpu=True,
+transform_on_worker=False,
+transforms=randaug,
+use_cpu=False,
+use_ipex=False,
+use_kornia=True,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.03,
+warmup_steps=0,
+weight_decay=0.0,
+)
+!! collections/Bongard-HOI/ma_text/5_set/Bongard-HOI_train_seed1.json
+num_train_samples 3604 num_test_samples 1234
+eval_point
+[ 574 1999 2611 2910 3604]
+model loading done
+len(train_datalists) 3604 len(datalists) 3604
+len(curr_train_datalists) 574
+seen_action_object 10
+[('kick', 'sports_ball'), ('wash', 'motorcycle'), ('lie_on', 'bed'), ('control', 'tv'), ('wash', 'car'), ('squeeze', 'orange'), ('sit_on', 'toilet'), ('ride', 'snowboard'), ('clean', 'toilet'), ('pet', 'cat')]
+load skip
+@@vanila@@
+self.num_blocks 31
+Warning: module Embedding is treated as a zero-op.
+Warning: module Dropout is treated as a zero-op.
+Warning: module ModuleDict is treated as a zero-op.
+Warning: module ParameterDict is treated as a zero-op.
+Warning: module Linear is treated as a zero-op.
+Warning: module LlamaRotaryEmbedding is treated as a zero-op.
+Warning: module LlamaFlashAttention2 is treated as a zero-op.
+Warning: module SiLU is treated as a zero-op.
+Warning: module LlamaMLP is treated as a zero-op.
+Warning: module LlamaRMSNorm is treated as a zero-op.
+Warning: module LlamaDecoderLayer is treated as a zero-op.
+Warning: module CLIPVisionEmbeddings is treated as a zero-op.
+Warning: module LayerNorm is treated as a zero-op.
+Warning: module CLIPAttention is treated as a zero-op.
+Warning: module QuickGELUActivation is treated as a zero-op.
+Warning: module CLIPMLP is treated as a zero-op.
+Warning: module CLIPEncoderLayer is treated as a zero-op.
+Warning: module CLIPEncoder is treated as a zero-op.
+Warning: module CLIPVisionTransformer is treated as a zero-op.
+Warning: module CLIPVisionModel is treated as a zero-op.
+Warning: module CLIPVisionTower is treated as a zero-op.
+Warning: module LlavaLlamaModel is treated as a zero-op.
+Warning: module LlavaLlamaForCausalLM is treated as a zero-op.
+Warning: module LoraModel is treated as a zero-op.
+Warning: module PeftModelForCausalLM is treated as a zero-op.
+Check! input_ids torch.Size([2, 157])
+Check! labels torch.Size([2, 157])
+Check! attention_mask torch.Size([2, 157])
+Check! images torch.Size([2, 5, 3, 336, 336])
+conv input shape torch.Size([10, 3, 336, 336]) output shape torch.Size([10, 1024, 24, 24])
+in_channels 3 out_channels 1024 filters_per_channel 1024 kernel_dim [14, 14] output_dims [24, 24]
+
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 577, 1024]) output shape torch.Size([10, 577, 4096])
+matrix input shape torch.Size([10, 577, 4096]) output shape torch.Size([10, 577, 1024])
+matrix input shape torch.Size([10, 576, 1024]) output shape torch.Size([10, 576, 4096])
+matrix input shape torch.Size([10, 576, 4096]) output shape torch.Size([10, 576, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 11008])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 11008]) output shape torch.Size([2, 157, 128])
+matrix input shape torch.Size([2, 157, 128]) output shape torch.Size([2, 157, 4096])
+matrix input shape torch.Size([2, 157, 4096]) output shape torch.Size([2, 157, 32000])
+!!!!!!!!!!!
+forward_flops_count 7547090944.0 backward_flops_count 15070588928.0
+!!!!!!!!!!!
+blockwise_backward_flops 32
+[0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999, 0.004567295999999999]
+cumulative_backward_flops
+[0.004567295999999999, 0.009134591999999999, 0.013701887999999999, 0.018269183999999997, 0.022836479999999996, 0.027403775999999994, 0.031971071999999996, 0.036538367999999995, 0.04110566399999999, 0.04567295999999999, 0.05024025599999999, 0.05480755199999999, 0.05937484799999999, 0.06394214399999999, 0.06850943999999999, 0.07307673599999999, 0.07764403199999999, 0.08221132799999999, 0.08677862399999998, 0.09134591999999998, 0.09591321599999998, 0.10048051199999998, 0.10504780799999998, 0.10961510399999998, 0.11418239999999998, 0.11874969599999997, 0.12331699199999997, 0.12788428799999998, 0.13245158399999998, 0.13701887999999998, 0.14158617599999998]
+[2025-02-13 02:45:09,789] [INFO] [launch.py:316:sigkill_handler] Killing subprocess 1927164
+[2025-02-13 02:45:09,789] [ERROR] [launch.py:322:sigkill_handler] ['/home/mila/s/sparsha.mishra/scratch/budgeted_CL_llava/bin/python', '-u', 'main_new_llava_trainer.py', '--local_rank=0', '--deepspeed', './deepspeed_script/zero2.json', '--model_name_or_path', './llava-v1.5-7b', '--model_name_for_dataarg', './llava-v1.5-7b', '--model_type', 'llama', '--version', 'v1', '--model_max_length', '10000', '--vision_tower', './clip-vit-large-patch14-336', '--gradient_checkpointing', 'True', '--num_train_epochs', '1', '--gradient_accumulation_steps', '1', '--bits', '16', '--bf16', 'True', '--tf32', 'True', '--dataset', 'Bongard-HOI', '--num_set', '5', '--data_type', 'ma_text', '--mode', 'VLM', '--dataloader_num_workers', '2', '--seed', '1', '--optim', 'adamw_torch', '--lr_scheduler_type', 'constant', '--weight_decay', '0.', '--warmup_ratio', '0.03', '--learning_rate', '5e-5', '--per_gpu_train_batch_size', '2', '--mm_projector_lr', '0', '--evaluation_strategy', 'no', '--save_strategy', 'no', '--logging_steps', '2', '--num_iter', '0.5', '--note', 'Bongard-HOI_ma_text_num5_iter0.5_infinite_base', '--output_dir', './results/test/'] exits with return code = 1
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Thu Feb 13 02:45:10 2025
+Driver Version                            : 560.35.03
+CUDA Version                              : 12.6
+
+Attached GPUs                             : 1
+GPU 00000000:E1:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 1927164
+            GPU Utilization               : 8 %
+            Memory Utilization            : 3 %
+            Max memory usage              : 45690 MiB
+            Time                          : 46902 ms
+            Is Running                    : 0
+
+Thu Feb 13 02:45:10 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:E1:00.0 Off |                    0 |
+| N/A   31C    P0            110W /  300W |       1MiB /  46068MiB |     60%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
