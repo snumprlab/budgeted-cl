@@ -1,5 +1,5 @@
 # aL-SAR
-<a href="https://bhkim94.github.io/projects/CL-ALFRED/"> <b>Budgeted Online Continual Learning by Adaptive Layer Freezing and Frequency-based Sampling</b> </a>
+<a href="https://openreview.net/pdf?id=dOAkHmsjRX"> <b>Budgeted Online Continual Learning by Adaptive Layer Freezing and Frequency-based Sampling</b> </a>
 <br>
 <a href="https://dbd05088.github.io/">Minhyuk Seo*</a>,
 Hyunseo Koh*,
@@ -8,13 +8,7 @@ Hyunseo Koh*,
 <a href="https://iclr.cc/"> ICLR 2025 (Spotlight) </a>
 
 
-**aL-SAR** is a benchmark that continuously learns new types of behaviors and environments for household tasks in <a href="https://github.com/askforalfred/alfred">ALFRED</a>.
-CL-ALFRED provides two incremental learning setups: **Behavior Incremental Learning** (**Behavior-IL**) to learn novel behaviors (task types) and **Environment Incremental Learning** (**Environment-IL**) to learn to complete tasks in novel environments.
-
-We provide the code of the baselines and CAMA.
-The code is built upon <a href="">i-Blurry</a> and <a href="https://github.com/snumprlab/abp">ABP</a>.
-
-<img src="cl-alfred.png" alt="CL-ALFRED">
+We provide the code of the baselines and our proposed aL-SAR.
 
 
 ## Environment
@@ -26,19 +20,23 @@ git clone https://github.com/snumprlab/budgeted-cl.git
 ### Install requirements
 Due to different python version usage for training and evaluation, we need a conda env for each training and evaluation.
 ```
+cd budgeted
 gdown --id 1A5EcV5snzDbqT_AY2afDF7ADnfc7RRss
 tar -xvf prepare.tar
-mv prepare/* ./
+mv prepare/* budgeted_CL_LLAVA
 rm prepare.tar
+rm -rf prepare
 ```
 
 # Training environment
+```
 conda create -n budgeted-cl-cil python=3.10
 conda activate budgeted-cl-cil
 pip install -r requirements_cil.txt
 ```
 ```
 # Evaluation environment
+```
 conda create -n budgeted-cl-llava python=3.10
 conda activate budgeted-cl-llava
 pip install -r requirements_llava.txt
