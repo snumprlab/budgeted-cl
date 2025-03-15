@@ -8,7 +8,7 @@ Hyunseo Koh*,
 <a href="https://iclr.cc/"> ICLR 2025 (Spotlight) </a>
 
 
-We provide the code of the baselines and our proposed aL-SAR.
+We provide the official implementation of the baselines and our proposed aL-SAR.
 
 
 ## Environment
