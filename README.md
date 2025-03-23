@@ -24,18 +24,6 @@ conda activate budgeted_cl
 pip install -r requirements.txt
 ```
 
-### Install PyTorch
-Install PyTorch from <a href="https://pytorch.org/get-started/previous-versions/#v1100">the official PyTorch site</a> for both `cl-alfred-train` and `cl-alfred-eval`.
-```
-conda deactivate
-conda activate cl-alfred-train
-pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-
-conda deactivate
-conda activate cl-alfred-eval
-pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
-```
-
 ### Downloading the Datasets
 CIFAR10, CIFAR100, CLEAR10, CLEAR100, Bongard-HOI, and Bongard-OpenWorld can be downloaded by running the corresponding scripts in the `dataset/` directory.
 ImageNet dataset can be downloaded from [Kaggle](https://www.kaggle.com/c/imagenet-object-localization-challenge).
@@ -45,10 +33,10 @@ ImageNet dataset can be downloaded from [Kaggle](https://www.kaggle.com/c/imagen
 
 
 ### Experiments Using Shell Script
-First, activate the training environment `cl-alfred-train`.
+First, activate the training environment `budgeted_cl`.
 ```
 conda deactivate
-conda activate cl-alfred-train
+conda activate budgeted_cl
 ```
 
 Experiments for the implemented methods can be run by executing `ex.sh` by
@@ -58,10 +46,10 @@ bash ex.sh
 You may change various arguments for different experiments.
 - `NOTE`: Short description of the experiment. Experiment result and log will be saved at `results/DATASET/NOTE`.
   - WARNING: logs/results with the same dataset and note will be overwritten!
-- `MODE`: CL method to be applied. Methods implemented in this version are: [sdp, clib, er, mir, gdumb, der++]
-- `DATASET`: Dataset to use in experiment. Supported datasets are: [cifar10, cifar100, tinyimagenet, imagenet]
+- `MODE`: CL method to be applied. Methods implemented in this version are: [ours, er, mir, der, aser, memo, ...]
+- `DATASET`: Dataset to use in experiment. Supported datasets are: [cifar10, cifar100, clear10, clear100, imagenet]
 - `REPEAT`: Number of periods in the Periodic Gaussian data stream. Set `REPEAT=1` for non-periodic case.
-- `SIGMA`: Standard deviation of the Gaussian distribution in Gaussian and Periodic Gaussian data stream.
+- `SIGMA`: Standard deviation of the Gaussian distribution in Gaussian data stream (10: gaussian scheduled setup, 0: disjoint setup).
 - `USE_AMP`: Use automatic mixed precision (amp), for faster running and reducing memory cost.
 - `MEM_SIZE`: Maximum number of samples in the episodic memory.
 - `ONLINE_ITER`: Number of model updates per sample.
