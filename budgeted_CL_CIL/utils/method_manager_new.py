@@ -18,14 +18,10 @@ from methods.der_LiDER import DER_LiDER
 from methods.xder_LiDER import XDER_LiDER
 from methods.mgi_dvc import MGI_DVC
 from methods.afec_new import AFEC
-from methods.co2l import CO2L
-from methods.SparCL import SparCL
-from methods.trire import TriRE
 from methods.er_ccldc_new import ER_CCLDC
 from methods.der_ccldc_new import DER_CCLDC
 from methods.cama_new import CAMA
 from methods.ewc_new_ccldc import EWCpp_CCLDC
-from methods.egeria import EGERIA
 logger = logging.getLogger()
 
 
