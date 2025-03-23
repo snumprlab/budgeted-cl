@@ -1,4 +1,4 @@
-# aL-SAR
+# The Official PyTorch Implementation of aL-SAR (adaptive Layer freezing and Similarity-Aware Retrieval)
 <a href="https://openreview.net/pdf?id=dOAkHmsjRX"> <b>Budgeted Online Continual Learning by Adaptive Layer Freezing and Frequency-based Sampling</b> </a>
 <br>
 <a href="https://dbd05088.github.io/">Minhyuk Seo*</a>,
@@ -36,24 +36,9 @@ conda activate cl-alfred-eval
 pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-
-## Dataset Download
-### Pre-extracted features
-Clone <a href="https://huggingface.co/datasets/byeonghwikim/abp_dataset">the Hugging Face repository</a> to the path `data/json_feat_2.1.0`.
-This should include numberized annotation files, ResNet-18 features, the vocabulary file, *etc.*
-<br>
-```
-git clone https://huggingface.co/datasets/byeonghwikim/abp_dataset data/json_feat_2.1.0
-```
-**Note**: It takes quite a large space (~1.6TB).
-**FAQ**: Why does it take so much space? $\rightarrow$ This is because 1) we use [surrounding views](https://bhkim94.github.io/projects/ABP/) (1 $\rightarrow$ 5 views) and 2) we cache all features of these views randomized by [image augmentation used in MOCA](https://bhkim94.github.io/projects/MOCA/) for faster training.
-
-### Raw RGB images, depth masks, and segmentation labels (Optional)
-We provide zip files that contain raw RGB images (and depth & segmentation masks) in <a href="https://huggingface.co/datasets/byeonghwikim/abp_images">the Hugging Face repository</a>, which takes about 250GB in total.
-With these images, you can extract features yourself with this <a href="https://github.com/snumprlab/abp/blob/main/models/utils/extract_resnet.py">code</a>.
-Or, you can build a smaller version of the dataset (*e.g.*, using only egocentric views without surrounding views)!
-If you are interested in building the egocentric-only version of this dataset, try <a href="https://github.com/gistvision/moca">MOCA</a> for an egocentric-view model!
-
+### Downloading the Datasets
+CIFAR10, CIFAR100, CLEAR10, CLEAR100, Bongard-HOI, and Bongard-OpenWorld can be downloaded by running the corresponding scripts in the `dataset/` directory.
+ImageNet dataset can be downloaded from [Kaggle](https://www.kaggle.com/c/imagenet-object-localization-challenge).
 
 
 ## Training
