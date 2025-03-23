@@ -46,15 +46,15 @@ bash ex.sh
 You may change various arguments for different experiments.
 - `NOTE`: Short description of the experiment. Experiment result and log will be saved at `results/DATASET/NOTE`.
   - WARNING: logs/results with the same dataset and note will be overwritten!
-- `MODE`: CL method to be applied. Methods implemented in this version are: [ours, er, mir, der, aser, memo, ...]
+- `MODE`: CL method to be applied. Methods implemented in this version are: [ours, er, mir, der, ewc, er_ccldc, der_ccldc, cama, aser, remind, memo]
 - `DATASET`: Dataset to use in experiment. Supported datasets are: [cifar10, cifar100, clear10, clear100, imagenet]
-- `REPEAT`: Number of periods in the Periodic Gaussian data stream. Set `REPEAT=1` for non-periodic case.
+- `REPEAT`: Number of periods in the Periodic Gaussian data stream. We used `REPEAT=1` for a non-periodic case.
 - `SIGMA`: Standard deviation of the Gaussian distribution in Gaussian data stream (10: gaussian scheduled setup, 0: disjoint setup).
 - `USE_AMP`: Use automatic mixed precision (amp), for faster running and reducing memory cost.
 - `MEM_SIZE`: Maximum number of samples in the episodic memory.
 - `ONLINE_ITER`: Number of model updates per sample.
 - `EVAL_PERIOD`: Period of evaluation queries, for calculating <img src="https://render.githubusercontent.com/render/math?math=A_\text{AUC}">.
-- `F_PERIOD`: Period of evaluating knowledge gain/loss, for calculating KLR and KGR.
+- `MODEL_NAME`: Model architecture. Models implemented in this version are: [resnet18, resnet20, resnet32, resnet34, resnet44, resnet56, resnet110]
 
 ```
 python models/train/train_seq2seq.py        \
