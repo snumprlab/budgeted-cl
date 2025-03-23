@@ -80,10 +80,10 @@ python models/train/train_seq2seq.py        \
 ```
 
 ## Evaluation
-First, activate the evaluation environment `cl-alfred-eval`.
+First, activate the evaluation environment `budgeted_cl`.
 ```
 conda deactivate
-conda activate cl-alfred-eval
+conda activate budgeted_cl
 ```
 
 To evaluate a model, run `eval_seq2seq.py` with the hyper-parameters below. <br>
