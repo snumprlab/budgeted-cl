@@ -42,25 +42,32 @@ ImageNet dataset can be downloaded from [Kaggle](https://www.kaggle.com/c/imagen
 
 
 ## Training
+
+
+### Experiments Using Shell Script
 First, activate the training environment `cl-alfred-train`.
 ```
 conda deactivate
 conda activate cl-alfred-train
 ```
 
-To train a model, run `train_seq2seq.py` with the hyper-parameters below. <br>
-- `incremental_setup`: `behavior_il` (Behavior-IL) or `environment_il` (Environment-IL)
-- `mode`: Continual learning methods
-  - `cama`: Confidence-Aware Moving Average
-  - `cama_nodc`: CAMA without Dynamically Determined Coefficients (CAMA w/o DC)
-  - `xder` eXtended-DER (Boschini et al. IEEE TPAMI'22)
-  - `der`: Dark Experience Replay (Buzzega et al. NeurIPS'20)
-  - `clib`: Continual Learning for i-Blurry (Koh et al. ICLR'22)
-  - `mir`: Maximally Interfered Retrieval (Aljundi et al. NeurIPS'19)
-  - `er`: Experience Replay (Rolnick et al. NeurIPS'19)
-  - `ewc++`: Elastic (Kirkpatrick et al. PNAS'17)
-- `stream_seed`: random seed for a behavior/environment sequence
-- `dout`: a path to save a model in
+Experiments for the implemented methods can be run by executing `ex.sh` by
+<pre>
+bash ex.sh
+</pre>
+You may change various arguments for different experiments.
+- `NOTE`: Short description of the experiment. Experiment result and log will be saved at `results/DATASET/NOTE`.
+  - WARNING: logs/results with the same dataset and note will be overwritten!
+- `MODE`: CL method to be applied. Methods implemented in this version are: [sdp, clib, er, mir, gdumb, der++]
+- `DATASET`: Dataset to use in experiment. Supported datasets are: [cifar10, cifar100, tinyimagenet, imagenet]
+- `REPEAT`: Number of periods in the Periodic Gaussian data stream. Set `REPEAT=1` for non-periodic case.
+- `SIGMA`: Standard deviation of the Gaussian distribution in Gaussian and Periodic Gaussian data stream.
+- `USE_AMP`: Use automatic mixed precision (amp), for faster running and reducing memory cost.
+- `MEM_SIZE`: Maximum number of samples in the episodic memory.
+- `ONLINE_ITER`: Number of model updates per sample.
+- `EVAL_PERIOD`: Period of evaluation queries, for calculating <img src="https://render.githubusercontent.com/render/math?math=A_\text{AUC}">.
+- `F_PERIOD`: Period of evaluating knowledge gain/loss, for calculating KLR and KGR.
+
 ```
 python models/train/train_seq2seq.py        \
     --incremental_setup <incremental_setup> \
